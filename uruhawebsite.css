@@ -495,3 +495,37 @@ h1, h2, h3, h4 {
         padding: 20px;
     }
 }
+
+<style>
+    /* ヘッダーロゴのスタイル */
+    .logo a {
+        color: #333; /* 通常のテキスト色に変更 */
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    /* ナビゲーションリンクのスタイル */
+    .nav ul li a {
+        color: #333; /* 通常のテキスト色 */
+        text-decoration: none;
+        padding: 5px 15px;
+        transition: color 0.3s ease;
+    }
+
+    .nav ul li a:hover {
+        color: #666; /* ホバー時の色 */
+    }
+
+    /* アクティブなリンクのスタイルを削除 */
+    .btn-contact {
+        background: none;
+        color: #333; /* 通常のテキスト色に変更 */
+        padding: 5px 15px; /* 他のメニューと同じパディングに */
+    }
+
+    .btn-contact:hover {
+        background: none;
+        color: #666; /* ホバー時の色 */
+    }
+</style>
