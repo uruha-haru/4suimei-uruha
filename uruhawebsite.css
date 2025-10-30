@@ -1,0 +1,497 @@
+/* 基本設定とフォント */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333; /* 濃いめのグレー */
+    line-height: 1.7;
+    background-color: #f7f5f2; /* 薄いベージュ (アースカラー) */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #3f51b5; /* イラストの青緑に近い色を基調に調整 */
+    line-height: 1.3;
+}
+
+.header-inner, .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー/ナビゲーション */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img { /* ロゴ画像のスタイル */
+    height: 50px; /* ロゴ画像の高さ調整 */
+    width: auto;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #5d4037;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #3f51b5; /* イラストの青緑に合わせる */
+}
+
+.btn-contact {
+    background-color: #4CAF50; /* ターコイズ/青緑に近い色 */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn-contact:hover {
+    background-color: #3f51b5; /* hover色も調整 */
+}
+
+
+/* メインビジュアル (Hero) */
+.hero {
+    background: url('image/image01.jpg') no-repeat center center/cover; /* ヘッダー背景画像パスを反映 */
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    color: white;
+    margin: 10px 0 20px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.hero-greeting {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* 共通セクション */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #e8e6df;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    display: inline-block;
+    border-bottom: 3px solid #3f51b5; /* イラストの色に合わせる */
+    padding-bottom: 5px;
+}
+
+
+/* プロフィールセクション */
+.profile-content {
+    display: flex;
+    text-align: left;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-text {
+    flex: 2;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.profile-photo { /* プロフィール画像のスタイル */
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* 円形に表示 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-intro {
+    font-weight: bold;
+    color: #3f51b5; /* イラストの色に合わせる */
+    margin-bottom: 20px;
+}
+
+/* コンセプトセクション */
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.concept-item h4 {
+    color: #3f51b5; /* イラストの色に合わせる */
+    border-left: 3px solid #4CAF50; /* ターコイズ/青緑に近い色をアクセントに */
+    padding-left: 10px;
+}
+
+.concept-image-placeholder {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.concept-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+
+/* メニューセクション */
+.menu-lead {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.menu-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 45%;
+    text-align: center;
+}
+
+.primary-card {
+    border: 3px solid #4CAF50; /* 初回鑑定をイラストのターコイズ系で強調 */
+}
+
+.secondary-card {
+    border: 3px solid #e8e6df;
+}
+
+.menu-card h4 {
+    font-size: 1.5rem;
+    color: #3f51b5; /* イラストの青緑に合わせる */
+    margin-top: 0;
+}
+
+.price-big {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #5d4037;
+    margin: 10px 0;
+}
+
+.time-note {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.menu-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.menu-card ul li {
+    padding: 8px 0;
+    border-top: 1px dashed #eee;
+}
+
+.menu-card ul li:last-child {
+    border-bottom: 1px dashed #eee;
+    font-weight: bold;
+    color: #3f51b5; /* 鑑定書付きをイラストの青緑で強調 */
+}
+
+.highlight {
+    color: #4CAF50; /* イラストのターコイズ系で強調 */
+}
+
+/* ボタン共通スタイル */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-main {
+    background-color: #3f51b5; /* イラストの青緑 */
+    color: white;
+}
+
+.btn-main:hover {
+    background-color: #4CAF50; /* ターコイズ系にhover */
+}
+
+.btn-detail {
+    background-color: transparent;
+    border: 1px solid #3f51b5;
+    color: #3f51b5;
+}
+
+.btn-detail:hover {
+    background-color: #3f51b5;
+    color: white;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #5d4037; /* ベースはテラコッタ/濃い茶系 */
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ対応 (モバイル向け) */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo-img { /* モバイルでのロゴ画像サイズ調整 */
+        height: 40px; 
+    }
+    .hero {
+        height: 50vh;
+    }
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    .profile-content {
+        flex-direction: column;
+    }
+    .profile-image {
+        order: -1; 
+        margin-bottom: 20px;
+    }
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-card {
+        width: 100%;
+    }
+    .section {
+        padding: 50px 20px;
+    }
+}
+
+
+/* お問い合わせフォーム */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #5d4037;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="date"],
+.contact-form input[type="time"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #3f51b5;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #4CAF50;
+}
+
+/* プライバシーポリシー */
+.privacy-policy {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.privacy-policy input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.privacy-link {
+    color: #3f51b5;
+    text-decoration: underline;
+}
+
+.privacy-link:hover {
+    text-decoration: none;
+}
+
+/* プライバシーポリシーページ */
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.privacy-content h2 {
+    color: #3f51b5;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.privacy-content h3 {
+    color: #5d4037;
+    margin: 30px 0 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.privacy-content p, 
+.privacy-content ul {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.privacy-content ul {
+    padding-left: 20px;
+}
+
+.privacy-content li {
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    text-align: right;
+    font-style: italic;
+    color: #888;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .privacy-content {
+        padding: 20px;
+    }
+}
