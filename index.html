@@ -291,36 +291,123 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </section>
 
-        <section id="menu" class="section menu">
-            <h3 class="section-title">鑑定メニュー</h3>
+<!-- メニューセクションを修正 -->
+<section id="menu" class="section menu">
+    <h3 class="section-title">✨ 鑑定メニュー</h3>
 
-            <div class="menu-lead">
-                <p>鑑定は、60分の対話（zoom又は対面（新潟市内の方）と、後から何度でも読み返せる【あなただけの鑑定書】のセットです。</p>
-            </div>
+    <div class="menu-lead">
+        <p>鑑定は、<strong>60分の対話</strong>と、後から何度でも読み返せる<strong>【あなただけの鑑定書】</strong>のセットです。</p>
+    </div>
 
-            <div class="menu-wrapper">
-                <div class="menu-card primary-card">
-                    <h4>🌱 お悩み初回鑑定</h4>
-                    <p class="price-big">5,000円</p>
-                    <p class="time-note">鑑定時間：60分</p>
-                    <ul>
-                        <li><span class="highlight">初めての方限定</span></li>
-                        <li>現在のお悩みに焦点を絞り、運気の流れを解説</li>
-                        <li>鑑定書付き（命式と鑑定内容のまとめ）</li>
-                    </ul>
-                </div>
+    <div class="menu-wrapper">
+        <div class="menu-card primary-card">
+            <h4>🌱 お悩み鑑定</h4>
+            <p class="price-big">5,000円</p>
+            <p class="time-note">鑑定時間：60分</p>
+            <ul>
+                <li>現在のお悩みに焦点を絞り、運気の流れを解説</li>
+                <li><strong>鑑定書付き</strong>（命式と鑑定内容のまとめ）</li>
+                <li>オンライン（Zoom）または対面（新潟市内）</li>
+                <li>アフターフォロー30日間</li>
+            </ul>
+            <a href="#contact" class="btn btn-main">申し込む</a>
+        </div>
+    </div>
+</section>
 
-                <div class="menu-card secondary-card">
-                    <h4>お悩みリピート鑑定</h4>
-                    <p class="price-big">4,000円</p>
-                    <p class="time-note">鑑定時間：60分</p>
-                    <ul>
-                        <li>以前鑑定を受けたことがある方</li>
-                        <li>継続的なアドバイスで運気の流れに調和</li>
-                        <li>鑑定書付き（命式と鑑定内容のまとめ）</li>
-                    </ul>
-                </div>
-            </div>
+<style>
+/* メニューカードのスタイル */
+.menu {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.menu-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.menu-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.price-big {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b5a2b;
+    margin: 10px 0;
+}
+
+.time-note {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.menu-card ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.menu-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.btn-main {
+    display: inline-block;
+    background: #8b5a2b;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+    background: #6b4520;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* スマホ用スタイル */
+@media screen and (max-width: 768px) {
+    .menu {
+        padding: 40px 15px;
+    }
+    
+    .menu-card {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+    
+    .menu-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .price-big {
+        font-size: 1.8rem;
+    }
+}
+</style>
             
 <section id="contact" class="section contact bg-light">
     <h3 class="section-title">お問い合わせ</h3>
