@@ -79,6 +79,59 @@ h1, h2, h3, h4 {
     }
 }
 
+/* スマホ用スタイル */
+@media screen and (max-width: 768px) {
+    /* ハンバーガーメニューボタン */
+    .menu-toggle {
+        order: 1; /* 左端に配置 */
+        margin-left: 10px;
+    }
+
+    /* ロゴ */
+    .logo {
+        order: 2;
+        flex-grow: 1;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* ドロップダウンメニュー */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #f5f0e6;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: none;
+        text-align: left;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav a {
+        padding: 12px 20px;
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+}
+
+
 
 /* スマホ用スタイル */
 @media screen and (max-width: 768px) {
