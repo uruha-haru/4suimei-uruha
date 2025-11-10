@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然派四柱推命鑑定士 潤葉 | 未来の光を見つける場所</title>
+    <link rel="stylesheet" href="uruhawebsite.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/uruha_favicon.png" type="image/png"> 
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="#home"><img src="image/uruha.png" alt="自然派四柱推命鑑定士 潤葉" class="logo-img"></a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">鑑定士 潤葉</a></li>
+                    <li><a href="#shichu">四柱推命とは</a></li>
+                    <li><a href="#menu">鑑定メニュー</a></li>
+                    <li><a href="#contact" class="btn-contact">鑑定申し込み</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="subtitle">自然の理（ことわり）に触れ、ありのままの自分を愛する</p>
+                <h2>運命は、乗り越えるものではなく、**調和**するもの。</h2>
+                <p class="hero-greeting">自然派四柱推命鑑定士の潤葉です。明日から頑張ろうと思えるきっかけをお届けします。</p>
+                <a href="#menu" class="btn btn-main">鑑定メニューを見る</a>
+            </div>
+        </section>
+
+        <section id="about" class="section profile">
+            <h3 class="section-title">💖 鑑定士 潤葉について</h3>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <p class="profile-intro">**すべてを投げ出したくなったあの日、四柱推命は『私は私で良い』と教えてくれました**</p>
+                    <p>私が四柱推命と深く関わるようになったのは、仕事と家庭、そして子育てのすべてに手いっぱいになり、「このまま私の人生はこの先どうなるのだろう」という不安に駆られていた時期でした。当時、他の鑑定士の方にも相談しましたが、腑に落ちる言葉に出会えず...**（→ここに、ご自身の詳細なエピソードと、浅野太志先生の自然派四柱推命に出会った経緯を挿入）**</p>
+                    <p>その後、浅野太志先生の講座で学びを深め、これまでに100名を超える方々の命式を見させていただき、鑑定士としての活動をスタートさせました。</p>
+                    <p>私の目指す「自然派四柱推命」は、五行（自然界のエネルギー）の流れを読み解き、運気を「良い・悪い」と単純に断じるのではなく、「すべての時期に必要な学びと実践方法」を具体的に導き出すものです。鑑定では、かつての私と同じように未来への不安で立ち止まってしまった方へ、「大丈夫、あなたの未来は決して悪くない」と確信を持ってお伝えします。運気の流れを知り、「こうすればきっと運は開けますよ」という具体的な道筋をお渡しし、「明日から頑張ってみよう」と思えるきっかけ作りを全力でサポートいたします。</p>
+                </div>
+                <div class="profile-image">
+                    <img src="image/uruha.png" alt="自然派四柱推命鑑定士 潤葉" class="profile-photo">
+                </div>
+            </div>
+        </section>
+
+        <section id="shichu" class="section concept bg-light">
+            <h3 class="section-title">🌿 自然派四柱推命とは</h3>
+            <p class="concept-intro">運気のサイクルを知る。自然と共にある、あなたの人生の羅針盤</p>
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <h4>✨ 運気に「悪い」時期はない</h4>
+                    <p>運気は季節の巡り。すべての時期に成長の種が隠されています。その意味と活かし方をお伝えし、未来への希望に変えます。</p>
+                    <div class="concept-image-placeholder">
+                        <img src="image/concept_flow.jpg" alt="運気の流れ" class="concept-image">
+                        <p class="image-caption">※別途、**静かに流れる川や四季の移ろいを連想させる画像**をご用意ください。</p>
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <h4>💡 実践的な行動指針</h4>
+                    <p>単なる予測ではなく、「今、何をすべきか」「こうすれば運が開ける」という具体的なアドバイスに特化しています。</p>
+                    <div class="concept-image-placeholder">
+                        <img src="image/concept_growth.jpg" alt="成長と行動" class="concept-image">
+                        <p class="image-caption">※別途、**大地から力強く伸びる木の根や芽吹く新芽を連想させる画像**をご用意ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="section menu">
+            <h3 class="section-title">✨ 鑑定メニュー</h3>
+
+            <div class="menu-lead">
+                <p>鑑定は、**60分の対話**と、後から何度でも読み返せる**【あなただけの鑑定書】**のセットです。</p>
+            </div>
+
+            <div class="menu-wrapper">
+                <div class="menu-card primary-card">
+                    <h4>🌱 お悩み初回鑑定</h4>
+                    <p class="price-big">5,000円</p>
+                    <p class="time-note">鑑定時間：60分</p>
+                    <ul>
+                        <li><span class="highlight">初めての方限定</span></li>
+                        <li>現在のお悩みに焦点を絞り、運気の流れを解説</li>
+                        <li>**鑑定書付き**（命式と鑑定内容のまとめ）</li>
+                    </ul>
+                </div>
+
+                <div class="menu-card secondary-card">
+                    <h4>🌿 お悩みリピート鑑定</h4>
+                    <p class="price-big">4,000円</p>
+                    <p class="time-note">鑑定時間：60分</p>
+                    <ul>
+                        <li>以前鑑定を受けたことがある方</li>
+                        <li>継続的なアドバイスで運気の流れに調和</li>
+                        <li>**鑑定書付き**（命式と鑑定内容のまとめ）</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <a href="#contact" class="btn btn-main">鑑定を申し込む</a>
+        </section>
+<section id="contact" class="section contact bg-light">
+    <h3 class="section-title">✉️ 鑑定申し込みフォーム</h3>
+    <p>下記のフォームに必要事項をご記入の上、送信してください。正確な鑑定のため、生まれた時間（母子手帳など）をご記入ください。</p>
+  
+    <form name="contact" method="POST" data-netlify="true" class="contact-form" netlify-honeypot="bot-field">
+        <p class="hidden">
+            <label>このフィールドは空欄のままにしてください: <input name="bot-field" /></label>
+        </p>
+        
+        <div class="form-group">
+            <label for="name">お名前（必須）</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">メールアドレス（必須）</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="birthdate">生年月日（必須）</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="birthtime">生まれた時間（わかる方）</label>
+            <input type="time" id="birthtime" name="birthtime">
+        </div>
+        
+        <div class="form-group">
+            <label for="gender">性別</label>
+            <select id="gender" name="gender">
+                <option value="選択しない">選択しない</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-method">ご希望の連絡方法（必須）</label>
+            <select id="contact-method" name="contact-method" required>
+                <option value="">選択してください</option>
+                <option value="zoom">Zoom（オンライン）</option>
+                <option value="face-to-face">対面（新潟市内）</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">ご相談内容やご質問</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        
+        <div class="form-group privacy-policy">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy"><a href="#privacy-policy" class="privacy-link">プライバシーポリシー</a>に同意する（必須）</label>
+        </div>
+        
+        <button type="submit" class="btn btn-main">送信する</button>
+    </form>
+</section>
+        
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
