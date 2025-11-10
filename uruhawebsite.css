@@ -1030,4 +1030,48 @@ main {
     }
 }
 
+/* メニューセクションのスタイル */
+.menu {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* メニューカードのスタイル調整 */
+.menu-wrapper {
+    width: 100%;
+}
+
+/* スマホ用の調整 */
+@media screen and (max-width: 768px) {
+    .menu {
+        min-height: calc(100vh - 120px); /* ヘッダー分を考慮 */
+        padding: 20px 15px;
+    }
+    
+    .menu-card {
+        margin: 20px auto;
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+    
+    .menu-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .menu-card ul {
+        padding-left: 25px;
+        margin: 15px 0;
+    }
+    
+    .menu-card li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+}
+
+
 </style>
