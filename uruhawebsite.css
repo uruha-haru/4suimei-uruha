@@ -80,6 +80,31 @@ h1, h2, h3, h4 {
 }
 
 
+/* スマホ用スタイル */
+@media screen and (max-width: 768px) {
+    /* その他のスタイルはそのままに、以下のスタイルを追加 */
+    .nav {
+        position: absolute;
+        left: 0;
+        right: auto; /* 右側の位置指定を解除 */
+        width: auto; /* 幅を自動調整 */
+        min-width: 200px; /* 最小幅を設定 */
+        margin-top: 10px;
+        border-radius: 0 0 5px 0; /* 右下角を丸く */
+    }
+
+    .nav ul {
+        text-align: left; /* テキストを左寄せ */
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav li {
+        text-align: left; /* メニュー項目を左寄せ */
+    }
+}
+
+
 /* ナビゲーションリンクのスタイルを統一 */
 .nav a {
     font-weight: normal;
