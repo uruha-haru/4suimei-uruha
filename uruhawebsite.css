@@ -950,5 +950,84 @@ main {
 }
 
 
+/* ヘッダーテキストの中央揃え */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* ロゴテキストのスタイル */
+.logo-text {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.4;
+    width: 100%;
+}
+
+/* キャッチフレーズの改行 */
+.catchphrase {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* スマホ用の調整 */
+@media screen and (max-width: 768px) {
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .catchphrase {
+        font-size: 0.8rem;
+    }
+}
+
+/* メニューセクションのスタイル */
+.menu {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* メニューカードのスタイル調整 */
+.menu-wrapper {
+    width: 100%;
+}
+
+/* スマホ用の調整 */
+@media screen and (max-width: 768px) {
+    .menu {
+        min-height: calc(100vh - 120px); /* ヘッダー分を考慮 */
+        padding: 20px 15px;
+    }
+    
+    .menu-card {
+        margin: 20px auto;
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+    
+    .menu-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .menu-card ul {
+        padding-left: 25px;
+        margin: 15px 0;
+    }
+    
+    .menu-card li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+}
 
 </style>
