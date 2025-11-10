@@ -563,30 +563,3 @@ main {
     }
 }
 
-/* ハンバーガーメニューのドロップダウン位置調整 */
-.nav.active {
-    top: 100%; /* ヘッダーの高さいっぱい下に配置 */
-    padding-top: 20px; /* 上に余白を追加 */
-    height: calc(100vh - 70px); /* 画面高さからヘッダー分を引く */
-    overflow-y: auto; /* スクロール可能に */
-}
-
-/* ナビゲーションリンクの余白調整 */
-.nav ul {
-    padding-top: 20px; /* 上部に余白を追加 */
-}
-
-/* ヘッダーの高さを調整 */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 70px; /* 固定の高さを指定 */
-}
-
-/* メインコンテンツの上部マージンを調整 */
-main {
-    margin-top: 70px; /* ヘッダーの高さ分下げる */
-}
