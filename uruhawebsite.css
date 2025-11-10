@@ -855,4 +855,100 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* 基本設定 */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+    position: relative;
+}
+
+/* メインコンテンツのスタイル */
+main {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* はみ出しを防ぐ */
+    margin: 0 auto;
+}
+
+/* ヘッダーの固定 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #f5f0e6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+/* メインコンテンツの余白調整 */
+.main-content {
+    padding-top: 70px; /* ヘッダーの高さ分の余白 */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* メニューカードのスタイル調整 */
+.menu-card {
+    max-width: 90%; /* 画面幅に余裕を持たせる */
+    margin: 0 auto;
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+/* スマホ用スタイル */
+@media screen and (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: 100%; /* フォントサイズの自動調整を防ぐ */
+        touch-action: manipulation; /* タップ時の遅延を軽減 */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .menu-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 5%; /* 左右に余白を追加 */
+    }
+
+    .menu-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px 15px;
+    }
+
+    /* 画像の最大幅を制限 */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* プロフィール画像のサイズ調整 */
+    .profile-image img {
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+/* ビューポートの設定 */
+@viewport {
+    width: device-width;
+    initial-scale: 1.0;
+    minimum-scale: 1.0;
+    maximum-scale: 1.0;
+    user-scalable: no;
+}
+
+
+
 </style>
