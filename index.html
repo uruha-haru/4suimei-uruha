@@ -9,37 +9,7 @@
     <link rel="icon" href="image/uruha_favicon.png" type="image/png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
-        /* スマホ用共通スタイル */
-        @media screen and (max-width: 768px) {
-            body {
-                text-align: center;
-            }
-            
-            .profile-content, .menu-wrapper, .concept-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .profile-text, .profile-image, .menu-card, .concept-item {
-                width: 90%;
-                margin: 0 auto 30px;
-            }
-            
-            img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-            }
-            
-            .contact-options {
-                width: 100%;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-        }
-
-/* --- 既存のヘッダーCSS --- */
+        /* --- 既存のヘッダーCSS --- */
 /* ヘッダー全体のスタイル */
 .header {
     background-color: #f5f0e6;
@@ -133,65 +103,6 @@
     color: #666;
 }
 
-/* スマホ用スタイル */
-@media screen and (max-width: 768px) {
-    .header-inner {
-        flex-wrap: wrap;
-        padding: 10px 15px;
-    }
-
-    /* ハンバーガーメニューボタンを表示 */
-    .menu-toggle {
-        display: block;
-        z-index: 1001;
-    }
-
-    /* ナビゲーションメニューを非表示に */
-    .nav {
-        display: none;
-        width: 100%;
-        order: 3;
-        margin-top: 10px;
-    }
-
-    .nav.active {
-        display: block;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        background: #f5f0e6;
-        border-radius: 5px;
-        padding: 10px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav li {
-        width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-
-    .nav a {
-        padding: 10px 15px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    /* ハンバーガーメニューのアニメーション */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg);
-        top: 10px;
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
-}
 /* --- 既存のメニューCSS --- */
 /* メニューカードのスタイル */
 .menu {
@@ -282,29 +193,6 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* スマホ用スタイル */
-@media screen and (max-width: 768px) {
-    .menu {
-        padding: 40px 0;
-    }
-    
-    .container {
-        padding: 0 15px;
-    }
-    
-    .menu-card {
-        padding: 25px 20px;
-        margin: 0;
-    }
-    
-    .menu-card h4 {
-        font-size: 1.3rem;
-    }
-    
-    .price-big {
-        font-size: 1.8rem;
-    }
-}
 /* --- 変更・追加したCSS --- */
 
 /* 価格改定のお知らせスタイル */
@@ -312,14 +200,14 @@
     max-width: 800px;
     margin: 40px auto 20px;
     padding: 20px;
-    background-color: #fff4e6; /* 優しいクリーム色 */
-    border: 2px solid #a38b6a; /* 自然派な茶色 */
+    background-color: #fff4e6; 
+    border: 2px solid #a38b6a; 
     border-radius: 8px;
     text-align: center;
 }
 
 .price-notice h4 {
-    color: #8b5a2b; /* メインカラーに合わせる */
+    color: #8b5a2b; 
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
@@ -329,7 +217,7 @@
     max-width: 600px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #fff9e6; /* 薄い黄色 */
+    background-color: #fff9e6; 
     border-left: 5px solid #8b5a2b;
     font-size: 0.95rem;
     text-align: center;
@@ -378,11 +266,58 @@
         transform: translateY(-3px);
         box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
+/* --- スマホ用最適化（特にメニューとナビゲーション） --- */
+@media screen and (max-width: 768px) {
+    /* ナビゲーションメニューを非表示に */
+    .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .header-inner {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+    /* ハンバーガーメニューボタンを表示 */
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    /* ... 既存のナビゲーションアニメーションCSSを省略 ... */
+    
+    .nav ul {
+        flex-direction: column;
+        background: #f5f0e6;
+        border-radius: 5px;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* メニューカードの横幅を確保し、積み重ねを明確に */
+    .menu-card {
+        max-width: 90%; /* 画面幅いっぱいに使う */
+        margin-bottom: 25px; /* カード間のマージンを確保 */
+    }
+    
+    .menu-wrapper {
+        gap: 0; /* 縦積みなので、gapは不要に */
+    }
+
+    .price-notice {
+        margin: 20px 15px; /* 左右の余白を調整 */
+        padding: 15px;
+    }
+}
 </style>
 </head>
 
 <body>
-
 
 
     
@@ -390,166 +325,3 @@
     <div class="header-inner">
         <h1 class="logo"><a href="#home">自然派四柱推命鑑定士 潤葉</a></h1>
                 <button class="menu-toggle" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">鑑定士 潤葉</a></li>
-                <li><a href="#shichu">四柱推命とは</a></li>
-                <li><a href="#menu">鑑定メニュー</a></li>
-                <li><a href="#contact">鑑定申し込み</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<script>
-// ハンバーガーメニューの動作
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    
-    menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('active');
-    });
-    
-    // メニュー項目をクリックしたらメニューを閉じる
-    const navLinks = document.querySelectorAll('.nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-        });
-    });
-});
-</script>
-
-
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="subtitle">自然の理に触れ<br>ありのままの自分を受け入れる</p>
-                <h2>運命は、乗り越えるものではなく調和するもの</h2>
-             <br>明日から頑張ろうと思える<br>きっかけをお届けします</p>
-                <a href="#menu" class="btn btn-main">鑑定メニューを見る</a>
-            </div>
-        </section>
-
-        <section id="about" class="section profile">
-            <h3 class="section-title">鑑定士 潤葉について</h3>
-            <div class="profile-content">
-                <div class="profile-text">
-                    <p class="profile-intro">
-                    <p>私が四柱推命と深く関わるようになったのは、仕事と家庭、そして子育てのすべてに手いっぱいになり不安に駆られていた時期でした。当時、鑑定士の方に相談しましたが、腑に落ちる言葉に出会うことができず「それなら自分で答えを見つけよう」と、手に取ったのが自然派四柱推命の本でした。自分で自分の命式を見る作業を行う中で、自然派四柱推命の解く「奥深さ」「優しさ」そして<br>「的中力」に強く惹かれました。
-<p>深い安堵感と自己肯定感に包まれました。<br>これが、私の鑑定士としての原点です。</p>
-                    <p>その後、自然派四柱推命の師である浅野太志先生の講座で学びを深め、これまでに多くの方々の命式を見させていただき、鑑定士としての活動を<br>スタートさせました。</p>
-                    <p>私の目指す「自然派四柱推命鑑定」は、五行（自然界のエネルギー）の流れを読み解き、運気を「良い・悪い」と単純に断じるのではなく「すべての時期においての開運方法」を具体的に導き出すものです。</p><p>鑑定では運が開いていく具体的な道筋をお伝えし、「明日から頑張ってみよう」と思えるきっかけ作りを全力でサポートいたします。</p>
-                </div>
-                <div class="profile-image">
-                    <img src="image/uruha.png" alt="自然派四柱推命鑑定士 潤葉" class="profile-photo">
-                </div>
-            </div>
-        </section>
-
-        <section id="shichu" class="section concept bg-light">
-            <h3 class="section-title">🌿 自然派四柱推命とは</h3>
-
-            <div class="concept-grid">
-                <div class="concept-item">
-                    <h4>運気に「悪い」時期はない</h4>
-                    <p>運気は季節の巡り。すべての時期に成長の種が隠されています。その意味と活かし方をお伝えし、未来への希望に変えます。</p>
-                    <div class="concept-image-placeholder">
-                        <img src="image/concept_flow.jpg" alt="運気の流れ" class="concept-image">
-                       
-                    </div>
-                </div>
-                <div class="concept-item">
-                    <h4>実践的な行動指針</h4>
-                    <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的なアドバイスに特化しています。</p>
-                    <div class="concept-image-placeholder">
-                        <img src="image/concept_growth.jpg" alt="成長と行動" class="concept-image">                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <div class="price-notice">
-            <h4>【大切なお知らせ】鑑定メニュー改定と新プラン導入について</h4>
-            <p>より長く質の高い鑑定を提供するため、2025年〇月〇日より鑑定メニューをリニューアルいたしました。すべて**詳細な鑑定書（書面）での納品**となります。</p>
-        </div>
-
-
-<section id="menu" class="section menu">
-    <div class="container">
-        <h3 class="section-title">✨ 鑑定メニュー</h3>
-
-        <div class="menu-lead">
-            <p>鑑定は、**じっくり読み返せる【あなただけの詳細鑑定書（PDF）】**をお送りするスタイルです。あなたの人生の道しるべとしてご活用ください。</p>
-        </div>
-
-        <div class="menu-wrapper">
-            
-            <div class="menu-card standard-card">
-                <h4>⭐ スタンダード鑑定</h4>
-                <p class="price-big">8,000円</p>
-                <p class="time-note">ご相談は2件まで</p>
-                <ul>
-                    <li>**【詳細鑑定書（PDF）】**をメール又はLINE納品</li>
-                    <li>鑑定結果に関する質問をメール又は電話フォローさせていただきます。（60分）</li>
-                </ul>
-                <a href="#contact" class="btn btn-main">申し込む</a>
-            </div>
-
-            <div class="menu-card premium-card">
-                <h4>💎 プレミアム鑑定</h4>
-                <p class="price-big">15,000円</p>
-                <ul>
-                    <li>お悩みごと、あなた本来の資質を深く鑑定</li>
-                    <li>**【詳細鑑定書（PDF）】**をメール納品</li>
-                    <li>鑑定結果に関する質問をメール又は電話フォローさせていただきます。（60分）</li>
-                </ul>
-                <a href="#contact" class="btn btn-main">申し込む</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-            
-<section id="contact" class="section contact bg-light">
-    <h3 class="section-title">鑑定申し込み・お問い合わせ</h3>
-    <p>鑑定のご予約やご質問は、下記の方法でお問い合わせください。</p>
-    
-    <p class="contact-note">
-        ※鑑定は、**詳細な鑑定書（書面）による納品**が中心です。<br>
-        質の高い鑑定を長く継続するため、ご理解とご協力をお願いいたします。
-    </p>
-    
-    <div class="contact-options">
-        <div class="contact-option">
-            <a href="https://www.instagram.com/fatenature33/" target="_blank" class="btn-contact instagram">
-                <i class="fab fa-instagram"></i>InstagramでDMを送る
-            </a>
-            <p>※「鑑定希望」とメッセージをお送りください</p>
-        </div>
-        
-           </div>
-</section>
-
-
-        
-        </section>
-
-        
-    </main>
-
-
-    <footer class="footer">
-        <p>&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
