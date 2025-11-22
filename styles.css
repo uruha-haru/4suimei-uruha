@@ -208,3 +208,16 @@ body {
     .nav { display: none; width: 100%; order: 3; margin-top: 5px; } /* マージンを減らす */
     .nav.active { display: block; }
     .nav ul { flex-direction: column; background:
+
+    /* リピーターカードのデザイン */
+.menu-card.repeater-card {
+    border: 2px solid #e6ccb2; /* 優しいベージュの枠線 */
+    background-color: #fffaf0; /* ほんのり暖かい背景色 */
+}
+.menu-card.repeater-card h4 {
+    color: #d4a373; /* 落ち着いたピンクベージュ系の文字色 */
+}
+/* リピーターカードのチェックマークの色変更 */
+.menu-card.repeater-card li::before {
+    color: #d4a373;
+}
