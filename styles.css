@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    line-height: 1.6; /* 全体の行間を調整 */
+    line-height: 1.7; /* 行間を広げ、読みやすく調整 */
 }
 
 .container {
@@ -15,7 +15,7 @@ body {
 }
 
 .section {
-    padding: 80px 0; /* セクションの上下余白をやや広めに */
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -24,9 +24,9 @@ body {
 }
 
 .section-title {
-    font-size: 2.2rem; /* タイトルの文字サイズ調整 */
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 50px; /* タイトル下の余白を広めに */
+    margin-bottom: 50px;
     color: #8b5a2b;
 }
 
@@ -41,7 +41,7 @@ body {
     font-weight: 600; 
     margin-top: 20px; 
     transition: all 0.3s ease; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ボタンに影を追加 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .btn-main:hover { 
     background: #6b4520; 
@@ -49,10 +49,10 @@ body {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
 }
 
-/* --- [B] ヘッダーとナビゲーション --- */
+/* --- [B] ヘッダーとナビゲーション (ハンバーガーメニュー対応) --- */
 .header {
     background-color: #f5f0e6;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 影を調整 */
     position: fixed;
     width: 100%;
     top: 0;
@@ -67,7 +67,7 @@ body {
     align-items: center;
     position: relative;
 }
-.logo { margin: 0; font-size: 1.4rem; white-space: nowrap; } /* ロゴの文字サイズをやや大きく */
+.logo { margin: 0; font-size: 1.4rem; white-space: nowrap; }
 .logo a { color: #333; text-decoration: none; font-weight: 700; }
 
 /* ハンバーガーメニューボタン（デフォルトでは非表示） */
@@ -81,15 +81,7 @@ body {
     cursor: pointer;
     padding: 0;
 }
-.menu-toggle span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #333;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
+.menu-toggle span { display: block; position: absolute; height: 3px; width: 100%; background: #333; border-radius: 3px; transition: all 0.3s ease; }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 10px; }
 .menu-toggle span:nth-child(3) { top: 20px; }
@@ -102,29 +94,180 @@ body {
     padding: 0;
     align-items: center;
 }
-.nav li { margin: 0 10px; } /* メニュー項目間の余白 */
+.nav li { margin: 0 10px; }
 .nav a {
     display: block;
-    padding: 8px 15px; /* メニュー項目のパディング */
+    padding: 8px 15px;
     color: #333;
     text-decoration: none;
     font-weight: normal;
     transition: color 0.3s ease;
-    border-radius: 5px; /* ホバー時の見た目調整 */
+    border-radius: 5px;
 }
 .nav a:hover {
     color: #666;
-    background-color: rgba(0,0,0,0.05); /* ホバー時の背景色 */
+    background-color: rgba(0,0,0,0.05);
 }
 
 
-/* --- [C] ヒーローとプロフィール、コンセプト --- */
+/* --- [C] ヒーローセクション（背景画像と文字色を修正） --- */
 .hero {
-    padding: 180px 20px 100px; /* ヘッダーの高さ考慮+上下の余白 */
-    background: url('image/hero_bg.jpg') no-repeat center center/cover; /* 自然の画像を背景に */
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 文字の視認性向上 */
+    padding: 180px 20px 100px; 
+    background: url('image/hero_bg.jpg') no-repeat center center/cover; /* 背景画像を適用 */
+    color: #333; /* 文字色を濃い色に設定 */
+    text-shadow: none; /* 影を削除 */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height:
+    min-height: 70vh; 
+}
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* 読みやすいように半透明の白背景を追加 */
+    padding: 30px;
+    border-radius: 10px;
+}
+.hero h2 {
+    font-size: 2.5rem; 
+    font-weight: 700; /* 太字 */
+    color: #333; 
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 600; /* 太字 */
+    color: #333; 
+    margin-bottom: 30px;
+}
+.hero .subtitle {
+    font-size: 1.3rem;
+    font-weight: 600; /* 太字 */
+    color: #333; 
+    margin-bottom: 15px;
+}
+
+/* プロフィール */
+.profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 40px;
+}
+.profile-text { flex: 2; padding-right: 20px; }
+.profile-image { flex: 1; display: flex; justify-content: center; align-items: center; }
+.profile-image img {
+    max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* コンセプト */
+.concept-grid { display: flex; justify-content: center; gap: 30px; margin-top: 30px; }
+.concept-item {
+    background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    max-width: 45%; text-align: center;
+}
+.concept-item h4 { font-size: 1.3rem; color: #8b5a2b; margin-bottom: 15px; }
+
+
+/* --- [D] 鑑定メニュー --- */
+.menu-lead { font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
+.menu-wrapper { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
+.menu-card {
+    background: white; border-radius: 10px; padding: 35px 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%; max-width: 450px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+.menu-card h4 { font-size: 1.6rem; margin-bottom: 15px; color: #8b5a2b; }
+.price-big { font-size: 2.5rem; font-weight: 700; color: #8b5a2b; margin: 15px 0; }
+.time-note { color: #666; font-size: 0.95rem; margin-bottom: 25px; }
+.menu-card ul { text-align: left; padding-left: 0; margin: 25px 0; list-style-type: none; }
+.menu-card li { margin-bottom: 12px; line-height: 1.7; position: relative; padding-left: 30px; font-size: 0.95rem; }
+.menu-card li:before { content: "✓"; color: #8b5a2b; position: absolute; left: 0; font-weight: bold; font-size: 1.1em; }
+
+
+/* --- [E] 告知と連絡先 --- */
+.price-notice {
+    max-width: 800px; margin: 60px auto 40px; padding: 25px; background-color: #fff4e6; 
+    border: 2px solid #a38b6a; border-radius: 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.price-notice h4 { color: #8b5a2b; font-size: 1.3rem; margin-bottom: 10px; }
+.contact-note {
+    max-width: 600px; margin: 30px auto; padding: 15px; background-color: #fff9e6; 
+    border-left: 5px solid #8b5a2b; font-size: 0.95rem; text-align: center; border-radius: 5px;
+}
+.contact-options { max-width: 600px; margin: 50px auto; text-align: center; }
+.contact-option { margin-bottom: 35px; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.btn-contact { 
+    display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; 
+    border-radius: 50px; color: white; text-decoration: none; font-weight: bold; margin: 15px 0; 
+    transition: all 0.3s ease; min-width: 250px; 
+}
+.btn-contact i { margin-right: 12px; font-size: 1.3em; }
+.instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+.btn-contact:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+
+
+/* --- [F] ★モバイル最適化専用CSS (768px以下) ★ --- */
+@media screen and (max-width: 768px) {
+    /* 共通設定 */
+    body { text-align: center; }
+    .section { padding: 40px 0; }
+    .container { padding: 0 15px; } 
+
+    /* ★ヘッダーの高さ調整★ */
+    .header-inner { flex-wrap: wrap; padding: 8px 15px; } /* 上下パディングを最小限に */
+    .logo { font-size: 1.1rem; } /* ロゴサイズも小さく */
+    .menu-toggle { display: block; z-index: 1001; }
+    /* ナビゲーションメニューの縦積みスタイル */
+    .nav { display: none; width: 100%; order: 3; margin-top: 10px; }
+    .nav.active { display: block; }
+    .nav ul { flex-direction: column; background: #f5f0e6; border-radius: 5px; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .nav li { width: 100%; margin: 0; text-align: center; }
+    .nav a { padding: 12px 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+
+    /* ★ヒーローセクションの調整★ */
+    .hero {
+        padding: 90px 15px 50px; /* ヘッダー分+適切な余白 */
+        min-height: 40vh; /* 画面の40%程度に高さを抑制 */
+        background-attachment: scroll; /* スマホでfixedは不自然な場合があるためscrollに */
+    }
+    .hero-content {
+        padding: 20px 15px;
+    }
+    .hero h2 { font-size: 1.5rem; } /* スマホでの文字サイズを適切に */
+    .hero .subtitle { font-size: 1.0rem; }
+    .hero p { font-size: 0.9rem; }
+
+
+    /* プロフィール・コンセプト・メニューを縦積みにする */
+    .profile-content, .menu-wrapper, .concept-grid { flex-direction: column; align-items: center; gap: 20px; }
+    /* プロフィールのテキストは読みやすさのため左寄せを維持 */
+    .profile-text { width: 100%; padding-right: 0; text-align: left; }
+    .profile-image { width: 100%; margin: 20px 0; }
+
+    /* メニューカードの調整 */
+    .menu-card { max-width: 100%; margin: 0 auto 20px; }
+    .menu-card h4 { font-size: 1.4rem; }
+    .price-big { font-size: 2.2rem; }
+    .menu-card li { font-size: 0.9rem; }
+    
+    /* コンセプトカードの調整 */
+    .concept-item { max-width: 100%; }
+
+    /* お問い合わせボタンの調整 */
+    .btn-contact { min-width: 100%; }
+}
+
+/* --- フッターのスタイル --- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8rem;
+}
