@@ -8,9 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="image/uruha_favicon.png" type="image/png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
         <style>
-        /* --- 既存のヘッダーCSS --- */
-/* ヘッダー全体のスタイル */
+/* --- 基本的なレイアウト設定 --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section {
+    padding: 60px 0;
+}
+
+/* --- 既存のヘッダーCSS --- */
 .header {
     background-color: #f5f0e6;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -19,7 +29,6 @@
     top: 0;
     z-index: 1000;
 }
-
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,93 +38,19 @@
     align-items: center;
     position: relative;
 }
+.logo { margin: 0; font-size: 1.1rem; white-space: nowrap; }
+.logo a { color: #333; text-decoration: none; font-weight: 700; }
+.menu-toggle { display: none; background: none; border: none; width: 30px; height: 24px; position: relative; cursor: pointer; padding: 0; }
+.menu-toggle span { display: block; position: absolute; height: 3px; width: 100%; background: #333; border-radius: 3px; transition: all 0.3s ease; }
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 10px; }
+.menu-toggle span:nth-child(3) { top: 20px; }
+.nav ul { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; }
+.nav li { margin: 0 5px; }
+.nav a { display: block; padding: 5px 10px; color: #333; text-decoration: none; font-weight: normal; transition: color 0.3s ease; }
+.nav a:hover { color: #666; }
 
-/* ロゴのスタイル */
-.logo {
-    margin: 0;
-    font-size: 1.1rem;
-    white-space: nowrap;
-}
-
-.logo a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-/* ハンバーガーメニューボタン（デフォルトでは非表示） */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-}
-
-.menu-toggle span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #333;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.menu-toggle span:nth-child(1) {
-    top: 0;
-}
-
-.menu-toggle span:nth-child(2) {
-    top: 10px;
-}
-
-.menu-toggle span:nth-child(3) {
-    top: 20px;
-}
-
-/* ナビゲーションのスタイル */
-.nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.nav li {
-    margin: 0 5px;
-}
-
-.nav a {
-    display: block;
-    padding: 5px 10px;
-    color: #333;
-    text-decoration: none;
-    font-weight: normal;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #666;
-}
-
-/* --- 既存のメニューCSS --- */
-/* メニューカードのスタイル */
-.menu {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* --- 鑑定メニューCSS --- */
 .menu-wrapper {
     display: flex;
     justify-content: center;
@@ -123,7 +58,6 @@
     gap: 30px;
     margin-top: 30px;
 }
-
 .menu-card {
     background: white;
     border-radius: 10px;
@@ -134,68 +68,20 @@
     text-align: center;
     margin: 0 auto;
 }
-
-/* その他のスタイルは変更なし */
-.menu-card h4 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
+.menu-card h4 { font-size: 1.5rem; margin-bottom: 15px; color: #333; }
+.price-big { font-size: 2rem; font-weight: 700; color: #8b5a2b; margin: 10px 0; }
+.time-note { color: #666; margin-bottom: 20px; }
+.menu-card ul { text-align: left; padding-left: 20px; margin: 20px 0; list-style-type: none; }
+.menu-card li { margin-bottom: 10px; line-height: 1.6; position: relative; padding-left: 25px; }
+.menu-card li:before { content: "✓"; color: #8b5a2b; position: absolute; left: 0; }
+.btn-main { 
+    display: inline-block; background: #8b5a2b; color: white; padding: 12px 30px; border-radius: 50px; 
+    text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s ease; 
 }
+.btn-main:hover { background: #6b4520; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-.price-big {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #8b5a2b;
-    margin: 10px 0;
-}
 
-.time-note {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.menu-card ul {
-    text-align: left;
-    padding-left: 20px;
-    margin: 20px 0;
-    list-style-type: none;
-}
-
-.menu-card li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 25px;
-}
-
-.menu-card li:before {
-    content: "✓";
-    color: #8b5a2b;
-    position: absolute;
-    left: 0;
-}
-
-.btn-main {
-    display: inline-block;
-    background: #8b5a2b;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.btn-main:hover {
-    background: #6b4520;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* --- 変更・追加したCSS --- */
-
-/* 価格改定のお知らせスタイル */
+/* --- 告知/注意書きCSS --- */
 .price-notice {
     max-width: 800px;
     margin: 40px auto 20px;
@@ -205,14 +91,7 @@
     border-radius: 8px;
     text-align: center;
 }
-
-.price-notice h4 {
-    color: #8b5a2b; 
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-/* お問い合わせセクションの注意書き */
+.price-notice h4 { color: #8b5a2b; font-size: 1.2rem; margin-bottom: 10px; }
 .contact-note {
     max-width: 600px;
     margin: 20px auto;
@@ -222,99 +101,54 @@
     font-size: 0.95rem;
     text-align: center;
 }
-.contact-options {
-        max-width: 600px;
-        margin: 40px auto;
-        text-align: center;
-    }
-    
-    .contact-option {
-        margin-bottom: 30px;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .btn-contact {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 24px;
-        border-radius: 50px;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 10px 0;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-contact i {
-        margin-right: 10px;
-        font-size: 1.2em;
-    }
-    
-    .instagram {
-        background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    }
-    
-    .line {
-        background: #00B900;
-    }
-    
-    .btn-contact:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-/* --- スマホ用最適化（特にメニューとナビゲーション） --- */
+.contact-options { max-width: 600px; margin: 40px auto; text-align: center; }
+.contact-option { margin-bottom: 30px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.btn-contact { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; margin: 10px 0; transition: all 0.3s ease; }
+.btn-contact i { margin-right: 10px; font-size: 1.2em; }
+.instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+.btn-contact:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+
+
+/* --- ★モバイル最適化専用CSS (768px以下) ★ --- */
 @media screen and (max-width: 768px) {
-    /* ナビゲーションメニューを非表示に */
-    .nav {
-        display: none;
-        width: 100%;
-        order: 3;
-        margin-top: 10px;
-    }
+    /* 共通設定 */
+    body { text-align: center; }
+    .section { padding: 40px 0; } /* セクションの上下余白を減らす */
+    .container { padding: 0 15px; } /* 左右の余白を適切に */
 
-    .nav.active {
-        display: block;
-    }
+    /* ナビゲーションの表示/非表示 (ハンバーガーメニュー) */
+    .header-inner { flex-wrap: wrap; padding: 10px 15px; }
+    .menu-toggle { display: block; z-index: 1001; }
+    .nav { display: none; width: 100%; order: 3; margin-top: 10px; }
+    .nav.active { display: block; }
+    .nav ul { flex-direction: column; background: #f5f0e6; border-radius: 5px; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .nav li { width: 100%; margin: 0; text-align: center; }
+    .nav a { padding: 10px 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
 
-    .header-inner {
-        flex-wrap: wrap;
-        padding: 10px 15px;
-    }
-    /* ハンバーガーメニューボタンを表示 */
-    .menu-toggle {
-        display: block;
-        z-index: 1001;
-    }
-    /* ... 既存のナビゲーションアニメーションCSSを省略 ... */
-    
-    .nav ul {
+    /* プロフィール・コンセプト・メニューを縦積みにする */
+    .profile-content, .menu-wrapper, .concept-grid {
         flex-direction: column;
-        background: #f5f0e6;
-        border-radius: 5px;
-        padding: 10px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        align-items: center;
     }
-    
-    /* メニューカードの横幅を確保し、積み重ねを明確に */
-    .menu-card {
-        max-width: 90%; /* 画面幅いっぱいに使う */
-        margin-bottom: 25px; /* カード間のマージンを確保 */
-    }
-    
-    .menu-wrapper {
-        gap: 0; /* 縦積みなので、gapは不要に */
-    }
 
-    .price-notice {
-        margin: 20px 15px; /* 左右の余白を調整 */
-        padding: 15px;
-    }
+    /* メニューカードの横幅を確保し、積み重ねを調整 */
+    .menu-card {
+        max-width: 95%; /* 画面幅いっぱいに近く */
+        margin: 0 auto 25px; /* 下部に間隔 */
+        padding: 25px 20px;
+    }
+    .menu-wrapper {
+        gap: 0; 
+    }
+
+    /* 画像とテキストの横幅調整 */
+    .profile-text, .profile-image, .concept-item {
+        width: 95%;
+        margin: 0 auto 20px;
+    }
+    img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 }
-</style>
+    </style>
 </head>
 
 <body>
@@ -325,3 +159,92 @@
     <div class="header-inner">
         <h1 class="logo"><a href="#home">自然派四柱推命鑑定士 潤葉</a></h1>
                 <button class="menu-toggle" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">鑑定士 潤葉</a></li>
+                <li><a href="#shichu">四柱推命とは</a></li>
+                <li><a href="#menu">鑑定メニュー</a></li>
+                <li><a href="#contact">鑑定申し込み</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+// ハンバーガーメニューの動作
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    
+    // メニュー項目をクリックしたらメニューを閉じる
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+});
+</script>
+
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="subtitle">自然の理に触れ<br>ありのままの自分を受け入れる</p>
+                <h2>運命は、乗り越えるものではなく調和するもの</h2>
+             <br>明日から頑張ろうと思える<br>きっかけをお届けします</p>
+                <a href="#menu" class="btn btn-main">鑑定メニューを見る</a>
+            </div>
+        </section>
+
+        <section id="about" class="section profile">
+            <h3 class="section-title">鑑定士 潤葉について</h3>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <p class="profile-intro">
+                    <p>私が四柱推命と深く関わるようになったのは、仕事と家庭、そして子育てのすべてに手いっぱいになり不安に駆られていた時期でした。当時、鑑定士の方に相談しましたが、腑に落ちる言葉に出会うことができず「それなら自分で答えを見つけよう」と、手に取ったのが自然派四柱推命の本でした。自分で自分の命式を見る作業を行う中で、自然派四柱推命の解く「奥深さ」「優しさ」そして<br>「的中力」に強く惹かれました。
+<p>深い安堵感と自己肯定感に包まれました。<br>これが、私の鑑定士としての原点です。</p>
+                    <p>その後、自然派四柱推命の師である浅野太志先生の講座で学びを深め、これまでに多くの方々の命式を見させていただき、鑑定士としての活動を<br>スタートさせました。</p>
+                    <p>私の目指す「自然派四柱推命鑑定」は、五行（自然界のエネルギー）の流れを読み解き、運気を「良い・悪い」と単純に断じるのではなく「すべての時期においての開運方法」を具体的に導き出すものです。</p><p>鑑定では運が開いていく具体的な道筋をお伝えし、「明日から頑張ってみよう」と思えるきっかけ作りを全力でサポートいたします。</p>
+                </div>
+                <div class="profile-image">
+                    <img src="image/uruha.png" alt="自然派四柱推命鑑定士 潤葉" class="profile-photo">
+                </div>
+            </div>
+        </section>
+
+        <section id="shichu" class="section concept bg-light">
+            <h3 class="section-title">🌿 自然派四柱推命とは</h3>
+
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <h4>運気に「悪い」時期はない</h4>
+                    <p>運気は季節の巡り。すべての時期に成長の種が隠されています。その意味と活かし方をお伝えし、未来への希望に変えます。</p>
+                    <div class="concept-image-placeholder">
+                        <img src="image/concept_flow.jpg" alt="運気の流れ" class="concept-image">
+                       
+                    </div>
+                </div>
+                <div class="concept-item">
+                    <h4>実践的な行動指針</h4>
+                    <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的なアドバイスに特化しています。</p>
+                    <div class="concept-image-placeholder">
+                        <img src="image/concept_growth.jpg" alt="成長と行動" class="concept-image">                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="price-notice">
+            <h4>【大切なお知らせ】鑑定メニュー改定と新プラン導入について</h4>
+            <p>より長く質の高い鑑定を提供するため、2025年〇月〇日より鑑定メニューをリニューアルいたしました。すべて**詳細な鑑定書（書面）

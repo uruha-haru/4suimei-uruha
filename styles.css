@@ -1,583 +1,218 @@
-/* リセットCSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- [A] 共通レイアウトと基本設定 --- */
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
-}
-
-/* ヘッダー */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #f5f0e6;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-inner {
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.logo {
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* メニューセクション */
-.section {
-    padding: 80px 0;
-    width: 100%;
-}
-
-.menu {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.menu-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.section {
+    padding: 60px 0;
+    text-align: center;
 }
 
-.menu-card {
-    background: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+.bg-light {
+    background-color: #f5f0e6;
 }
 
-/* レスポンシブデザイン */
-@media screen and (max-width: 768px) {
-    .header {
-        height: 60px;
-    }
-    
-    .logo {
-        font-size: 1rem;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .menu {
-        min-height: calc(100vh - 60px);
-        padding: 20px 0;
-    }
-    
-    .container {
-        padding: 0 15px;
-    }
-    
-    .menu-card {
-        padding: 25px 20px;
-    }
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #8b5a2b;
 }
 
-/* ヘッダー全体のスタイル */
+/* --- [B] ヘッダーとナビゲーション --- */
 .header {
-    background-color: #f5f0e6;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background-color: #f5f0e6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-/* ロゴのスタイル */
 .logo {
-    margin: 0;
-    font-size: 1.1rem;
-    white-space: nowrap;
+    margin: 0;
+    font-size: 1.1rem;
+    white-space: nowrap;
 }
 
 .logo a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-/* ナビゲーションのスタイル */
-.nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.nav li {
-    margin: 0 5px;
-}
-
-.nav a {
-    display: block;
-    padding: 5px 10px;
-    color: #333;
-    text-decoration: none;
-    font-weight: normal;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #666;
-}
-
-/* ハンバーガーメニューボタン（デフォルトでは非表示） */
 .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
+    display: none; /* デスクトップでは非表示 */
+    background: none;
+    border: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
 }
 
 .menu-toggle span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #333;
-    border-radius: 3px;
-    transition: all 0.3s ease;
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
-.menu-toggle span:nth-child(1) {
-    top: 0;
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 10px; }
+.menu-toggle span:nth-child(3) { top: 20px; }
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.menu-toggle span:nth-child(2) {
-    top: 10px;
+.nav li { margin: 0 5px; }
+
+.nav a {
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
 }
 
-.menu-toggle span:nth-child(3) {
-    top: 20px;
-}
-
-/* スマホ用スタイル */
-@media screen and (max-width: 768px) {
-    .header-inner {
-        flex-wrap: wrap;
-        padding: 10px 15px;
-    }
-
-    /* ハンバーガーメニューボタンを表示 */
-    .menu-toggle {
-        display: block;
-        z-index: 1001;
-    }
-
-    /* ナビゲーションメニューを非表示に */
-    .nav {
-        display: none;
-        width: 100%;
-        order: 3;
-        margin-top: 10px;
-    }
-
-    .nav.active {
-        display: block;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        background: #f5f0e6;
-        border-radius: 5px;
-        padding: 10px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav li {
-        width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-
-    .nav a {
-        padding: 10px 15px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    /* ハンバーガーメニューのアニメーション */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg);
-        top: 10px;
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg);
-        top: 10px;
-    }
-}
+.nav a:hover { color: #666; }
 
 
-
-/* リセットCSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
-    padding-top: 70px; /* ヘッダーの高さ分の余白を追加 */
-}
-
-/* メインコンテンツのスタイル */
-main {
-    padding: 20px 0;
-}
-
-/* レスポンシブデザイン */
-@media screen and (max-width: 768px) {
-    body {
-        padding-top: 60px; /* スマホ用のヘッダー高さに調整 */
-    }
-}
-
-/* メインコンテンツの基本設定 */
-main {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-/* 各セクションの基本スタイル */
-.section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 60px 0;
-}
-
-/* ヒーローセクション */
+/* --- [C] ヒーローとプロフィール --- */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 15px;
+    /* ヒーローイメージ用のスタイルを追加してください */
+    padding: 150px 20px 80px;
+    background-color: #e6e0d4; /* 仮の背景色 */
 }
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* プロフィールセクション */
 .profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
 }
-
-/* コンセプトセクション */
-.concept {
-    text-align: center;
+.profile-text {
+    flex: 1;
+    padding-right: 40px;
 }
-
+.profile-image img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 .concept-grid {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 15px;
+    margin-top: 30px;
+}
+.concept-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 45%;
 }
 
-/* メニューセクション */
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* --- [D] 鑑定メニュー（新しい料金体系） --- */
 .menu-wrapper {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-/* お問い合わせセクション */
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.contact-options {
-    width: 100%;
-    max-width: 500px;
-    margin: 30px auto 0;
-    padding: 0 15px;
-}
-
-/* スマホ用の調整 */
-@media screen and (max-width: 768px) {
-    .section {
-        padding: 40px 0;
-        min-height: auto;
-    }
-
-    .hero-content {
-        padding: 0 15px;
-    }
-
-    .profile-content {
-        padding: 0 15px;
-    }
-
-    .profile-text {
-        order: 2;
-    }
-
-    .profile-image {
-        order: 1;
-        margin-bottom: 30px;
-    }
-
-    .profile-image img {
-        max-width: 200px;
-        height: auto;
-    }
-
-    .concept-grid {
-        padding: 0 15px;
-    }
-
-    .menu {
-        padding: 40px 0;
-    }
-
-    .menu-card {
-        width: 100%;
-        padding: 25px 20px;
-    }
-
-    .contact-options {
-        padding: 0 15px;
-    }
-}
-
-/* ボタンのスタイル */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.btn-main {
-    background: #8b5a2b;
-    color: white;
-}
-
-.btn-main:hover {
-    background: #6b4520;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn-contact {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin: 10px 0;
-}
-
-.instagram {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
-}
-
-/* メニューカードの中央配置 */
-.menu-wrapper {
-    display: flex;
-    justify-content: center; /* 水平方向の中央寄せ */
-    width: 100%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .menu-card {
-    max-width: 500px; /* 適切な最大幅に調整 */
-    width: 100%;
-    margin: 0 auto; /* 中央寄せ */
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-/* スマホ用の調整 */
-@media screen and (max-width: 768px) {
-    .menu-card {
-        width: 90%; /* スマホでは少し余白を持たせる */
-        padding: 25px 20px;
-        margin: 0 auto; /* 中央寄せを維持 */
-    }
-}
+.menu-card h4 { font-size: 1.5rem; margin-bottom: 15px; color: #333; }
+.price-big { font-size: 2rem; font-weight: 700; color: #8b5a2b; margin: 10px 0; }
+.time-note { color: #666; margin-bottom: 20px; }
+.menu-card ul { text-align: left; padding-left: 20px; margin: 20px 0; list-style-type: none; }
+.menu-card li { margin-bottom: 10px; line-height: 1.6; position: relative; padding-left: 25px; }
+.menu-card li:before { content: "✓"; color: #8b5a2b; position: absolute; left: 0; }
 
-/* ヒーローイメージセクション */
-.hero-image {
-    position: relative;
-    width: 100%;
-    height: 90vh; /* 画面の高さに合わせて調整 */
-    background-image: url('image/image01.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-top: 70px; /* ヘッダーの高さ分下げる */
-}
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* オーバーレイの色と透明度 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-text {
+/* --- [E] 告知と連絡先 --- */
+.price-notice {
     max-width: 800px;
+    margin: 40px auto 20px;
     padding: 20px;
+    background-color: #fff4e6; 
+    border: 2px solid #a38b6a; 
+    border-radius: 8px;
+    text-align: center;
 }
+.price-notice h4 { color: #8b5a2b; font-size: 1.2rem; margin-bottom: 10px; }
 
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.contact-note {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff9e6; 
+    border-left: 5px solid #8b5a2b;
+    font-size: 0.95rem;
+    text-align: center;
 }
-
-.hero-text .subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+.contact-options { max-width: 600px; margin: 40px auto; text-align: center; }
+.contact-option { margin-bottom: 30px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.btn-contact { 
+    display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; 
+    border-radius: 50px; color: white; text-decoration: none; font-weight: bold; margin: 10px 0; 
+    transition: all 0.3s ease; 
 }
+.btn-contact i { margin-right: 10px; font-size: 1.2em; }
+.instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+.btn-contact:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
 
-.hero-text .hero-greeting {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
 
-/* レスポンシブ対応 */
+/* --- [F] モバイル最適化専用CSS (768px以下) --- */
 @media screen and (max-width: 768px) {
-    .hero-image {
-        height: 70vh;
-        margin-top: 60px; /* スマホ用のヘッダー高さに調整 */
-    }
+    /* 共通設定 */
+    body { text-align: center; }
+    .section { padding: 40px 0; } /* セクションの上下余白を減らす */
+    .container { padding: 0 15px; } /* 左右の余白を適切に */
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text .subtitle {
-        font-size: 1.4rem;
-    }
-
-    .hero-text .hero-greeting {
-        font-size: 1rem;
-    }
-}
-
-/* ドロップダウンメニューの元のスタイルに戻す */
-.nav.active {
-    top: 0;
-    padding-top: 0;
-    height: 100vh;
-}
-
-.nav ul {
-    padding-top: 0;
-}
-
-.header {
-    height: auto;
-}
-
-main {
-    margin-top: 0;
-}
+    /* ナビゲーションの表示/非表示 (ハンバーガーメニュー) */
+    .header-inner { flex-wrap: wrap; padding: 10px 15px; }
+    .menu-toggle { display: block; z-index: 1
