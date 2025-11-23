@@ -14,11 +14,11 @@
         }
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            color: #4a3b32; /* 濃い茶色で読みやすく */
+            color: #4a3b32; /* 読みやすい濃い茶色 */
             margin: 0;
             padding: 0;
             background-color: #f9f7f2;
-            line-height: 1.8; /* 行間を広めに */
+            line-height: 1.8;
             -webkit-text-size-adjust: 100%;
         }
         a {
@@ -27,7 +27,7 @@
             transition: opacity 0.3s;
         }
         a:hover {
-            opacity: 0.7;
+            opacity: 0.8;
         }
         img {
             max-width: 100%;
@@ -43,7 +43,7 @@
         /* --- [2] レイアウト共通クラス --- */
         .container {
             width: 100%;
-            padding: 0 20px; /* スマホでの左右の余白 */
+            padding: 0 20px;
             margin: 0 auto;
             max-width: 1000px;
         }
@@ -51,20 +51,19 @@
             padding: 60px 0;
         }
         .section-title {
-            font-size: 1.8rem; /* スマホで見やすい大きさ */
+            font-size: 1.8rem;
             font-weight: 700;
             text-align: center;
             margin-bottom: 40px;
             color: #8b5a2b;
             letter-spacing: 0.05em;
         }
-        .text-center { text-align: center; }
         .bg-light { background-color: #fffbf5; }
 
         /* --- [3] ヘッダー & ドロップダウンメニュー --- */
         .header {
             background-color: #f5f0e6;
-            height: 60px; /* 高さを固定してコンパクトに */
+            height: 60px;
             width: 100%;
             position: fixed;
             top: 0;
@@ -85,7 +84,7 @@
 
         /* ハンバーガーボタン */
         .menu-toggle {
-            display: block; /* 常に表示（スマホ優先） */
+            display: block;
             width: 30px;
             height: 25px;
             position: relative;
@@ -125,14 +124,12 @@
         /* ドロップダウンナビゲーション */
         .nav {
             position: absolute;
-            top: 60px; /* ヘッダーの高さ分下げる */
+            top: 60px;
             left: 0;
             width: 100%;
             background-color: #f5f0e6;
             border-top: 1px solid #e0d8cc;
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-            
-            /* アニメーション設定 */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-in-out;
@@ -155,7 +152,7 @@
 
         /* PC画面（768px以上）の時の調整 */
         @media screen and (min-width: 768px) {
-            .menu-toggle { display: none; } /* ボタンを消す */
+            .menu-toggle { display: none; }
             .nav {
                 position: static;
                 width: auto;
@@ -172,33 +169,28 @@
 
         /* --- [4] ヒーローセクション --- */
         .hero {
-            margin-top: 60px; /* ヘッダーの高さ分下げる */
+            margin-top: 60px;
             position: relative;
             width: 100%;
-            height: 60vh; /* 画面の60%の高さ */
+            height: 60vh;
             min-height: 400px;
-            background-image: url('image/hero_bg.jpg'); /* ★ここに自然の画像 */
+            background-image: url('image/hero_bg.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        /* 画像がない場合のフォールバック色 */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.1); /* 少し明るく */
-        }
+        /* 画像読み込み前の背景色 */
+        .hero { background-color: #e6e0d4; }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.85); /* 半透明の白背景 */
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 30px 20px;
             border-radius: 8px;
-            width: 90%; /* スマホでの幅 */
+            width: 90%;
             max-width: 500px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -212,7 +204,7 @@
         }
         
         .hero-title {
-            font-size: 1.5rem; /* スマホで見やすいサイズ */
+            font-size: 1.5rem;
             color: #333;
             margin-bottom: 20px;
             line-height: 1.4;
@@ -232,20 +224,20 @@
         /* --- [5] プロフィール --- */
         .profile-wrap {
             display: flex;
-            flex-direction: column; /* スマホは縦並び */
+            flex-direction: column;
             align-items: center;
             gap: 30px;
         }
         .profile-img {
-            width: 200px; /* ★画像の大きさを制限 */
+            width: 200px; /* スマホで見やすいサイズに固定 */
             height: 200px;
             object-fit: cover;
-            border-radius: 50%; /* 丸くする */
+            border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin: 0 auto;
         }
         .profile-body {
-            text-align: left; /* 文章は左揃えで読みやすく */
+            text-align: left;
         }
         .profile-body p {
             margin-bottom: 1.5em;
@@ -259,7 +251,7 @@
             border-radius: 8px;
             padding: 20px;
             margin: 40px 20px;
-            text-align: center;
+            text-align: left;
         }
         .notice-title {
             color: #c0392b;
@@ -267,12 +259,13 @@
             display: block;
             margin-bottom: 10px;
             font-size: 1.1rem;
+            text-align: center;
         }
 
         /* --- [7] 鑑定メニュー（カードデザイン） --- */
         .menu-grid {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* スマホでは縦並び */
             gap: 30px;
         }
         .menu-card {
@@ -282,11 +275,11 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             border: 1px solid #eee;
+            width: 100%; /* 幅いっぱいに */
         }
-        /* プレミアムカードの強調 */
+        /* プレミアムだけ少し強調（任意） */
         .menu-card.premium {
             border: 2px solid #d4bfa8;
-            background-color: #ffxfaf0;
         }
         
         .menu-title {
@@ -349,7 +342,7 @@
             font-size: 1rem;
             width: 100%;
             max-width: 300px;
-            margin: 20px 0;
+            margin: 20px auto;
         }
         .btn-insta i { margin-right: 10px; font-size: 1.2rem; }
 
@@ -362,18 +355,21 @@
             font-size: 0.8rem;
         }
 
-        /* PC向け微調整（プロフィール横並びなど） */
+        /* PC画面（768px以上）のレイアウト調整 */
         @media screen and (min-width: 768px) {
             .profile-wrap {
                 flex-direction: row;
                 align-items: flex-start;
             }
             .profile-img { margin: 0; }
+            
+            /* PCではカードを横並びにする */
             .menu-grid {
                 flex-direction: row;
                 justify-content: center;
+                align-items: stretch; /*高さを揃える*/
             }
-            .menu-card { width: 45%; }
+            .menu-card { width: 30%; } /* 3つ並べる */
         }
     </style>
 </head>
@@ -402,7 +398,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <p class="hero-subtitle">自然の理に触れ、自分を受け入れる</p>
-            <h2 class="hero-title">運命は乗り越えるものでは<br>なく、調和するもの</h2>
+            <h2 class="hero-title">運命は乗り越えるものではなく<br>調和するもの</h2>
             <p style="font-size: 0.95rem; margin-bottom: 20px;">明日から頑張ろうと思える<br>きっかけをお届けします</p>
             <a href="#menu" class="btn-hero">鑑定メニューを見る</a>
         </div>
@@ -429,11 +425,11 @@
             <h3 class="section-title">自然派四柱推命とは</h3>
             <div style="text-align: left; max-width: 800px; margin: 0 auto;">
                 <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <h4 style="color: #8b5a2b; margin-bottom: 10px;">🌿 運気に「悪い」時期はない</h4>
+                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 運気に「悪い」時期はない</h4>
                     <p>運気は季節の巡りのようなもの。すべての時期に成長の種が隠されています。その意味をお伝えし、未来への希望に変えます。</p>
                 </div>
                 <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <h4 style="color: #8b5a2b; margin-bottom: 10px;">🌿 実践的な行動指針</h4>
+                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 実践的な行動指針</h4>
                     <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的な行動のアドバイスに特化しています。</p>
                 </div>
             </div>
@@ -443,14 +439,14 @@
     <div class="container">
         <div class="notice-box">
             <span class="notice-title">【大切なお知らせ】</span>
-            <p style="font-size: 0.9rem; text-align: left;"><strong>より長く質の高い鑑定を提供するため、2025年12月よりメニューをリニューアルいたします。</p>
+            <p style="font-size: 0.9rem;">より長く質の高い鑑定を提供するため、2025年〇月よりメニューをリニューアルいたしました。現在は<strong>「詳細な鑑定書（書面）」での納品</strong>を中心としております。</p>
         </div>
     </div>
 
     <section id="menu" class="section">
         <div class="container">
             <h3 class="section-title">鑑定メニュー</h3>
-            <p style="margin-bottom: 30px; font-size: 0.95rem;">後から何度でも読み返えせる<br><strong>【あなただけの詳細鑑定書】</strong>をお届けします。</p>
+            <p style="margin-bottom: 30px; font-size: 0.95rem; text-align:center;">後から何度でも読み返せる<br><strong>【あなただけの詳細鑑定書(PDF)】</strong>をお届けします。</p>
 
             <div class="menu-grid">
                 <div class="menu-card">
@@ -458,9 +454,8 @@
                     <p class="menu-price">8,000円</p>
                     <p style="color: #666; font-size: 0.9rem;">ご相談は3件まで</p>
                     <ul class="menu-desc">
-                        <li>お悩みに絞った詳細鑑定</li>
                         <li><strong>詳細鑑定書(PDF)</strong>をメール又はLINE納品</li>
-                        <li><strong>電話又はLINE(60分)フォロー</strong>付き</li>
+                          <li><strong>電話フォロー(60分)</strong>付き</li>
                     </ul>
                     <a href="#contact" class="btn-menu">申し込む</a>
                 </div>
@@ -469,23 +464,25 @@
                     <h4 class="menu-title">💎 プレミアム鑑定</h4>
                     <p class="menu-price">15,000円</p>
                     <ul class="menu-desc">
-                        <li>お悩みごと（ご家族様含めます）5件まで</li>
+                        <li>ご家族の鑑定もできます。お悩み5件＋本来の資質を深く鑑定</li>
                         <li><strong>詳細鑑定書(PDF)</strong>をメール又はLINE納品</li>
-                       <li><strong>電話又はLINE(60分)フォロー</strong>付き</li>
+                        <li><strong>電話フォロー(60分)</strong>付き</li>
                     </ul>
                     <a href="#contact" class="btn-menu" style="background-color: #8b5a2b;">申し込む</a>
                 </div>
 
-
-            </div><div class="menu-card repeater-card">
-                <h4>🌸 リピーター様限定</h4>
-                <p class="price-big">5,000円</p>
-                <p class="time-note">2回目以降の方専用</p>
-                
-<li><strong>電話又はLINE(60分)フォロー</strong>付き</li>
-
-
-                <a href="#contact" class="btn-menu" style="background-color: #d4a373;">申し込む</a>
+                <div class="menu-card">
+                    <h4 class="menu-title">🌸 リピーター様限定</h4>
+                    <p class="menu-price">5,000円</p>
+                    <p style="color: #666; font-size: 0.9rem;">2回目以降の方専用</p>
+                    <ul class="menu-desc">
+                        <li>前回の鑑定を踏まえた継続相談</li>
+                        <li>今年の運勢や特定の悩みなど</li>
+                         <li><strong>鑑定書(PDF)</strong>をメール又はLINE納品</li>
+                       <li><strong>電話フォロー(60分)</strong>付き</li>
+                    </ul>
+                    <a href="#contact" class="btn-menu">申し込む</a>
+                </div>
             </div>
         </div>
     </section>
@@ -503,7 +500,7 @@
                 
                 <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
                     ※「鑑定希望」とメッセージをお送りください。<br>
-                
+                    ※現在は書面納品が中心となります。
                 </p>
             </div>
         </div>
