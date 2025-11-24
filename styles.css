@@ -193,7 +193,42 @@ body {
 .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 
 
-/* --- [F] ★モバイル最適化専用CSS (768px以下) ★ --- */
+
+
+
+
+/* --- [F] ★        /* --- [10] ご感想セクション --- */
+        .voice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .voice-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .voice-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #8b5a2b;
+        }
+
+        .voice-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        @media screen and (min-width: 768px) {
+            .voice-list {
+                gap: 24px;
+            }
+        }モバイル最適化専用CSS (768px以下) ★ --- */
 @media screen and (max-width: 768px) {
     /* 共通設定 */
     body { text-align: center; }
@@ -220,4 +255,7 @@ body {
 /* リピーターカードのチェックマークの色変更 */
 .menu-card.repeater-card li::before {
     color: #d4a373;
+
+
 }
+
