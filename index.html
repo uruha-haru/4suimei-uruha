@@ -524,27 +524,7 @@
     <footer class="footer">
         <p>&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
     </footer>
-
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.getElementById('nav');
-        
-        // ハンバーガーボタンをクリックした時の動作
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active'); // ボタンの形を変える
-            nav.classList.toggle('active'); // メニューを開閉する
-        });
-
-        // メニュー内のリンクをクリックしたら閉じる動作
-        const navLinks = document.querySelectorAll('.nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-    
         const menuToggle = document.getElementById('menuToggle');
         const nav = document.getElementById('nav');
         
@@ -570,9 +550,8 @@
                 history.replaceState(null, '', location.pathname);
             }
         });
-
-
     </script>
+
 
 </body>
 </html>
