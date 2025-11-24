@@ -387,7 +387,7 @@
         <nav class="nav" id="nav">
             <ul>
                 <li><a href="#home">ホーム</a></li>
-                <li><a href="#about">鑑定士について</a></li>
+                <li><a href="#about">鑑定士（潤葉）</a></li>
                 <li><a href="#shichu">四柱推命とは</a></li>
                 <li><a href="#menu">鑑定メニュー</a></li>
                 <li><a href="#contact">お申し込み</a></li>
@@ -543,6 +543,35 @@
                 nav.classList.remove('active');
             });
         });
+
+    
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        // ハンバーガーボタンをクリックした時の動作
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active'); // ボタンの形を変える
+            nav.classList.toggle('active'); // メニューを開閉する
+        });
+
+        // メニュー内のリンクをクリックしたら閉じる動作
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // ★ ページ読み込み時に一番上へスクロール＆ハッシュを消す
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);  // 画面の一番上へ
+            if (location.hash) {
+                history.replaceState(null, '', location.pathname);
+            }
+        });
+
+
     </script>
 
 </body>
