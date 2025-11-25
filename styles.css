@@ -228,6 +228,8 @@ body {
             .voice-list {
                 gap: 24px;
             }
+
+            
         }モバイル最適化専用CSS (768px以下) ★ --- */
 @media screen and (max-width: 768px) {
     /* 共通設定 */
