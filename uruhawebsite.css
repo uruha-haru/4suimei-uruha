@@ -1147,4 +1147,15 @@ main {
     }
 }
 
+.nav a[href="#aroma-set"],
+.nav a[href="#aroma-only"] {
+  display: none;
+}
+
+
+#aroma-set,
+#aroma-only {
+  display: none;
+}
+
 </style>
