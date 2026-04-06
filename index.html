@@ -438,6 +438,98 @@
             .hero-subtitle { font-size: 1.1rem; }
         }
 
+        /* --- [12] LINEリッチメニュー紹介 --- */
+        .line-menu-intro {
+            background-color: #fff9f2;
+            border: 1px solid #e8d9c8;
+            border-radius: 12px;
+            padding: 28px 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        .line-menu-intro p {
+            font-size: 0.95rem;
+            color: #5e4b40;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .line-menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .line-menu-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        @media screen and (min-width: 768px) {
+            .line-menu-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+        }
+
+        /* --- [13] ご利用の流れ --- */
+        .flow-list {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .flow-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 16px 0;
+            position: relative;
+        }
+        .flow-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 52px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background-color: #d4bfa8;
+        }
+        .flow-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #8b5a2b;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .flow-body {
+            padding-top: 8px;
+        }
+        .flow-body h4 {
+            color: #5e4b40;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 0 4px;
+        }
+        .flow-body p {
+            font-size: 0.88rem;
+            color: #888;
+            margin: 0;
+        }
+        .flow-cta {
+            text-align: center;
+            margin-top: 36px;
+        }
+        .flow-cta .btn-hero {
+            font-size: 1rem;
+            padding: 14px 36px;
+        }
+
     </style>
 </head>
 <body>
@@ -454,12 +546,13 @@
 <nav class="nav" id="nav">
     <ul>
         <li><a href="#home">ホーム</a></li>
-        <li><a href="#about">鑑定士（潤葉）</a></li>
+        <li><a href="#about">潤葉について</a></li>
         <li><a href="#shichu">四柱推命とは</a></li>
         <li><a href="#menu">鑑定メニュー</a></li>
+        <li><a href="#flow">ご利用の流れ</a></li>
         <li><a href="#aroma-set">総合鑑定＋アロマオプション</a></li>
         <li><a href="#aroma-only">アロマ単体メニュー</a></li>
-        <li><a href="#voice">鑑定の感想の一例</a></li>
+        <li><a href="#voice">お客様の声</a></li>
         <li><a href="#contact">お申し込み</a></li>
     </ul>
 </nav>
@@ -469,8 +562,8 @@
         <div class="hero-content">
             <p class="hero-subtitle">自然の理に触れ、自分を受け入れる</p>
             <h2 class="hero-title">運命は乗り越えるものでは<br>なく調和するもの</h2>
-            <p style="font-size: 0.95rem; margin-bottom: 20px;">明日から頑張ろうと思える<br>きっかけをお届けします</p>
-            <a href="#menu" class="btn-hero">鑑定メニューを見る</a>
+            <p style="font-size: 0.95rem; margin-bottom: 20px;">あなたが「明日からまた歩き出せる」<br>きっかけをお届けします</p>
+            <a href="#menu" class="btn-hero">まずはメニューを見てみる</a>
         </div>
     </section>
 
@@ -482,9 +575,9 @@
                 
                 <div class="profile-body">
                     <p>私が四柱推命と深く関わるようになったのは、仕事と家庭、そして子育てのすべてに手いっぱいになり不安に駆られていた時期でした。</p>
-                    <p>当時、腑に落ちる言葉に出会えず、「それなら自分で答えを見つけよう」と手に取ったのが自然派四柱推命の本でした。</p>
+                    <p>当時、しっくりくる言葉に出会えず、「それなら自分で答えを見つけよう」と手に取ったのが自然派四柱推命の本でした。</p>
                     <p>自分の命式を読み解く中で得た「深い安堵感」と「自己肯定感」。これが私の原点です。</p>
-                    <p>運気を「良い・悪い」と断じるのではなく、すべての時期における開運方法を導き出し、「明日から頑張ってみよう」と思えるきっかけ作りを全力でサポートいたします。</p>
+                    <p>運気を「良い・悪い」と断じるのではなく、どんな時期にも光を見つけ、「明日からまた歩き出してみよう」と思えるきっかけ作りを心を込めてお手伝いいたします。</p>
                 </div>
             </div>
         </div>
@@ -496,11 +589,11 @@
             <div style="text-align: left; max-width: 800px; margin: 0 auto;">
                 <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 運気に「悪い」時期はない</h4>
-                    <p>運気は季節の巡りのようなもの。すべての時期に成長の種が隠されています。その意味をお伝えし、未来への希望に変えます。</p>
+                    <p>運気は季節の巡りのようなもの。すべての時期に成長の種が隠されています。その意味を一緒に読み解き、未来への希望に変えていきます。</p>
                 </div>
                 <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 実践的な行動指針</h4>
-                    <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的な行動のアドバイスに特化しています。</p>
+                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 今日から使える行動のヒント</h4>
+                    <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的な行動のヒントをお伝えすることを大切にしています。</p>
                 </div>
             </div>
         </div>
@@ -509,18 +602,18 @@
     <section id="menu" class="section">
         <div class="container">
             <h3 class="section-title">鑑定メニュー</h3>
-            <p style="margin-bottom: 30px; font-size: 0.95rem; text-align:center;">後から何度でも読み返せる<br><strong>【あなただけの詳細鑑定書(PDF)】</strong><br>をお届けします。</p>
+            <p style="margin-bottom: 30px; font-size: 0.95rem; text-align:center;">迷ったときに何度でも読み返せる、<br><strong>【あなただけの詳細鑑定書（PDF）】</strong><br>をお届けします。</p>
 
             <div class="menu-grid">
                 <div class="menu-card">
                     <h4 class="menu-title">⭐ スタンダード鑑定</h4>
                     <p class="menu-price">7,500円</p>
-                    <p style="color: #666; font-size: 0.9rem;">ご相談は3件まで</p>
+                    <p style="color: #666; font-size: 0.9rem;">お悩み3件まで承ります</p>
                     <ul class="menu-desc">
-                        <li><strong>詳細鑑定書(PDF)</strong>をメール又はLINE納品</li>
+                        <li><strong>詳細鑑定書(PDF)</strong>をメールまたはLINEにてお届け</li>
                           <li><strong>LINEフォロー 1週間</strong></li>
                     </ul>
-                    <a href="#contact" class="btn-menu">申し込む</a>
+                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
                
@@ -530,10 +623,10 @@
                     <p class="menu-price">12,000円</p>
                        <p style="color: #666; font-size: 0.9rem;">お悩み5件＋本来の資質を深く鑑定</p>
                     <ul class="menu-desc">
-                        <li><strong>詳細鑑定書(PDF)</strong>をメール又はLINE納品</li>
+                        <li><strong>詳細鑑定書(PDF)</strong>をメールまたはLINEにてお届け</li>
                         <li><strong>LINEフォロー 1週間</strong></li>
                     </ul>
-                    <a href="#contact" class="btn-menu" style="background-color: #8b5a2b;">申し込む</a>
+                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="background-color: #8b5a2b;">このメニューで申し込む</a>
                 </div>
 
                 <div class="menu-card">
@@ -542,25 +635,85 @@
                     <p style="color: #666; font-size: 0.9rem;">2回目以降の方専用</p>
                     <ul class="menu-desc">
                         <li>前回の鑑定を踏まえた継続相談</li>
-                        <li>今年の運勢や特定の悩みなど</li>
-                         <li><strong>鑑定書(PDF)</strong>をメール又はLINE納品</li>
+                        <li>今年の流れや気になるお悩みなど、柔軟に対応いたします</li>
+                         <li><strong>鑑定書(PDF)</strong>をメールまたはLINEにてお届け</li>
                        <li><strong>LINEフォロー 1週間</strong></li>
                     </ul>
-                    <a href="#contact" class="btn-menu">申し込む</a>
+                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
  <div class="menu-card premium">
                     <h4 class="menu-title">🏠 ご家族鑑定（4名様まで）</h4>
                     <p class="menu-price">16,000円</p>
-                     <p style="color: #666; font-size: 0.9rem;">ご家族のお悩みにご対応いたします。</p>
+                     <p style="color: #666; font-size: 0.9rem;">大切なご家族の命式も、まとめてご鑑定いただけます。</p>
                     <ul class="menu-desc">
                         <li>ご家族2名様 10,000円、3名様13,000円</li>
-                        <li><strong>詳細鑑定書(PDF)</strong>をメール又はLINE納品</li>
+                        <li><strong>詳細鑑定書(PDF)</strong>をメールまたはLINEにてお届け</li>
                         <li><strong>LINEフォロー 1週間</strong></li>
                     </ul>
-                    <a href="#contact" class="btn-menu" style="background-color: #8b5a2b;">申し込む</a>
+                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="background-color: #8b5a2b;">このメニューで申し込む</a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ご利用の流れ -->
+    <section id="flow" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">ご利用の流れ</h3>
+
+            <!-- LINEリッチメニュー紹介 -->
+            <div class="line-menu-intro">
+                <p>🌿 友だち追加すると、画面下部にこのメニューが表示されます</p>
+                <div class="line-menu-grid">
+                    <img src="image/line_menu_standard.jpg" alt="スタンダード鑑定メニュー">
+                    <img src="image/line_menu_premium.jpg" alt="プレミアム鑑定メニュー">
+                    <img src="image/line_menu_repeater.jpg" alt="リピーター様限定鑑定メニュー">
+                    <img src="image/line_menu_family.jpg" alt="ご家族様鑑定メニュー">
+                </div>
+                <p style="font-size: 0.82rem; color: #999; margin-top: 14px; margin-bottom: 0; font-weight: normal;">タップするだけで簡単にお申し込みいただけます</p>
+            </div>
+
+            <div class="flow-list">
+                <div class="flow-item">
+                    <div class="flow-num">1</div>
+                    <div class="flow-body">
+                        <h4>LINEを友だち追加し、メニューからプランを選ぶ</h4>
+                        <p>友だち追加後、画面下部に表示されるメニューからご希望のプランをタップしてください。</p>
+                    </div>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-num">2</div>
+                    <div class="flow-body">
+                        <h4>ご希望メニューと生年月日をお知らせ</h4>
+                        <p>ご相談内容・お悩みもあわせてお聞かせください。</p>
+                    </div>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-num">3</div>
+                    <div class="flow-body">
+                        <h4>お支払い</h4>
+                        <p>お振込みまたはPayPay等にてお願いいたします。</p>
+                    </div>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-num">4</div>
+                    <div class="flow-body">
+                        <h4>鑑定書（PDF）をお届け</h4>
+                        <p>メールまたはLINEにて納品いたします。</p>
+                    </div>
+                </div>
+                <div class="flow-item">
+                    <div class="flow-num">5</div>
+                    <div class="flow-body">
+                        <h4>1週間のLINEフォロー</h4>
+                        <p>鑑定書を読んで気になった点はお気軽にご質問ください。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-cta">
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-hero">LINEを友だち追加する</a>
             </div>
         </div>
     </section>
@@ -614,7 +767,7 @@
 </p>
 
                     <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="margin-top: 10px; text-align: center;">
-                        四柱推命総合鑑定<br>＋アロマオプションを申し込む
+                        四柱推命総合鑑定<br>＋アロマオプションをこのメニューで申し込む
                     </a>
                 </div>
             </div>
@@ -689,7 +842,7 @@
                     </p>
 
                     <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="margin-top: 10px; text-align: center;">
-                        アロマ処方箋（単体メニュー）を<br>申し込む
+                        アロマ処方箋（単体メニュー）を<br>このメニューで申し込む
                     </a>
                 </div>
             </div>
@@ -700,15 +853,14 @@
     <!-- ご感想セクション -->
     <section id="voice" class="section bg-light">
         <div class="container">
-            <h3 class="section-title">鑑定を受けた方のご感想</h3>
+            <h3 class="section-title">お喜びの声</h3>
 
             <div class="voice-list">
     <div class="voice-item">
         <p class="voice-name">Aさん（40代 女性）</p>
         <p class="voice-text">
             私らしくこの先を生きていけるような、勇気が湧きました。<br>
-            鑑定を参考にさせていただきます。また、何かあったら是非お願いしたいです。<br>
-            その時はよろしくお願いします。
+            鑑定を参考にさせていただきます。また、何かあったら是非お願いしたいです。
         </p>
     </div>
 
@@ -742,24 +894,37 @@
             
             <div class="contact-box">
                 <p style="margin-bottom: 20px;">
-                    鑑定のご予約・お問い合わせは<br>
-                    LINE公式アカウントより<br>受け付けております。
+                    ご予約・ご相談は、<br>
+                    LINE公式アカウントから<br>お気軽にどうぞ。
                 </p>
                 
                 <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-insta">
-                    <i class="fab fa-line"></i> LINEで送る
+                    <i class="fab fa-line"></i> LINEを友だち追加する
                 </a>
-                
+
+                <a href="https://www.instagram.com/fatenature33/" target="_blank" class="btn-insta" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); margin-top: 0;">
+                    <i class="fab fa-instagram"></i> Instagramはこちら
+                </a>
+
                 <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
-                    ※LINEで「鑑定希望」と<br>メッセージをお送りください。<br>
-                    ※現在は書面納品が中心となります。
+                    ※友だち追加後、画面下部のメニューから<br>ご希望のプランをお選びください。<br>
+                    ※現在はPDF（書面）でのお届けが中心となっております。
                 </p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+        <div style="margin-bottom: 16px;">
+            <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color: #dcdcdc; margin: 0 12px; font-size: 1.5rem;" aria-label="LINE">
+                <i class="fab fa-line"></i>
+            </a>
+            <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color: #dcdcdc; margin: 0 12px; font-size: 1.5rem;" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p style="margin: 0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+        <p style="margin: 0;"><a href="privacy.html" style="color: #aaa; font-size: 0.8rem;">プライバシーポリシー</a></p>
     </footer>
     <script>
         const menuToggle = document.getElementById('menuToggle');
