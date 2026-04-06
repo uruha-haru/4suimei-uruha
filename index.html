@@ -172,28 +172,34 @@
             margin-top: 60px;
             position: relative;
             width: 100%;
-            height: 60vh;
-            min-height: 400px;
-            background-image: url('image/hero_bg.jpg');
+            height: 70vh;
+            min-height: 450px;
+            background-color: #e6e0d4;
+            background-image: url('image/image01.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        /* 画像読み込み前の背景色 */
-        .hero { background-color: #e6e0d4; }
+        /* 画像上のオーバーレイ（視認性向上） */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+        }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 30px 20px;
-            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.88);
+            padding: 35px 28px;
+            border-radius: 12px;
             width: 90%;
-            max-width: 500px;
+            max-width: 520px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
         }
 
         .hero-subtitle {
@@ -201,13 +207,14 @@
             color: #8b5a2b;
             margin-bottom: 10px;
             font-weight: bold;
+            letter-spacing: 0.05em;
         }
-        
+
         .hero-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #333;
             margin-bottom: 20px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .btn-hero {
@@ -363,13 +370,14 @@
             }
             .profile-img { margin: 0; }
             
-            /* PCではカードを横並びにする */
+            /* PCではカードを2×2グリッドにする */
             .menu-grid {
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: center;
-                align-items: stretch; /*高さを揃える*/
+                align-items: stretch;
             }
-            .menu-card { width: 30%; } /* 3つ並べる */
+            .menu-card { width: calc(50% - 15px); } /* 2列×2行 */
         }
 
 .nav a[href="#aroma-set"],
@@ -382,6 +390,53 @@
   display: none !important;
 }
 
+        /* --- [10] ご感想セクション --- */
+        .voice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .voice-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 24px 24px 24px 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-left: 4px solid #d4bfa8;
+            position: relative;
+        }
+        .voice-item::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: #d4bfa8;
+            line-height: 1;
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-family: Georgia, serif;
+        }
+        .voice-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #8b5a2b;
+            font-size: 0.9rem;
+        }
+        .voice-text {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: #4a3b32;
+            margin: 0;
+        }
+        @media screen and (min-width: 768px) {
+            .voice-list { gap: 24px; }
+        }
+
+        /* --- [11] PCでのヒーロータイトル拡大 --- */
+        @media screen and (min-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+        }
 
     </style>
 </head>
