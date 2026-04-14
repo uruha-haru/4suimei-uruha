@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お申し込みフォーム | 自然派四柱推命鑑定士 潤葉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #4a3b32;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f7f2;
+            line-height: 1.8;
+            -webkit-text-size-adjust: 100%;
+        }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        a:hover { opacity: 0.8; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        /* ヘッダー */
+        .header {
+            background-color: #f5f0e6;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo { font-size: 1.1rem; font-weight: 700; color: #333; margin: 0; }
+
+        /* ページ上部 */
+        .page-top {
+            margin-top: 60px;
+            background-color: #fffbf5;
+            padding: 36px 20px 28px;
+            text-align: center;
+            border-bottom: 1px solid #e8d9c8;
+        }
+        .page-top h1 {
+            font-size: 1.4rem;
+            color: #8b5a2b;
+            font-weight: 700;
+            margin: 0 0 6px;
+            letter-spacing: 0.05em;
+        }
+        .page-top p {
+            font-size: 0.88rem;
+            color: #999;
+            margin: 0;
+        }
+
+        /* コンテンツ */
+        .form-section {
+            padding: 36px 0 60px;
+        }
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 640px;
+        }
+
+        /* 戻るリンク */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #8b5a2b;
+            margin-bottom: 24px;
+        }
+
+        /* 冒頭文 */
+        .form-intro {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 22px 20px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #d4bfa8;
+            font-size: 0.9rem;
+            line-height: 1.95;
+            color: #5e4b40;
+        }
+        .form-intro p { margin: 0 0 0.8em; }
+        .form-intro p:last-child { margin-bottom: 0; }
+
+        /* フォームカード */
+        .form-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 26px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            margin-bottom: 14px;
+        }
+        .form-section-heading {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #8b5a2b;
+            letter-spacing: 0.05em;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e8d9c8;
+            margin: 0 0 20px;
+        }
+        .form-group { margin-bottom: 22px; }
+        .form-group:last-child { margin-bottom: 0; }
+
+        /* ラベル */
+        label.field-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #5e4b40;
+            margin-bottom: 8px;
+        }
+        .required-mark { color: #c0392b; margin-left: 4px; font-size: 0.82rem; }
+        .optional-mark { color: #aaa; margin-left: 6px; font-size: 0.8rem; font-weight: normal; }
+        .field-hint { font-size: 0.8rem; color: #aaa; margin-top: 6px; }
+
+        /* 入力フィールド */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid #d4bfa8;
+            border-radius: 8px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            color: #4a3b32;
+            background-color: #fffdf9;
+            -webkit-appearance: none;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #8b5a2b;
+            background-color: #fff;
+        }
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* ラジオボタン */
+        .radio-group { display: flex; flex-direction: column; gap: 10px; }
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 14px;
+            border: 1.5px solid #d4bfa8;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            background: #fffdf9;
+            transition: border-color 0.2s, background 0.2s;
+            line-height: 1.5;
+        }
+        .radio-label input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #8b5a2b;
+            flex-shrink: 0;
+        }
+        .radio-label:has(input:checked) {
+            border-color: #8b5a2b;
+            background-color: #fffbf5;
+        }
+
+        /* チェックボックス */
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            line-height: 1.75;
+        }
+        .checkbox-label input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: #8b5a2b;
+            flex-shrink: 0;
+        }
+        .privacy-link { color: #8b5a2b; text-decoration: underline; }
+
+        /* 送信ボタン */
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: #8b5a2b;
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 28px;
+            letter-spacing: 0.06em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-submit:hover { background-color: #6b4520; transform: translateY(-1px); }
+        .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }
+        .submit-note { text-align: center; font-size: 0.8rem; color: #aaa; margin-top: 10px; }
+
+        /* 完了メッセージ */
+        .success-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 48px 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .success-icon { font-size: 3rem; margin-bottom: 16px; }
+        .success-box h2 { color: #8b5a2b; font-size: 1.3rem; margin-bottom: 16px; }
+        .success-box p { font-size: 0.95rem; line-height: 1.9; color: #5e4b40; margin: 0; }
+
+        /* LINE導線 */
+        .line-fallback {
+            background-color: #fffbf5;
+            border: 1px solid #e8d9c8;
+            border-radius: 10px;
+            padding: 24px 20px;
+            text-align: center;
+            margin-top: 28px;
+        }
+        .line-fallback p { font-size: 0.88rem; color: #5e4b40; margin: 0 0 14px; }
+        .btn-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #06C755;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            gap: 8px;
+        }
+
+        /* フッター */
+        .footer {
+            background-color: #4a3b32;
+            color: #dcdcdc;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+        }
+        .footer a { color: #aaa; }
+
+        @media (min-width: 768px) {
+            .page-top h1 { font-size: 1.6rem; }
+            .form-card { padding: 32px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1 class="logo"><a href="index.html">自然派四柱推命 潤葉</a></h1>
+</header>
+
+<div class="page-top">
+    <div class="container">
+        <h1>お申し込みフォーム</h1>
+        <p>四柱推命鑑定のご予約・お問い合わせ</p>
+    </div>
+</div>
+
+<section class="form-section">
+    <div class="container">
+
+        <a href="index.html" class="back-link">← トップページに戻る</a>
+
+        <!-- 冒頭文 -->
+        <div class="form-intro">
+            <p>このたびはお申込みをご検討いただき、ありがとうございます。</p>
+            <p>こちらは四柱推命鑑定のお申込みフォームです。</p>
+            <p>事前に命式を丁寧に読み解き、鑑定書を作成したうえでお届けしています。</p>
+            <p>鑑定書では、本来の性質、強みとして出やすい部分、無理しやすいポイント、これからの選び方のヒントを整理してお伝えします。</p>
+            <p>鑑定書お渡し後は、LINEでの補足対応もしています。</p>
+            <p>ご希望の方には、お電話でのフォローも可能です。</p>
+            <p>必要事項をご入力のうえ、送信をお願いいたします。</p>
+        </div>
+
+        <!-- フォーム本体 -->
+        <div id="form-container">
+            <form
+                id="contact-form"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                novalidate
+            >
+                <input type="hidden" name="form-name" value="contact">
+                <!-- Honeypot スパム対策 -->
+                <div style="display:none">
+                    <label>このフィールドは入力しないでください: <input name="bot-field"></label>
+                </div>
+
+                <!-- ① ご希望メニュー -->
+                <div class="form-card">
+                    <p class="form-section-heading">🌿 ご希望のメニュー</p>
+                    <div class="form-group">
+                        <label class="field-label">ご希望のメニューをお選びください<span class="required-mark">＊必須</span></label>
+                        <div class="radio-group" id="menu-group">
+                            <label class="radio-label">
+                                <input type="radio" name="menu" value="鑑定書付き四柱推命鑑定（60分）7,500円" required>
+                                鑑定書付き四柱推命鑑定（60分）7,500円
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="menu" value="リピート鑑定（45分）5,000円">
+                                リピート鑑定（45分）5,000円
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="menu" value="ご家族鑑定">
+                                ご家族鑑定
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ② 基本情報 -->
+                <div class="form-card">
+                    <p class="form-section-heading">📋 基本情報</p>
+
+                    <div class="form-group">
+                        <label class="field-label" for="name">お名前（ふりがな）<span class="required-mark">＊必須</span></label>
+                        <input type="text" id="name" name="name" placeholder="例：山田 花子（やまだ はなこ）" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="birthday">生年月日<span class="required-mark">＊必須</span></label>
+                        <input type="text" id="birthday" name="birthday" placeholder="例：1985年3月20日" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="birthtime">
+                            生まれた時間<span class="optional-mark">（任意）</span>
+                        </label>
+                        <input type="text" id="birthtime" name="birthtime" placeholder="例：午前10時30分 ／ わからない場合は「不明」とご入力ください">
+                        <p class="field-hint">わからない場合は「不明」とご記入ください。</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="birthplace">
+                            出生地（都道府県・市町村）<span class="optional-mark">（任意）</span>
+                        </label>
+                        <input type="text" id="birthplace" name="birthplace" placeholder="例：東京都渋谷区">
+                    </div>
+                </div>
+
+                <!-- ③ ご相談内容 -->
+                <div class="form-card">
+                    <p class="form-section-heading">💬 ご相談内容</p>
+                    <div class="form-group">
+                        <label class="field-label" for="concern">今いちばん気になっていること<span class="required-mark">＊必須</span></label>
+                        <textarea id="concern" name="concern" placeholder="例：仕事を変えるべきか迷っている、人間関係が難しい、自分の強みがわからない…など、どんなことでもお気軽にお書きください。" required></textarea>
+                    </div>
+                </div>
+
+                <!-- ④ 連絡先 -->
+                <div class="form-card">
+                    <p class="form-section-heading">📱 ご連絡先</p>
+
+                    <div class="form-group">
+                        <label class="field-label">ご希望の連絡方法<span class="required-mark">＊必須</span></label>
+                        <div class="radio-group" id="contact-method-group">
+                            <label class="radio-label">
+                                <input type="radio" name="contact_method" value="LINE" required>
+                                LINE
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="contact_method" value="メール">
+                                メール
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="contact_info">
+                            ご連絡先（LINE IDまたはメールアドレス）<span class="required-mark">＊必須</span>
+                        </label>
+                        <input type="text" id="contact_info" name="contact_info" placeholder="LINE ID または メールアドレス" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label">電話フォロー希望<span class="optional-mark">（任意）</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="phone_follow" value="希望する">
+                                希望する
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="phone_follow" value="希望しない">
+                                希望しない
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="phone_follow" value="まずはLINE希望">
+                                まずはLINEで相談してから決めたい
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ⑤ プライバシーポリシー同意 -->
+                <div class="form-card">
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" required>
+                            <span>
+                                <a href="privacy.html" target="_blank" class="privacy-link">プライバシーポリシー</a>を読み、内容に同意します。<span class="required-mark">＊必須</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submit-btn">この内容で申し込む</button>
+                <p class="submit-note">内容を確認のうえ、こちらからご案内をお送りします。</p>
+
+            </form>
+        </div>
+
+        <!-- 完了メッセージ -->
+        <div id="success-message" style="display:none;">
+            <div class="success-box">
+                <div class="success-icon">🌿</div>
+                <h2>お申し込みありがとうございます</h2>
+                <p>
+                    このたびはお申し込みいただき、<br>
+                    ありがとうございます。<br><br>
+                    内容を確認のうえ、<br>
+                    こちらからご案内をお送りします。<br><br>
+                    今しばらくお待ちください。
+                </p>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 20px; line-height: 1.9;">
+                    ご案内はLINEまたはメールにてお送りします。<br>
+                    2日以上たっても連絡がない場合は、<br>
+                    お手数ですが再度ご連絡ください。
+                </p>
+                <a href="index.html" style="display: inline-block; margin-top: 24px; padding: 12px 28px; background-color: #8b5a2b; color: #fff; border-radius: 50px; font-size: 0.95rem; font-weight: bold;">トップページに戻る</a>
+            </div>
+        </div>
+
+        <!-- LINE導線 -->
+        <div class="line-fallback">
+            <p>LINEで相談しながら決めたい方は、<br>LINEからもご連絡いただけます。<br><br>メニュー選びに迷っている場合も、<br>お気軽にご相談ください。</p>
+            <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
+                <i class="fab fa-line"></i> LINEで相談する
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="margin-bottom: 14px;">
+        <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line"></i></a>
+        <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p style="margin:0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+    <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+<script>
+const form = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const formContainer = document.getElementById('form-container');
+const successMessage = document.getElementById('success-message');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // 必須バリデーション
+    let valid = true;
+    let firstError = null;
+
+    // テキスト・テキストエリア
+    form.querySelectorAll('input[required], textarea[required]').forEach(field => {
+        if (field.type === 'checkbox') {
+            if (!field.checked) { valid = false; firstError = firstError || field; }
+        } else if (field.type !== 'radio') {
+            if (!field.value.trim()) { valid = false; firstError = firstError || field; }
+        }
+    });
+
+    // ラジオグループ（必須）
+    ['menu', 'contact_method'].forEach(name => {
+        const group = form.querySelectorAll(`input[name="${name}"]`);
+        const checked = Array.from(group).some(r => r.checked);
+        if (!checked) { valid = false; }
+    });
+
+    if (!valid) {
+        alert('必須項目がすべて入力されているか確認してください。');
+        if (firstError) firstError.focus();
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+            formContainer.style.display = 'none';
+            successMessage.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            throw new Error();
+        }
+    } catch {
+        alert('送信に失敗しました。時間をおいて再度お試しいただくか、LINEよりご連絡ください。');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+    }
+});
+</script>
+
+</body>
+</html>
