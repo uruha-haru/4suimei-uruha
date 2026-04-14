@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はじめての方へ | 自然派四柱推命鑑定士 潤葉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- リセット・基本 --- */
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #4a3b32;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f7f2;
+            line-height: 1.9;
+            -webkit-text-size-adjust: 100%;
+        }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        a:hover { opacity: 0.8; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        /* --- ヘッダー --- */
+        .header {
+            background-color: #f5f0e6;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo { font-size: 1.1rem; font-weight: 700; color: #333; margin: 0; }
+
+        /* --- ページ上部 --- */
+        .page-top {
+            margin-top: 60px;
+            background-color: #fffbf5;
+            padding: 40px 20px 30px;
+            text-align: center;
+            border-bottom: 1px solid #e8d9c8;
+        }
+        .page-top h1 {
+            font-size: 1.5rem;
+            color: #8b5a2b;
+            font-weight: 700;
+            margin: 0 0 12px;
+            letter-spacing: 0.06em;
+        }
+        .page-top .lead {
+            font-size: 0.95rem;
+            color: #5e4b40;
+            line-height: 2;
+            margin: 0;
+        }
+
+        /* --- コンテナ --- */
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 680px;
+        }
+
+        /* --- 共通セクション --- */
+        .content-section {
+            padding: 48px 0;
+            border-bottom: 1px solid #ede5da;
+        }
+        .content-section:last-of-type { border-bottom: none; }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #8b5a2b;
+            margin: 0 0 22px;
+            padding-left: 14px;
+            border-left: 3px solid #c8a882;
+            line-height: 1.6;
+            letter-spacing: 0.04em;
+        }
+
+        /* --- 戻るリンク --- */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #8b5a2b;
+            margin-bottom: 0;
+            padding: 24px 0 0;
+        }
+
+        /* --- 本文カード --- */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 26px 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .card p {
+            margin: 0 0 1.2em;
+            font-size: 0.95rem;
+            color: #5e4b40;
+        }
+        .card p:last-child { margin-bottom: 0; }
+
+        /* --- お悩みリスト --- */
+        .worry-list {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 22px;
+        }
+        .worry-list li {
+            font-size: 0.95rem;
+            color: #5e4b40;
+            padding: 10px 0 10px 26px;
+            border-bottom: 1px dashed #e8d9c8;
+            position: relative;
+            line-height: 1.75;
+        }
+        .worry-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .worry-list li::before {
+            content: "・";
+            position: absolute;
+            left: 8px;
+            color: #c8a882;
+        }
+        .worry-note {
+            font-size: 0.9rem;
+            color: #5e4b40;
+            margin: 18px 0 0;
+            line-height: 1.9;
+        }
+
+        /* --- お申し込みの流れ --- */
+        .flow-list { display: flex; flex-direction: column; gap: 0; }
+        .flow-item {
+            display: flex;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px dashed #e8d9c8;
+        }
+        .flow-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .flow-num {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background-color: #8b5a2b;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+        .flow-body { flex: 1; }
+        .flow-body strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #4a3b32;
+            margin-bottom: 4px;
+        }
+        .flow-body p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: #7a6357;
+            line-height: 1.85;
+        }
+
+        /* --- メニューカード --- */
+        .menu-cards { display: flex; flex-direction: column; gap: 16px; }
+        .menu-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-top: 3px solid #c8a882;
+        }
+        .menu-card .menu-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #8b5a2b;
+            margin: 0 0 4px;
+        }
+        .menu-card .menu-price {
+            font-size: 0.88rem;
+            color: #9b8070;
+            margin: 0 0 12px;
+        }
+        .menu-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #5e4b40;
+            line-height: 1.85;
+        }
+
+        /* --- FAQ アコーディオン --- */
+        .faq-list { display: flex; flex-direction: column; gap: 10px; }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 18px 20px;
+            cursor: pointer;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.92rem;
+            color: #4a3b32;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.6;
+        }
+        .faq-question span { flex: 1; }
+        .faq-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: #e8d9c8;
+            color: #8b5a2b;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            font-style: normal;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.25s;
+            padding: 0 20px;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding: 0 20px 18px;
+        }
+        .faq-answer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #5e4b40;
+            line-height: 1.9;
+            border-top: 1px solid #f0e6da;
+            padding-top: 14px;
+        }
+
+        /* --- 最後に（メッセージ） --- */
+        .message-box {
+            background: #fffbf5;
+            border-radius: 12px;
+            border: 1px solid #e8d9c8;
+            padding: 28px 22px;
+            font-size: 0.93rem;
+            color: #5e4b40;
+            line-height: 2;
+        }
+        .message-box p { margin: 0 0 1.1em; }
+        .message-box p:last-child { margin-bottom: 0; }
+
+        /* --- CTA --- */
+        .cta-section {
+            padding: 48px 0 60px;
+            text-align: center;
+        }
+        .cta-lead {
+            font-size: 0.92rem;
+            color: #5e4b40;
+            line-height: 1.95;
+            margin: 0 0 28px;
+        }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: center;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #8b5a2b;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            width: 100%;
+            max-width: 320px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #6b4520;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+        .btn-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #06C755;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            width: 100%;
+            max-width: 320px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-line:hover {
+            background-color: #05a847;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* --- フッター --- */
+        .footer {
+            background-color: #4a3b32;
+            color: #dcdcdc;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+        }
+        .footer a { color: #aaa; }
+
+        /* --- PC用調整 --- */
+        @media (min-width: 768px) {
+            .page-top h1 { font-size: 1.8rem; }
+            .page-top .lead { font-size: 1rem; }
+            .section-title { font-size: 1.15rem; }
+            .card { padding: 30px 28px; }
+            .cta-buttons { flex-direction: row; justify-content: center; }
+            .btn-primary, .btn-line { width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+    <h1 class="logo"><a href="index.html">自然派四柱推命 潤葉</a></h1>
+</header>
+
+<!-- ページ上部 -->
+<div class="page-top">
+    <div class="container">
+        <h1>はじめての方へ</h1>
+        <p class="lead">
+            自分の強みがわからず、<br>
+            「このままでいいのかな……」と迷う女性へ。<br><br>
+            四柱推命では、命式から本来の性質を読み解き、<br>
+            無理のない生き方や選び方のヒントをお届けしています。<br><br>
+            事前に丁寧に読み解いた内容を鑑定書としてお渡ししますので、<br>
+            あとから何度でも見返していただけます。
+        </p>
+    </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main>
+    <div class="container">
+
+        <a href="index.html" class="back-link">← トップページに戻る</a>
+
+        <!-- セクション1：こんなお悩みはありませんか -->
+        <section class="content-section">
+            <h2 class="section-title">こんなお悩みはありませんか</h2>
+            <ul class="worry-list">
+                <li>自分の強みがわからない</li>
+                <li>仕事や人間関係で迷いやすい</li>
+                <li>人に合わせすぎて苦しくなる</li>
+                <li>がんばっているのに、なぜか不安になる</li>
+                <li>自分らしい選び方を知りたい</li>
+            </ul>
+            <p class="worry-note">
+                そんな方に向けて、<br>
+                四柱推命を通して自分の性質や強みを<br>
+                やさしく整理しています。
+            </p>
+        </section>
+
+        <!-- セクション2：鑑定でお届けしていること -->
+        <section class="content-section">
+            <h2 class="section-title">鑑定でお届けしていること</h2>
+            <div class="card">
+                <p>鑑定では、事前に命式を丁寧に読み解き、鑑定書を作成してお届けしています。</p>
+                <p>
+                    鑑定書では、<br>
+                    本来の性質、<br>
+                    強みとして出やすい部分、<br>
+                    無理しやすいポイント、<br>
+                    これからの選び方のヒントを整理してお伝えします。
+                </p>
+                <p>鑑定書をお渡ししたあと、LINEでの補足にも対応しています。</p>
+                <p>ご希望の方には、お電話でのフォローも可能です。</p>
+            </div>
+        </section>
+
+        <!-- セクション3：この鑑定が大切にしていること -->
+        <section class="content-section">
+            <h2 class="section-title">この鑑定が大切にしていること</h2>
+            <div class="card">
+                <p>四柱推命は、あなたを決めつけるためのものではありません。</p>
+                <p>良し悪しを判断するためではなく、自分を知り、これからを少し楽にするためのものだと考えています。</p>
+                <p>当てることだけを目的にするのではなく、自分の性質や選び方の軸を知るきっかけとして、やさしく読み解いています。</p>
+            </div>
+        </section>
+
+        <!-- セクション4：お申し込みの流れ -->
+        <section class="content-section">
+            <h2 class="section-title">お申し込みの流れ</h2>
+            <div class="card">
+                <ol class="flow-list">
+                    <li class="flow-item">
+                        <div class="flow-num">1</div>
+                        <div class="flow-body">
+                            <strong>お申し込み</strong>
+                            <p>フォームまたはLINEからご連絡ください。</p>
+                        </div>
+                    </li>
+                    <li class="flow-item">
+                        <div class="flow-num">2</div>
+                        <div class="flow-body">
+                            <strong>必要事項の確認</strong>
+                            <p>生年月日、生まれた時間、出生地、ご相談内容をお伺いします。<br>生まれた時間が不明な場合も、お申し込みいただけます。</p>
+                        </div>
+                    </li>
+                    <li class="flow-item">
+                        <div class="flow-num">3</div>
+                        <div class="flow-body">
+                            <strong>お支払い</strong>
+                            <p>ご案内後、お支払いをお願いいたします。<br>ご入金確認後、鑑定書の作成に入ります。</p>
+                        </div>
+                    </li>
+                    <li class="flow-item">
+                        <div class="flow-num">4</div>
+                        <div class="flow-body">
+                            <strong>鑑定書のお届け</strong>
+                            <p>命式を丁寧に読み解き、鑑定書をLINEまたはメールにてお届けします。<br>お届けの目安は、ご入金確認後3〜5日です。</p>
+                        </div>
+                    </li>
+                    <li class="flow-item">
+                        <div class="flow-num">5</div>
+                        <div class="flow-body">
+                            <strong>補足フォロー</strong>
+                            <p>鑑定書お渡し後、LINEでの補足質問を承ります。<br>ご希望の方には、お電話でのフォローも可能です。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- セクション5：ご案内しているメニュー -->
+        <section class="content-section">
+            <h2 class="section-title">ご案内しているメニュー</h2>
+            <div class="menu-cards">
+                <div class="menu-card">
+                    <p class="menu-name">鑑定書付き四柱推命鑑定</p>
+                    <p class="menu-price">60分　7,500円</p>
+                    <p>事前に命式を丁寧に読み解き、鑑定書を作成してお届けします。</p>
+                </div>
+                <div class="menu-card">
+                    <p class="menu-name">リピート鑑定</p>
+                    <p class="menu-price">45分　5,000円</p>
+                    <p>以前鑑定を受けてくださった方向けのメニューです。前回の内容をふまえながら、今の悩みや流れを整理していきます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション6：よくあるご質問 -->
+        <section class="content-section">
+            <h2 class="section-title">よくあるご質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>生まれた時間がわからなくても申し込めますか。</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい。生まれた時間が不明な場合も、お申し込みいただけます。わかる範囲の情報で丁寧に読み解いていきます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>鑑定は対面ですか。</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>基本は、事前に読み解いた内容を鑑定書としてお届けしています。その後、LINEでの補足や、ご希望の方にはお電話でのフォローも行っています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>四柱推命がはじめてでも大丈夫ですか。</span>
+                        <i class="faq-icon">+</i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい。はじめての方にもわかりやすいよう、やさしく整理してお伝えしています。難しい知識がなくても大丈夫です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション7：最後に -->
+        <section class="content-section">
+            <h2 class="section-title">最後に</h2>
+            <div class="message-box">
+                <p>私自身も、「このままでいいのかな……」と迷う時期がありました。</p>
+                <p>四柱推命を学ぶ中で、自分の性質や無理しやすいところが少しずつ見えてきて、自分を責めすぎなくてよくなりました。</p>
+                <p>今は、同じように迷いを抱える方に、自分を知るきっかけを届けたいと思っています。</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <p class="cta-lead">
+                お申し込みはフォームから承っております。<br><br>
+                メニューに迷っている方や、<br>
+                気になることがある方は、<br>
+                LINEからお気軽にご相談ください。
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">
+                    <i class="fas fa-pen"></i> フォームで申し込む
+                </a>
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
+                    <i class="fab fa-line"></i> LINEで相談する
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="footer">
+    <div style="margin-bottom: 14px;">
+        <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line"></i></a>
+        <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p style="margin:0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+    <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+<script>
+    // FAQ アコーディオン
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            // すべて閉じる
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            // クリックしたものを開く（すでに開いていれば閉じる）
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
