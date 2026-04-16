@@ -292,9 +292,25 @@
         }
 
         /* --- [7] 鑑定メニュー --- */
+
+        /* 強調一文 */
+        .menu-highlight {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #6b8c6b;
+            border: 1.5px solid #a8c4a2;
+            border-radius: 10px;
+            padding: 14px 20px;
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            background: #f8fbf8;
+        }
+
         .menu-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 24px;
         }
         .menu-card {
@@ -318,12 +334,14 @@
             padding: 3px 12px;
             border-radius: 20px;
             margin-bottom: 10px;
+            align-self: flex-start;
         }
         .menu-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #5e4b40;
-            margin: 0 0 12px;
+            margin: 0 0 10px;
             font-weight: bold;
+            line-height: 1.5;
         }
         .menu-recommend {
             background: #f3f7f1;
@@ -332,24 +350,52 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.88rem;
             color: #557055;
-            margin-bottom: 20px;
-            line-height: 1.7;
+            margin-bottom: 16px;
+            line-height: 1.75;
+        }
+        .menu-body-text {
+            font-size: 0.9rem;
+            color: #6b5547;
+            line-height: 1.9;
+            margin: 0 0 18px;
+        }
+        .menu-divider {
+            border: none;
+            border-top: 1px solid #ede7de;
+            margin: 0 0 18px;
+        }
+        .menu-contents-label {
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: #a8c4a2;
+            letter-spacing: 0.08em;
+            margin: 0 0 10px;
+        }
+        .menu-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin: 18px 0 6px;
         }
         .menu-price {
-            font-size: 1.9rem;
+            font-size: 2rem;
             color: #8b5a2b;
             font-weight: bold;
-            margin: 0 0 4px;
-            line-height: 1.2;
+            line-height: 1.1;
+        }
+        .menu-price-unit {
+            font-size: 0.9rem;
+            color: #8b5a2b;
+            font-weight: bold;
         }
         .menu-price-note {
-            font-size: 0.82rem;
-            color: #888;
+            font-size: 0.8rem;
+            color: #999;
             margin: 0 0 20px;
         }
         .menu-desc {
             text-align: left;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             margin: 0 0 24px;
             flex: 1;
         }
@@ -363,8 +409,8 @@
             color: #a8c4a2;
             position: absolute;
             left: 0;
-            font-size: 0.85rem;
-            top: 2px;
+            font-size: 0.82rem;
+            top: 3px;
         }
         .btn-menu {
             display: block;
@@ -377,17 +423,46 @@
             text-align: center;
             margin-top: auto;
             font-size: 0.95rem;
-            transition: opacity 0.25s;
+            transition: opacity 0.25s, transform 0.2s;
         }
-        .btn-menu:hover { opacity: 0.85; }
+        .btn-menu:hover { opacity: 0.85; transform: translateY(-1px); }
+
+        /* メニュー補足・LINE相談 */
+        .menu-footnote {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a6558;
+            line-height: 1.9;
+            margin: 32px auto 0;
+            max-width: 560px;
+        }
+        .line-consult-box {
+            background: #f3f7f1;
+            border: 1px solid #c6dbc4;
+            border-radius: 12px;
+            padding: 28px 24px;
+            max-width: 560px;
+            margin: 28px auto 0;
+            text-align: center;
+        }
+        .line-consult-box .lc-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #5e4b40;
+            margin: 0 0 10px;
+        }
+        .line-consult-box .lc-body {
+            font-size: 0.88rem;
+            color: #6b5547;
+            line-height: 1.85;
+            margin: 0 0 20px;
+        }
 
         @media screen and (min-width: 768px) {
             .menu-grid {
-                flex-direction: row;
-                align-items: stretch;
-                gap: 20px;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
             }
-            .menu-card { flex: 1; }
         }
 
         /* アロマアコーディオン */
@@ -782,70 +857,152 @@
         <div class="container">
             <h3 class="section-title">鑑定メニュー</h3>
             <span class="section-title-line"></span>
+
+            <!-- 導入文 -->
             <p class="section-lead">
-                迷ったときに何度でも読み返せる、<strong>あなただけの詳細鑑定書（PDF）</strong>をお届けします。
+                自分を責める前に、まずは自分の扱い方を知るための鑑定です。<br><br>
+                自然派四柱推命をもとに、ご自身の気質や無理しやすいポイント、今の悩みとのつながりを、読み返せる鑑定書とLINEフォローでお届けしています。<br><br>
+                ご自身のことを深く知りたい方にも、お子さまやご家族との関わり方を整えたい方にも、今の状態に合わせてお選びいただけます。
+            </p>
+
+            <!-- 強調一文 -->
+            <p class="menu-highlight">
+                読んで終わりではなく、<br>迷ったときに何度でも読み返せる鑑定書です。
             </p>
 
             <div class="menu-grid">
 
-                <!-- A: はじめての方 -->
+                <!-- カード1: はじめての方 -->
                 <div class="menu-card featured">
                     <span class="menu-badge">はじめての方向け</span>
-                    <h4 class="menu-title">🌿 鑑定書付き四柱推命鑑定</h4>
+                    <h4 class="menu-title">自然派四柱推命<br>鑑定書付き個別鑑定</h4>
                     <div class="menu-recommend">
-                        自分の気質や無理しやすいポイントを知りたい方へ
+                        ご自身の気質や無理しやすいポイントを知りたい方に。
                     </div>
-                    <p class="menu-price">7,500円</p>
-                    <p class="menu-price-note">（税込）ご相談3テーマまで</p>
+                    <p class="menu-body-text">
+                        生まれ持った気質、強み、無理しやすい場面、今の悩みとのつながりを整理した鑑定書をお届けします。<br>
+                        受け取って終わりではなく、1週間のLINEフォローを通して、ご自身の中に少しずつ落とし込んでいける形です。
+                    </p>
+                    <hr class="menu-divider">
+                    <p class="menu-contents-label">含まれるもの</p>
                     <ul class="menu-desc">
-                        <li>性質・才能・今後の流れの読み解き</li>
-                        <li>詳細鑑定書（PDF）をお届け</li>
-                        <li>1週間LINEフォロー付き</li>
-                        <li>ご希望のお悩み3テーマまで対応</li>
+                        <li>ご相談3テーマまで</li>
+                        <li>詳細鑑定書（PDF）</li>
+                        <li>1週間のLINEフォロー</li>
+                        <li>性質・強み・今の流れ・整え方の読み解き</li>
                     </ul>
+                    <div class="menu-price-row">
+                        <span class="menu-price">9,800</span>
+                        <span class="menu-price-unit">円（税込）</span>
+                    </div>
+                    <p class="menu-price-note">お申し込みはフォームから受け付けています</p>
                     <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
-                <!-- B: リピート -->
+                <!-- カード2: 継続フォロー -->
                 <div class="menu-card">
-                    <span class="menu-badge" style="background:#c4b49a;">リピートの方向け</span>
-                    <h4 class="menu-title">🌸 リピート鑑定</h4>
+                    <span class="menu-badge" style="background:#9ab09a;">前回受けた方向け</span>
+                    <h4 class="menu-title">継続フォロー鑑定</h4>
                     <div class="menu-recommend">
-                        前回の鑑定をふまえて、今の悩みや流れを整理したい方へ
+                        前回鑑定を受けた方へ。今の変化や悩みを整理したい方に。
                     </div>
-                    <p class="menu-price">5,000円</p>
-                    <p class="menu-price-note">（税込）2回目以降の方専用</p>
+                    <p class="menu-body-text">
+                        前回の鑑定内容をふまえて、今の状態や気になっていることをあらためて整理する継続メニューです。<br>
+                        流れの変化や、今つまずいていること、これから意識したいことを、今のあなたに合わせて見ていきます。
+                    </p>
+                    <hr class="menu-divider">
+                    <p class="menu-contents-label">含まれるもの</p>
                     <ul class="menu-desc">
-                        <li>前回内容を踏まえた補足と整理</li>
-                        <li>継続用の鑑定書（PDF）をお届け</li>
-                        <li>1週間LINEフォロー付き</li>
-                        <li>今年の流れや新たなお悩みにも対応</li>
+                        <li>前回鑑定をふまえた追補鑑定</li>
+                        <li>継続用の鑑定書（PDF）</li>
+                        <li>1週間のLINEフォロー</li>
+                        <li>今の悩みの整理と次の一歩の確認</li>
                     </ul>
-                    <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
+                    <div class="menu-price-row">
+                        <span class="menu-price">6,600</span>
+                        <span class="menu-price-unit">円（税込）</span>
+                    </div>
+                    <p class="menu-price-note">2回目以降の方専用メニューです</p>
+                    <a href="contact.html" class="btn-menu">継続鑑定を申し込む</a>
                 </div>
 
-                <!-- C: ご家族 -->
+                <!-- カード3: お子さま・ご家族追加 -->
                 <div class="menu-card">
-                    <span class="menu-badge" style="background:#b0a88e;">ご家族の方向け</span>
-                    <h4 class="menu-title">🏠 ご家族鑑定</h4>
+                    <span class="menu-badge" style="background:#b0a88e;">ご家族1名を追加したい方へ</span>
+                    <h4 class="menu-title">お子さま・ご家族<br>追加鑑定</h4>
                     <div class="menu-recommend">
-                        ご家族との相性や関係性も一緒に見たい方へ
+                        ご本人の鑑定後に、お子さまやパートナーなどご家族1名を追加で見たい方に。
                     </div>
-                    <p class="menu-price">10,000円〜</p>
-                    <p class="menu-price-note">（税込）2〜4名様 最大16,000円</p>
+                    <p class="menu-body-text">
+                        ご家族1名の命式をもとに、その方の気質や無理しやすいポイント、関わるうえで大切にしたいことを整理した鑑定書をお届けします。<br>
+                        お子さまの特性を知りたい方や、ご家族との距離感をやさしく見直したい方に向いています。
+                    </p>
+                    <hr class="menu-divider">
+                    <p class="menu-contents-label">含まれるもの</p>
                     <ul class="menu-desc">
-                        <li>2〜4名の命式鑑定</li>
-                        <li>相性と関係性のアドバイス</li>
-                        <li>鑑定書（PDF）をお届け</li>
-                        <li>1週間LINEフォロー付き</li>
+                        <li>ご家族1名分の鑑定</li>
+                        <li>鑑定書（PDF）</li>
+                        <li>1週間のLINEフォロー</li>
+                        <li>関わり方のヒント</li>
                     </ul>
-                    <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
+                    <div class="menu-price-row">
+                        <span class="menu-price">8,800</span>
+                        <span class="menu-price-unit">円（税込）</span>
+                    </div>
+                    <p class="menu-price-note">ご家族1名追加の場合のメニューです</p>
+                    <a href="contact.html" class="btn-menu">家族追加鑑定を申し込む</a>
+                </div>
+
+                <!-- カード4: ご家族関係性 -->
+                <div class="menu-card">
+                    <span class="menu-badge" style="background:#8a9e8a;">ご家族全体を見たい方へ</span>
+                    <h4 class="menu-title">ご家族関係性鑑定</h4>
+                    <div class="menu-recommend">
+                        お子さま2名以上や、ご家族全体の関係性まで整理したい方に。
+                    </div>
+                    <p class="menu-body-text">
+                        それぞれの命式を読み解くだけでなく、ご家族の関係性や接し方のポイントまで整理する、ご家族向けの深掘り鑑定です。<br>
+                        一人ひとりの特性を知りながら、どう関わると安心しやすいか、どう支えると力を発揮しやすいかを、鑑定書にまとめてお届けします。
+                    </p>
+                    <hr class="menu-divider">
+                    <p class="menu-contents-label">含まれるもの</p>
+                    <ul class="menu-desc">
+                        <li>ご家族2名以上の鑑定</li>
+                        <li>関係性の読み解き</li>
+                        <li>接し方の具体的アドバイス</li>
+                        <li>鑑定書（PDF）</li>
+                        <li>1週間のLINEフォロー</li>
+                    </ul>
+                    <div class="menu-price-row">
+                        <span class="menu-price">12,800</span>
+                        <span class="menu-price-unit">円（税込）</span>
+                    </div>
+                    <p class="menu-price-note">ご家族2名以上のまとめ鑑定です</p>
+                    <a href="contact.html" class="btn-menu">ご家族鑑定を申し込む</a>
                 </div>
 
             </div>
 
+            <!-- 補足文 -->
+            <p class="menu-footnote">
+                どのメニューが合うか迷われる場合は、まずはLINEからご相談ください。<br>
+                今の状況に合わせて、無理のない形をご案内します。
+            </p>
+
+            <!-- LINE相談ボックス -->
+            <div class="line-consult-box">
+                <p class="lc-title">メニュー選びに迷う方へ</p>
+                <p class="lc-body">
+                    はじめてで迷う方も、ご家族のことを見てほしい方も、まずはLINEからご相談いただけます。<br>
+                    状況をうかがいながら、今のあなたに合うメニューをご案内します。
+                </p>
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
+                    <i class="fab fa-line"></i> LINEで相談する
+                </a>
+            </div>
+
             <!-- アロマオプション（アコーディオン） -->
-            <details class="aroma-accordion">
+            <details class="aroma-accordion" style="margin-top: 20px;">
                 <summary>🌸 アロマオプション（+2,200円）についてはこちら</summary>
                 <div class="aroma-accordion-body">
                     命式をもとに選んだ精油のブレンドレシピ（デジタルカード）をお届けします。鑑定書と合わせて、日々のセルフケアにお役立てください。<br><br>
