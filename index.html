@@ -6,61 +6,61 @@
     <title>自然派四柱推命鑑定士 潤葉</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <style>
         /* --- [1] リセットと基本設定 --- */
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            color: #4a3b32; /* 読みやすい濃い茶色 */
+            color: #4a3b32;
             margin: 0;
             padding: 0;
             background-color: #f9f7f2;
             line-height: 1.8;
+            font-size: 16px;
             -webkit-text-size-adjust: 100%;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: opacity 0.3s;
-        }
-        a:hover {
-            opacity: 0.8;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            vertical-align: bottom;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        a:hover { opacity: 0.8; }
+        img { max-width: 100%; height: auto; vertical-align: bottom; }
+        ul { list-style: none; padding: 0; margin: 0; }
 
-        /* --- [2] レイアウト共通クラス --- */
+        /* --- [2] レイアウト共通 --- */
         .container {
             width: 100%;
             padding: 0 20px;
             margin: 0 auto;
             max-width: 1000px;
         }
-        .section {
-            padding: 60px 0;
-        }
+        .section { padding: 64px 0; }
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 40px;
-            color: #8b5a2b;
-            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            color: #5e4b40;
+            letter-spacing: 0.04em;
+        }
+        .section-lead {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #7a6558;
+            margin: 0 auto 40px;
+            max-width: 600px;
+            line-height: 1.9;
+        }
+        .section-title-line {
+            display: block;
+            width: 36px;
+            height: 2px;
+            background: #a8c4a2;
+            margin: 10px auto 32px;
+            border-radius: 2px;
         }
         .bg-light { background-color: #fffbf5; }
+        .bg-sage  { background-color: #f3f7f1; }
 
-        /* --- [3] ヘッダー & ドロップダウンメニュー --- */
+        /* --- [3] ヘッダー --- */
         .header {
             background-color: #f5f0e6;
             height: 60px;
@@ -74,15 +74,8 @@
             justify-content: space-between;
             padding: 0 20px;
         }
+        .logo { font-size: 1rem; font-weight: 700; color: #5e4b40; margin: 0; }
 
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #333;
-            margin: 0;
-        }
-
-        /* ハンバーガーボタン */
         .menu-toggle {
             display: block;
             width: 30px;
@@ -107,21 +100,10 @@
         .menu-toggle span:nth-child(1) { top: 0; }
         .menu-toggle span:nth-child(2) { top: 11px; }
         .menu-toggle span:nth-child(3) { top: 22px; }
+        .menu-toggle.active span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
 
-        /* ハンバーガーが開いた時のアニメーション */
-        .menu-toggle.active span:nth-child(1) {
-            top: 11px;
-            transform: rotate(45deg);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            top: 11px;
-            transform: rotate(-45deg);
-        }
-
-        /* ドロップダウンナビゲーション */
         .nav {
             position: absolute;
             top: 60px;
@@ -134,23 +116,10 @@
             overflow: hidden;
             transition: max-height 0.4s ease-in-out;
         }
-        
-        .nav.active {
-            max-height: 400px; /* メニューが開く高さ */
-        }
+        .nav.active { max-height: 420px; }
+        .nav li { border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav a { display: block; padding: 15px 20px; font-size: 1rem; color: #5e4b40; font-weight: 500; }
 
-        .nav li {
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .nav a {
-            display: block;
-            padding: 15px 20px;
-            font-size: 1rem;
-            color: #5e4b40;
-            font-weight: 500;
-        }
-
-        /* PC画面（768px以上）の時の調整 */
         @media screen and (min-width: 768px) {
             .menu-toggle { display: none; }
             .nav {
@@ -164,16 +133,76 @@
             }
             .nav ul { display: flex; gap: 20px; }
             .nav li { border: none; }
-            .nav a { padding: 0; font-size: 0.95rem; }
+            .nav a { padding: 0; font-size: 0.9rem; }
         }
 
-        /* --- [4] ヒーローセクション --- */
+        /* アロマのナビ非表示 */
+        .nav a[href="#aroma-set"],
+        .nav a[href="#aroma-only"] { display: none !important; }
+        #aroma-set, #aroma-only { display: none !important; }
+
+        /* --- [4] ボタン共通 --- */
+        .btn-primary {
+            display: inline-block;
+            background-color: #8b5a2b;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            transition: opacity 0.25s, transform 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: #6b8c6b;
+            border: 2px solid #6b8c6b;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            transition: background-color 0.25s, color 0.25s, transform 0.2s;
+        }
+        .btn-secondary:hover { background-color: #6b8c6b; color: #fff; opacity: 1; transform: translateY(-2px); }
+
+        .btn-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #06C755;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .btn-line i { margin-right: 8px; }
+
+        .btn-form {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #8b5a2b;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .btn-form i { margin-right: 8px; }
+
+        /* --- [5] ヒーローセクション --- */
         .hero {
             margin-top: 60px;
             position: relative;
             width: 100%;
-            height: 70vh;
-            min-height: 450px;
+            min-height: 540px;
             background-color: #e6e0d4;
             background-image: url('image/image01.jpg');
             background-size: cover;
@@ -181,54 +210,68 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 40px 16px;
         }
-        /* 画像上のオーバーレイ（視認性向上） */
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(10, 8, 5, 0.3);
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.88);
-            padding: 35px 28px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 520px;
+            background-color: rgba(255, 253, 248, 0.93);
+            padding: 36px 28px 32px;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 540px;
             text-align: center;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.16);
         }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            color: #8b5a2b;
-            margin-bottom: 10px;
+        .hero-tag {
+            display: inline-block;
+            background: #a8c4a2;
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
             font-weight: bold;
             letter-spacing: 0.05em;
+            margin-bottom: 18px;
         }
-
         .hero-title {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 1.25rem;
+            color: #3a2e28;
+            margin: 0 0 16px;
+            line-height: 1.7;
+            font-weight: 700;
+        }
+        .hero-sub {
+            font-size: 0.9rem;
+            color: #6b5547;
+            line-height: 1.85;
+            margin: 0 0 24px;
+        }
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .hero-btns .btn-primary,
+        .hero-btns .btn-secondary { width: 100%; max-width: 320px; }
+
+        @media screen and (min-width: 768px) {
+            .hero { min-height: 600px; }
+            .hero-title { font-size: 1.5rem; }
+            .hero-sub { font-size: 0.95rem; }
+            .hero-btns { flex-direction: row; justify-content: center; }
+            .hero-btns .btn-primary,
+            .hero-btns .btn-secondary { width: auto; }
         }
 
-        .btn-hero {
-            display: inline-block;
-            background-color: #8b5a2b;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 10px;
-            font-size: 1rem;
-        }
-
-        /* --- [5] プロフィール --- */
+        /* --- [6] プロフィール --- */
         .profile-wrap {
             display: flex;
             flex-direction: column;
@@ -236,242 +279,243 @@
             gap: 30px;
         }
         .profile-img {
-            width: 200px; /* スマホで見やすいサイズに固定 */
-            height: 200px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
-        .profile-body {
-            text-align: left;
-        }
-        .profile-body p {
-            margin-bottom: 1.5em;
-            font-size: 0.95rem;
+        .profile-body p { margin-bottom: 1.4em; font-size: 0.95rem; }
+        @media screen and (min-width: 768px) {
+            .profile-wrap { flex-direction: row; align-items: flex-start; }
         }
 
-        /* --- [6] 重要なお知らせ --- */
-        .notice-box {
-            background-color: #fff4e6;
-            border: 1px solid #d4bfa8;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 40px 20px;
-            text-align: left;
-        }
-        .notice-title {
-            color: #c0392b;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        /* --- [7] 鑑定メニュー（カードデザイン） --- */
+        /* --- [7] 鑑定メニュー --- */
         .menu-grid {
             display: flex;
-            flex-direction: column; /* スマホでは縦並び */
-            gap: 30px;
+            flex-direction: column;
+            gap: 24px;
         }
         .menu-card {
             background: #fff;
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border: 1px solid #eee;
-            width: 100%; /* 幅いっぱいに */
+            border-radius: 14px;
+            padding: 32px 24px 28px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            border: 1px solid #ede7de;
+            display: flex;
+            flex-direction: column;
         }
-        /* プレミアムだけ少し強調（任意） */
-        .menu-card.premium {
-            border: 2px solid #d4bfa8;
+        .menu-card.featured {
+            border: 2px solid #a8c4a2;
         }
-        
-        .menu-title {
-            font-size: 1.3rem;
-            color: #5e4b40;
-            margin-bottom: 10px;
+        .menu-badge {
+            display: inline-block;
+            background: #a8c4a2;
+            color: #fff;
+            font-size: 0.75rem;
             font-weight: bold;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .menu-title {
+            font-size: 1.2rem;
+            color: #5e4b40;
+            margin: 0 0 12px;
+            font-weight: bold;
+        }
+        .menu-recommend {
+            background: #f3f7f1;
+            border-left: 3px solid #a8c4a2;
+            padding: 9px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            color: #557055;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
         .menu-price {
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: #8b5a2b;
             font-weight: bold;
-            margin: 15px 0;
+            margin: 0 0 4px;
+            line-height: 1.2;
+        }
+        .menu-price-note {
+            font-size: 0.82rem;
+            color: #888;
+            margin: 0 0 20px;
         }
         .menu-desc {
             text-align: left;
-            font-size: 0.95rem;
-            margin: 20px 0;
-            padding-left: 10px;
+            font-size: 0.92rem;
+            margin: 0 0 24px;
+            flex: 1;
         }
         .menu-desc li {
             margin-bottom: 8px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 22px;
         }
         .menu-desc li::before {
             content: '✔';
-            color: #8b5a2b;
+            color: #a8c4a2;
             position: absolute;
             left: 0;
+            font-size: 0.85rem;
+            top: 2px;
         }
         .btn-menu {
             display: block;
             width: 100%;
-            background-color: #5e4b40;
+            background-color: #8b5a2b;
             color: #fff;
-            padding: 15px;
+            padding: 14px;
             border-radius: 8px;
             font-weight: bold;
-            margin-top: 15px;
-        }
-
-        /* --- [8] お問い合わせ --- */
-        .contact-box {
             text-align: center;
-            padding: 30px 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-top: auto;
+            font-size: 0.95rem;
+            transition: opacity 0.25s;
         }
-        .btn-insta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-               background: #06C755; /* LINEグリーン */
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1rem;
-            width: 100%;
-            max-width: 300px;
-            margin: 20px auto;
-        }
-        .btn-insta i { margin-right: 10px; font-size: 1.2rem; }
+        .btn-menu:hover { opacity: 0.85; }
 
-        /* --- [9] フッター --- */
-        .footer {
-            background-color: #4a3b32;
-            color: #dcdcdc;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.8rem;
-        }
-
-        /* PC画面（768px以上）のレイアウト調整 */
         @media screen and (min-width: 768px) {
-            .profile-wrap {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .profile-img { margin: 0; }
-            
-            /* PCではカードを2×2グリッドにする */
             .menu-grid {
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
                 align-items: stretch;
+                gap: 20px;
             }
-            .menu-card { width: calc(33.33% - 20px); } /* 3列 */
+            .menu-card { flex: 1; }
         }
 
-.nav a[href="#aroma-set"],
-.nav a[href="#aroma-only"] {
-  display: none !important;
-}
+        /* アロマアコーディオン */
+        .aroma-accordion {
+            max-width: 660px;
+            margin: 32px auto 0;
+            border: 1px solid #e0d8cc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .aroma-accordion summary {
+            list-style: none;
+            padding: 16px 20px;
+            background: #fffaf0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #5e4b40;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+        .aroma-accordion summary::-webkit-details-marker { display: none; }
+        .aroma-accordion summary::after {
+            content: '＋';
+            font-size: 1rem;
+            color: #a8c4a2;
+            flex-shrink: 0;
+            margin-left: 8px;
+        }
+        .aroma-accordion[open] summary::after { content: '−'; }
+        .aroma-accordion-body {
+            padding: 16px 20px;
+            background: #fff;
+            font-size: 0.88rem;
+            color: #5e4b40;
+            line-height: 1.8;
+            border-top: 1px solid #e8d9c8;
+        }
 
-#aroma-set,
-#aroma-only {
-  display: none !important;
-}
-
-        /* --- [10] ご感想セクション --- */
-        .voice-list {
+        /* --- [8] 鑑定書でお届けする内容 --- */
+        .report-section { background-color: #f9f7f2; }
+        .report-wrap {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            gap: 32px;
+            align-items: center;
         }
-        .voice-item {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 24px 24px 24px 28px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            border-left: 4px solid #d4bfa8;
-            position: relative;
-        }
-        .voice-item::before {
-            content: '\201C';
-            font-size: 3rem;
-            color: #d4bfa8;
-            line-height: 1;
-            position: absolute;
-            top: 10px;
-            right: 16px;
-            font-family: Georgia, serif;
-        }
-        .voice-name {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #8b5a2b;
-            font-size: 0.9rem;
-        }
-        .voice-text {
-            font-size: 0.95rem;
-            line-height: 1.9;
-            color: #4a3b32;
-            margin: 0;
-        }
-        @media screen and (min-width: 768px) {
-            .voice-list { gap: 24px; }
-        }
-
-        /* --- [11] PCでのヒーロータイトル拡大 --- */
-        @media screen and (min-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.1rem; }
-        }
-
-        /* --- [12] LINEリッチメニュー紹介 --- */
-        .line-menu-intro {
-            background-color: #fff9f2;
-            border: 1px solid #e8d9c8;
-            border-radius: 12px;
-            padding: 28px 20px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-        .line-menu-intro p {
-            font-size: 0.95rem;
-            color: #5e4b40;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .line-menu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .line-menu-grid img {
+        .report-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 420px;
+            overflow: hidden;
         }
-        @media screen and (min-width: 768px) {
-            .line-menu-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 16px;
-            }
+        .report-card-header {
+            background: #6b8c6b;
+            color: #fff;
+            padding: 18px 24px 14px;
+        }
+        .report-card-header .report-label {
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            opacity: 0.85;
+            margin-bottom: 4px;
+        }
+        .report-card-header .report-name {
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+        .report-card-body {
+            padding: 22px 24px;
+        }
+        .report-toc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0ebe4;
+            font-size: 0.92rem;
+        }
+        .report-toc-item:last-child { border-bottom: none; }
+        .report-toc-num {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #a8c4a2;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+        .report-desc {
+            max-width: 500px;
+            text-align: left;
+        }
+        .report-desc p {
+            font-size: 0.93rem;
+            color: #6b5547;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+        .report-note {
+            background: #f3f7f1;
+            border-left: 3px solid #a8c4a2;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            color: #557055;
+            line-height: 1.75;
         }
 
-        /* --- [13] ご利用の流れ --- */
+        @media screen and (min-width: 768px) {
+            .report-wrap {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .report-card { max-width: 360px; }
+        }
+
+        /* --- [9] お申し込みの流れ --- */
         .flow-list {
             display: flex;
             flex-direction: column;
@@ -507,71 +551,204 @@
             font-size: 1rem;
             flex-shrink: 0;
         }
-        .flow-body {
-            padding-top: 8px;
+        .flow-body { padding-top: 8px; }
+        .flow-body h4 { color: #5e4b40; font-size: 1rem; font-weight: bold; margin: 0 0 4px; }
+        .flow-body p { font-size: 0.88rem; color: #888; margin: 0; }
+
+        /* --- [10] お客様の声 --- */
+        .voice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .flow-body h4 {
-            color: #5e4b40;
-            font-size: 1rem;
+        .voice-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 24px 24px 24px 28px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            border-left: 4px solid #a8c4a2;
+            position: relative;
+        }
+        .voice-item::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: #d4bfa8;
+            line-height: 1;
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-family: Georgia, serif;
+        }
+        .voice-change {
+            display: inline-block;
+            background: #f3f7f1;
+            color: #557055;
+            border-left: 3px solid #a8c4a2;
+            padding: 5px 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.85rem;
             font-weight: bold;
-            margin: 0 0 4px;
+            margin-bottom: 12px;
         }
-        .flow-body p {
+        .voice-name {
+            font-weight: bold;
+            margin: 10px 0 8px;
+            color: #8b5a2b;
             font-size: 0.88rem;
-            color: #888;
+        }
+        .voice-text {
+            font-size: 0.93rem;
+            line-height: 1.9;
+            color: #4a3b32;
             margin: 0;
         }
-        .flow-cta {
-            text-align: center;
-            margin-top: 36px;
-        }
-        .flow-cta .btn-hero {
-            font-size: 1rem;
-            padding: 14px 36px;
+        @media screen and (min-width: 768px) {
+            .voice-list { gap: 24px; }
         }
 
+        /* --- [11] 下部CTA --- */
+        .section-cta {
+            background: linear-gradient(160deg, #f5efe6 0%, #f0f5ef 100%);
+            padding: 72px 20px;
+            text-align: center;
+        }
+        .section-cta .cta-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #5e4b40;
+            line-height: 1.65;
+            margin: 0 0 16px;
+        }
+        .section-cta .cta-lead {
+            font-size: 0.92rem;
+            color: #7a6558;
+            line-height: 1.9;
+            margin: 0 0 32px;
+        }
+        .cta-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: center;
+        }
+        .cta-btns .btn-form,
+        .cta-btns .btn-line {
+            width: 100%;
+            max-width: 320px;
+        }
+        @media screen and (min-width: 768px) {
+            .section-cta .cta-title { font-size: 1.45rem; }
+            .cta-btns { flex-direction: row; justify-content: center; }
+            .cta-btns .btn-form,
+            .cta-btns .btn-line { width: auto; min-width: 220px; }
+        }
+
+        /* --- [12] お問い合わせセクション（コンパクト版） --- */
+        .contact-box {
+            text-align: center;
+            padding: 32px 20px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .contact-box .btn-form,
+        .contact-box .btn-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
+
+        /* --- [13] 自然派四柱推命とは --- */
+        .shichu-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .shichu-card {
+            background: #fff;
+            padding: 22px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .shichu-card h4 {
+            color: #6b8c6b;
+            margin: 0 0 10px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .shichu-card p { margin: 0; font-size: 0.95rem; }
+        @media screen and (min-width: 768px) {
+            .shichu-cards { flex-direction: row; }
+            .shichu-card { flex: 1; }
+        }
+
+        /* --- [14] フッター --- */
+        .footer {
+            background-color: #4a3b32;
+            color: #dcdcdc;
+            text-align: center;
+            padding: 32px 20px;
+            font-size: 0.8rem;
+        }
+        .footer-icons { margin-bottom: 16px; }
+        .footer-icons a { color: #dcdcdc; margin: 0 12px; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
+    <!-- ヘッダー -->
     <header class="header">
         <h1 class="logo"><a href="#home">自然派四柱推命 潤葉</a></h1>
-        
         <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
-
-<nav class="nav" id="nav">
-    <ul>
-        <li><a href="#home">ホーム</a></li>
-        <li><a href="hajimete.html">はじめての方へ</a></li>
-        <li><a href="#about">潤葉について</a></li>
-        <li><a href="#shichu">四柱推命とは</a></li>
-        <li><a href="#menu">鑑定メニュー</a></li>
-        <li><a href="#flow">ご利用の流れ</a></li>
-        <li><a href="#voice">お客様の声</a></li>
-        <li><a href="contact.html">フォームで申し込む</a></li>
-    </ul>
-</nav>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="hajimete.html">はじめての方へ</a></li>
+                <li><a href="#about">潤葉について</a></li>
+                <li><a href="#shichu">四柱推命とは</a></li>
+                <li><a href="#menu">鑑定メニュー</a></li>
+                <li><a href="#flow">ご利用の流れ</a></li>
+                <li><a href="#voice">お客様の声</a></li>
+                <li><a href="contact.html">フォームで申し込む</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- ヒーロー -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">「このままでいいのかな……」と迷う女性へ</p>
-            <h2 class="hero-title">命式から本来の性質を読み解き、<br>無理のない生き方と選び方を整えます</h2>
-            <p style="font-size: 0.95rem; margin-bottom: 20px;">自然派四柱推命で、あなただけの答えを見つけましょう</p>
-            <a href="#menu" class="btn-hero">鑑定メニューを見てみる</a>
+            <span class="hero-tag">人間関係で疲れやすい方へ</span>
+            <h2 class="hero-title">
+                自然派四柱推命で、あなたの気質と<br>
+                無理しやすいポイントをやさしく言葉にします。
+            </h2>
+            <p class="hero-sub">
+                読み返せる鑑定書（PDF）と1週間のLINEフォローで、<br>
+                自分を責める前に〈自分の扱い方〉を知るための鑑定です。
+            </p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn-primary">鑑定メニューを見る</a>
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-secondary">まずはLINEで相談する</a>
+            </div>
         </div>
     </section>
 
+    <!-- 鑑定士プロフィール -->
     <section id="about" class="section">
         <div class="container">
             <h3 class="section-title">鑑定士 潤葉</h3>
+            <span class="section-title-line"></span>
             <div class="profile-wrap">
                 <img src="image/uruha.png" alt="鑑定士 潤葉" class="profile-img">
-                
                 <div class="profile-body">
                     <p>私が四柱推命と深く関わるようになったのは、仕事と家庭、そして子育てのすべてに手いっぱいになり不安に駆られていた時期でした。</p>
                     <p>当時、しっくりくる言葉に出会えず、「それなら自分で答えを見つけよう」と手に取ったのが自然派四柱推命の本でした。</p>
@@ -582,76 +759,153 @@
         </div>
     </section>
 
+    <!-- 自然派四柱推命とは -->
     <section id="shichu" class="section bg-light">
         <div class="container">
             <h3 class="section-title">自然派四柱推命とは</h3>
-            <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-                <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 運気に「悪い」時期はない</h4>
+            <span class="section-title-line"></span>
+            <div class="shichu-cards">
+                <div class="shichu-card">
+                    <h4>🌿 運気に「悪い」時期はない</h4>
                     <p>運気は季節の巡りのようなもの。すべての時期に成長の種が隠されています。その意味を一緒に読み解き、未来への希望に変えていきます。</p>
                 </div>
-                <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <h4 style="color: #8b5a2b; margin-bottom: 10px; font-weight:bold;">🌿 今日から使える行動のヒント</h4>
+                <div class="shichu-card">
+                    <h4>🌿 今日から使える行動のヒント</h4>
                     <p>単なる予測ではなく「今、何をすべきか」「こうすれば運が開ける」という具体的な行動のヒントをお伝えすることを大切にしています。</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 鑑定メニュー -->
     <section id="menu" class="section">
         <div class="container">
             <h3 class="section-title">鑑定メニュー</h3>
-            <p style="margin-bottom: 30px; font-size: 0.95rem; text-align:center;">迷ったときに何度でも読み返せる、<br><strong>【あなただけの詳細鑑定書（PDF）】</strong><br>をお届けします。</p>
+            <span class="section-title-line"></span>
+            <p class="section-lead">
+                迷ったときに何度でも読み返せる、<strong>あなただけの詳細鑑定書（PDF）</strong>をお届けします。
+            </p>
 
             <div class="menu-grid">
-                <div class="menu-card">
+
+                <!-- A: はじめての方 -->
+                <div class="menu-card featured">
+                    <span class="menu-badge">はじめての方向け</span>
                     <h4 class="menu-title">🌿 鑑定書付き四柱推命鑑定</h4>
+                    <div class="menu-recommend">
+                        自分の気質や無理しやすいポイントを知りたい方へ
+                    </div>
                     <p class="menu-price">7,500円</p>
-                    <p style="color: #666; font-size: 0.9rem;">はじめての方・お悩み3件まで</p>
+                    <p class="menu-price-note">（税込）ご相談3テーマまで</p>
                     <ul class="menu-desc">
-                        <li>命式から性質・才能・今後の流れを読み解き</li>
-                        <li>気になるお悩みに寄り添った<strong>詳細鑑定書（PDF）</strong>をお届け</li>
-                        <li><strong>1週間LINEフォロー</strong>付き</li>
+                        <li>性質・才能・今後の流れの読み解き</li>
+                        <li>詳細鑑定書（PDF）をお届け</li>
+                        <li>1週間LINEフォロー付き</li>
+                        <li>ご希望のお悩み3テーマまで対応</li>
                     </ul>
                     <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
+                <!-- B: リピート -->
                 <div class="menu-card">
+                    <span class="menu-badge" style="background:#c4b49a;">リピートの方向け</span>
                     <h4 class="menu-title">🌸 リピート鑑定</h4>
+                    <div class="menu-recommend">
+                        前回の鑑定をふまえて、今の悩みや流れを整理したい方へ
+                    </div>
                     <p class="menu-price">5,000円</p>
-                    <p style="color: #666; font-size: 0.9rem;">2回目以降の方専用</p>
+                    <p class="menu-price-note">（税込）2回目以降の方専用</p>
                     <ul class="menu-desc">
-                        <li>前回の鑑定を踏まえた継続フォロー</li>
-                        <li>今年の流れや新たなお悩みなど、柔軟に対応</li>
-                        <li><strong>鑑定書（PDF）</strong>＋<strong>1週間LINEフォロー</strong></li>
+                        <li>前回内容を踏まえた補足と整理</li>
+                        <li>継続用の鑑定書（PDF）をお届け</li>
+                        <li>1週間LINEフォロー付き</li>
+                        <li>今年の流れや新たなお悩みにも対応</li>
                     </ul>
                     <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
+                <!-- C: ご家族 -->
                 <div class="menu-card">
+                    <span class="menu-badge" style="background:#b0a88e;">ご家族の方向け</span>
                     <h4 class="menu-title">🏠 ご家族鑑定</h4>
+                    <div class="menu-recommend">
+                        ご家族との相性や関係性も一緒に見たい方へ
+                    </div>
                     <p class="menu-price">10,000円〜</p>
-                    <p style="color: #666; font-size: 0.9rem;">2〜4名様まで（最大16,000円）</p>
+                    <p class="menu-price-note">（税込）2〜4名様 最大16,000円</p>
                     <ul class="menu-desc">
-                        <li>大切なご家族の命式もまとめてご鑑定</li>
-                        <li>相性・家族関係のアドバイスも</li>
-                        <li><strong>詳細鑑定書（PDF）</strong>＋<strong>1週間LINEフォロー</strong></li>
+                        <li>2〜4名の命式鑑定</li>
+                        <li>相性と関係性のアドバイス</li>
+                        <li>鑑定書（PDF）をお届け</li>
+                        <li>1週間LINEフォロー付き</li>
                     </ul>
                     <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
             </div>
 
-            <!-- アロマオプション案内 -->
-            <div style="max-width: 660px; margin: 30px auto 0; padding: 20px 24px; background: #fffaf0; border: 1px solid #e8d9c8; border-radius: 10px; text-align: center;">
-                <p style="font-size: 0.9rem; color: #5e4b40; margin: 0 0 6px; font-weight: bold;">
-                    🌸 アロマオプション（+2,200円）
-                </p>
-                <p style="font-size: 0.85rem; color: #888; margin: 0; line-height: 1.7;">
-                    命式をもとに選んだ精油のブレンドレシピ（デジタルカード）をお届けします。<br>
-                    鑑定書と合わせて、日々のセルフケアにお役立てください。<br>
-                    ご希望の方は申し込みフォームの「気になること」欄にその旨お書き添えください。
-                </p>
+            <!-- アロマオプション（アコーディオン） -->
+            <details class="aroma-accordion">
+                <summary>🌸 アロマオプション（+2,200円）についてはこちら</summary>
+                <div class="aroma-accordion-body">
+                    命式をもとに選んだ精油のブレンドレシピ（デジタルカード）をお届けします。鑑定書と合わせて、日々のセルフケアにお役立てください。<br><br>
+                    ご希望の方は申し込みフォームの「気になること」欄にその旨お書き添えください。<br>
+                    ※精油そのものの販売ではなく、レシピのお渡しとなります。プラナロム精油での説明となります。
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- 鑑定書でお届けする内容 -->
+    <section class="section report-section bg-sage">
+        <div class="container">
+            <h3 class="section-title">鑑定書でお届けする内容</h3>
+            <span class="section-title-line"></span>
+            <p class="section-lead">
+                価格への納得感を持っていただけるよう、鑑定書の中身をご紹介します。
+            </p>
+            <div class="report-wrap">
+                <!-- PDF風カード -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <p class="report-label">SHICHUSUIMEI REPORT</p>
+                        <p class="report-name">四柱推命 詳細鑑定書</p>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">1</span>
+                            <span>生まれ持った気質</span>
+                        </div>
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">2</span>
+                            <span>無理しやすいポイント</span>
+                        </div>
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">3</span>
+                            <span>人間関係の傾向</span>
+                        </div>
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">4</span>
+                            <span>仕事や役割のヒント</span>
+                        </div>
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">5</span>
+                            <span>今の流れの見方</span>
+                        </div>
+                        <div class="report-toc-item">
+                            <span class="report-toc-num">6</span>
+                            <span>整え方と行動アドバイス</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 説明文 -->
+                <div class="report-desc">
+                    <p>鑑定書はPDFでお届けするため、スマートフォンやPCでいつでも読み返すことができます。</p>
+                    <p>「気持ちが落ち込んだとき」「また迷いが出てきたとき」に開いてもらえる、あなただけの一冊として丁寧に仕上げます。</p>
+                    <div class="report-note">
+                        鑑定書は、お伝えしたいことをすべて盛り込んだ読みごたえのある内容です。じっくり読み込んでいただくことで、自分の扱い方がだんだんわかってきます。
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -660,8 +914,8 @@
     <section id="flow" class="section bg-light">
         <div class="container">
             <h3 class="section-title">お申し込みの流れ</h3>
-
-            <p style="text-align: center; font-size: 0.95rem; color: #6b5547; margin: -20px 0 40px; line-height: 1.9;">
+            <span class="section-title-line"></span>
+            <p class="section-lead">
                 はじめての方にも安心してご利用いただけるよう、<br>
                 お申し込みから鑑定書のお届けまでの流れをご案内します。
             </p>
@@ -711,224 +965,105 @@
         </div>
     </section>
 
-        <!-- 四柱推命総合鑑定＋アロマオプション -->
-    <section id="aroma-set" class="section bg-light">
-        <div class="container">
-            <h3 class="section-title">四柱推命総合鑑定<br>＋アロマオプション</h3>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: #ffffff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="margin-top: 0; margin-bottom: 10px; color: #8b5a2b; font-size: 1.2rem; font-weight: bold;">
-                        あなただけの「アロマ処方箋」
-                    </h4>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 1em;">
-                        鑑定結果をもとに選定した、今のあなたに最適な精油（エッセンシャルオイル）の組み合わせをお伝えします。<br>
-                        実物のオイル販売ではなく
-                        <strong>「ブレンドレシピ（調合の指示書）」</strong>
-                        のお渡しとなります、レシピをもとに、アロマショップ等で香りを探す時間もお楽しみください。（プラナロム精油での説明となります）。
-                    </p>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 0.7em;">
-                        【処方箋に含まれるもの】
-                    </p>
-                    <ul style="font-size: 0.95rem; margin: 0 0 1em 1.2em; padding: 0; list-style: disc;">
-                        <li>今のあなたに必要な精油の選定（2〜3種類）</li>
-                        <li>おすすめのブレンド比率（滴数）</li>
-                        <li>香りの持つ意味とメッセージ（なぜこの香りがあなたに必要なのか）</li>
-                        <li>おすすめの使い方（お部屋での楽しみ方、入浴時の活用法など）</li>
-                    </ul>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 1em;">
-    本メニューでご紹介する精油は、医療現場でも用いられる高品質なエッセンシャルオイルブランド
-    「プラナロム社（PRANARÔM）」の製品を基準として選定しています。<br>
-    植物ごとの成分分析（ケモタイプ）に基づき、香りだけでなく安全性や品質にもこだわった精油です。
-</p>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 1em;">
-                        【お渡し形式】<br>
-                        スマートフォンでいつでも見返せる「デジタルカード（画像）」または「PDF」にてお送りします。
-                    </p>
-
-                    <p style="font-size: 1.2rem; font-weight: bold; text-align: center; margin-bottom: 1.2em;">
-                        【料金】 鑑定料 ＋ 3,300円<br>
-                        <strong>リリース価格 2,200円！<br>（2月3日まで）</strong>
-                    </p>
-
-                    <p style="font-size: 0.85rem; color: #666; margin-top: -0.3em; margin-bottom: 1.5em;">
-    ※お選びした精油が体質やお好みに合わなかった場合でも、ご返金はいたしかねます。あらかじめご了承ください。
-</p>
-
-                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="margin-top: 10px; text-align: center;">
-                        四柱推命総合鑑定<br>＋アロマオプションをこのメニューで申し込む
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- アロマ単体メニュー -->
-    <section id="aroma-only" class="section">
-        <div class="container">
-            <h3 class="section-title">アロマ単体メニュー</h3>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: #ffffff; padding: 25px 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="margin-top: 0; margin-bottom: 10px; color: #8b5a2b; font-size: 1.2rem; font-weight: bold;">
-                        あなただけの「アロマ処方箋」<br>
-                        <span style="font-size: 0.95rem; font-weight: normal;">
-                            五行バランス診断 ＆ 心の処方箋アロマ<br>
-                        </span>
-                    </h4>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 1em;">
-                        「本格的な鑑定までは必要ないけれど、最近なんとなく不調を感じる」<br>
-                        「今の自分のエネルギー状態を知って、自分でメンテナンスしたい」<br>
-                        そんな方のための、
-                        <strong>「診断」と「アロマ処方」</strong>
-                        がセットになった単体プランです。
-                    </p>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 1em;">
-                        生年月日からあなたの命式における「五行（木火土金水）」のバランスを算出。<br>
-                        今のあなたに「足りないエネルギー」や「過剰になっているエネルギー」を分析しそれを整えるためのアロマレシピをお伝えします。
-                    </p>
-
-                    <p style="font-size: 0.95rem; margin-bottom: 0.7em;">
-                        お届けする内容<br>
-                        以下の2点をスマートフォンで見られるデジタルカード（またはPDF）にてお届けします。
-                    </p>
-                    <ol style="font-size: 0.95rem; margin: 0 0 1em 1.2em; padding: 0;">
-                        <li>
-                            あなたの五行バランス診断結果<br>
-                            今のあなたのエネルギーバランスを「木・火・土・金・水」の観点から簡易的に分析し、お伝えします。
-                        </li><br>
-                        <li>
-                            あなただけの「アロマ処方箋」（レシピ）<br>
-                            診断結果をもとに、バランスを整えるための精油（2〜3種類）を選定し、ブレンド比率や活用法をお伝えします。<br>
-                            ※精油そのものの販売ではありません。レシピをもとに、アロマショップ等で香りを探す時間もお楽しみください。（プラナロム精油での説明となります）
-                        </li>
-
-                        <p style="font-size: 0.95rem; margin-bottom: 1em;">
-    本メニューでご紹介する精油は、医療現場でも用いられる高品質なエッセンシャルオイルブランド
-    「プラナロム社（PRANARÔM）」の製品を基準として選定しています。<br>
-    植物ごとの成分分析（ケモタイプ）に基づき、香りだけでなく安全性や品質にもこだわった精油です。
-</p>
-                    </ol>
-
-                    <p style="font-size: 1.2rem; font-weight: bold; text-align: center; margin-bottom: 1.2em;">
-                        料金 3,300円（税込）
-                    </p>
-
-                    <p style="font-size: 0.85rem; color: #666; margin-top: -0.3em; margin-bottom: 1.5em;">
-    ※お選びした精油が体質やお好みに合わなかった場合でも、ご返金はいたしかねます。あらかじめご了承ください。
-</p>
-
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5em;">
-                        ⚠️ 必ずお読みください（鑑定との違い）<br>
-                        本メニューは現在のエネルギーバランスを読み解くことに特化したものです。<br>
-                        以下のような詳しい鑑定内容は含まれませんのでご注意ください。<br>
-                        ・性格や才能の詳細な分析<br>
-                        ・運勢バイオリズム（年運・月運など）<br>
-                        ・具体的なお悩み相談（仕事、相性など）<br>
-                        ※これらを詳しく知りたい方は「四柱推命総合鑑定（＋アロマオプション）」をお申し込みください。
-                    </p>
-
-                    <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-menu" style="margin-top: 10px; text-align: center;">
-                        アロマ処方箋（単体メニュー）を<br>このメニューで申し込む
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ご感想セクション -->
-    <section id="voice" class="section bg-light">
+    <!-- お客様の声 -->
+    <section id="voice" class="section">
         <div class="container">
             <h3 class="section-title">お喜びの声</h3>
+            <span class="section-title-line"></span>
 
             <div class="voice-list">
-    <div class="voice-item">
-        <p class="voice-name">Aさん（40代 女性）</p>
-        <p class="voice-text">
-            私らしくこの先を生きていけるような、勇気が湧きました。<br>
-            鑑定を参考にさせていただきます。また、何かあったら是非お願いしたいです。
-        </p>
-    </div>
+                <div class="voice-item">
+                    <span class="voice-change">→ 前向きな勇気が湧いた</span>
+                    <p class="voice-name">Aさん（40代 女性）</p>
+                    <p class="voice-text">
+                        私らしくこの先を生きていけるような、勇気が湧きました。<br>
+                        鑑定を参考にさせていただきます。また、何かあったら是非お願いしたいです。
+                    </p>
+                </div>
 
-    <div class="voice-item">
-        <p class="voice-name">Bさん（40代 女性）</p>
-        <p class="voice-text">
-            その方一人一人に寄り添う姿勢、良くないことも言って終わりではなく、<br>
-            そんな時はこうすればいいよと教えてくださり、とても前向きな気持ちになりました。
-        </p>
-    </div>
+                <div class="voice-item">
+                    <span class="voice-change">→ 前向きな気持ちになれた</span>
+                    <p class="voice-name">Bさん（40代 女性）</p>
+                    <p class="voice-text">
+                        その方一人一人に寄り添う姿勢、良くないことも言って終わりではなく、<br>
+                        そんな時はこうすればいいよと教えてくださり、とても前向きな気持ちになりました。
+                    </p>
+                </div>
 
-    <div class="voice-item">
-        <p class="voice-name">Cさん（30代 女性）</p>
-        <p class="voice-text">
-            面白いほど当たり過ぎていて、楽しかったです笑<br>
-            娘の事も含め、これからの道筋が見えたので、鑑定を参考にさせていただきながら、<br>
-            引き続き頑張っていこうと思いました。
-        </p>
-    </div>
-
-</div>   
+                <div class="voice-item">
+                    <span class="voice-change">→ これからの道筋が見えた</span>
+                    <p class="voice-name">Cさん（30代 女性）</p>
+                    <p class="voice-text">
+                        面白いほど当たり過ぎていて、楽しかったです笑<br>
+                        娘の事も含め、これからの道筋が見えたので、鑑定を参考にさせていただきながら、<br>
+                        引き続き頑張っていこうと思いました。
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- 下部CTA -->
+    <div class="section-cta">
+        <div class="container">
+            <h3 class="cta-title">自分を責める前に、<br>まずは自分の扱い方を知ってみませんか</h3>
+            <p class="cta-lead">
+                ご自身のペースでじっくり申し込みたい方はフォームから。<br>
+                まずは少し相談してみたい方はLINEからどうぞ。
+            </p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn-form">
+                    <i class="fas fa-pen"></i> フォームで申し込む
+                </a>
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
+                    <i class="fab fa-line"></i> LINEで相談する
+                </a>
+            </div>
+        </div>
+    </div>
 
-
-      <section id="contact" class="section bg-light">
+    <!-- お問い合わせ -->
+    <section id="contact" class="section bg-light">
         <div class="container">
             <h3 class="section-title">お申し込み・ご相談</h3>
-
+            <span class="section-title-line"></span>
             <div class="contact-box">
-                <p style="margin-bottom: 28px; font-size: 1rem; line-height: 1.9;">
+                <p style="margin-bottom: 24px; font-size: 0.95rem; line-height: 1.9;">
                     ご自身のペースでじっくりお伝えしたい方は<strong>フォーム</strong>から、<br>
                     まずはちょっと聞いてみたい方は<strong>LINE</strong>からお気軽にどうぞ。
                 </p>
-
-                <a href="contact.html" class="btn-insta" style="background-color: #8b5a2b;">
+                <a href="contact.html" class="btn-form">
                     <i class="fas fa-pen"></i> フォームで申し込む
                 </a>
-
-                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-insta">
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line" style="margin-top: 12px;">
                     <i class="fab fa-line"></i> LINEで相談する
                 </a>
-
-                <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
+                <p style="font-size: 0.82rem; color: #888; margin-top: 16px;">
                     ※LINEの場合、友だち追加後に画面下部のメニューから<br>ご希望のプランをお選びください。
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- フッター -->
     <footer class="footer">
-        <div style="margin-bottom: 16px;">
-            <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color: #dcdcdc; margin: 0 12px; font-size: 1.5rem;" aria-label="LINE">
-                <i class="fab fa-line"></i>
-            </a>
-            <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color: #dcdcdc; margin: 0 12px; font-size: 1.5rem;" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+        <div class="footer-icons">
+            <a href="https://lin.ee/xZRU4Ig" target="_blank" aria-label="LINE"><i class="fab fa-line"></i></a>
+            <a href="https://www.instagram.com/fatenature33/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
         <p style="margin: 0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
         <p style="margin: 0;"><a href="privacy.html" style="color: #aaa; font-size: 0.8rem;">プライバシーポリシー</a></p>
     </footer>
+
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const nav = document.getElementById('nav');
-        
-        // ハンバーガーボタンをクリックした時の動作
+
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active'); // ボタンの形を変える
-            nav.classList.toggle('active'); // メニューを開閉する
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
         });
 
-        // メニュー内のリンクをクリックしたら閉じる動作
         const navLinks = document.querySelectorAll('.nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -937,15 +1072,13 @@
             });
         });
 
-        // ★ ページ読み込み時に一番上へスクロール＆ハッシュを消す
         window.addEventListener('load', () => {
-            window.scrollTo(0, 0);  // 画面の一番上へ
+            window.scrollTo(0, 0);
             if (location.hash) {
                 history.replaceState(null, '', location.pathname);
             }
         });
     </script>
-
 
 </body>
 </html>
