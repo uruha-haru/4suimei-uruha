@@ -305,7 +305,6 @@
                 id="contact-form"
                 name="contact"
                 method="POST"
-                action="/thanks.html"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
             >
@@ -442,6 +441,27 @@
             </form>
         </div>
 
+        <!-- 完了メッセージ（送信後に表示） -->
+        <div id="success-message" style="display:none;">
+            <div class="success-box">
+                <div class="success-icon">🌿</div>
+                <h2>お申し込みありがとうございます</h2>
+                <p>
+                    このたびはお申し込みいただき、<br>
+                    ありがとうございます。<br><br>
+                    内容を確認のうえ、<br>
+                    こちらからご案内をお送りします。<br><br>
+                    今しばらくお待ちください。
+                </p>
+                <p style="font-size:0.85rem; color:#888; margin-top:20px; line-height:1.9; padding:14px; background:#fffbf5; border-radius:8px; border:1px solid #e8d9c8;">
+                    ご案内はLINEまたはメールにてお送りします。<br>
+                    2日以上たっても連絡がない場合は、<br>
+                    お手数ですが再度ご連絡ください。
+                </p>
+                <a href="index.html" style="display:inline-block; margin-top:24px; padding:13px 32px; background-color:#8b5a2b; color:#fff; border-radius:50px; font-size:0.95rem; font-weight:bold;">トップページに戻る</a>
+            </div>
+        </div>
+
         <!-- LINE導線 -->
         <div class="line-fallback">
             <p>LINEで相談しながら決めたい方は、<br>LINEからもご連絡いただけます。</p>
@@ -462,6 +482,47 @@
     <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
 </footer>
 
+<script>
+(function() {
+    var form = document.getElementById('contact-form');
+    var formContainer = document.getElementById('form-container');
+    var successMessage = document.getElementById('success-message');
+    var submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中…';
+
+        var data = [];
+        var formData = new FormData(form);
+        formData.forEach(function(value, key) {
+            data.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+        });
+
+        fetch('/contact.html', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: data.join('&')
+        })
+        .then(function(res) {
+            if (res.ok) {
+                formContainer.style.display = 'none';
+                successMessage.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                throw new Error('server error');
+            }
+        })
+        .catch(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '送信する';
+            alert('送信できませんでした。LINEよりご連絡ください。');
+        });
+    });
+})();
+</script>
 
 </body>
 </html>
