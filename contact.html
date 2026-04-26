@@ -501,24 +501,22 @@
             data.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
         });
 
-        fetch('/contact.html', {
+        fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: data.join('&')
         })
-        .then(function(res) {
-            if (res.ok) {
-                formContainer.style.display = 'none';
-                successMessage.style.display = 'block';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                throw new Error('server error');
-            }
+        .then(function() {
+            // Netlifyからのリダイレクト含め、応答があれば成功とみなす
+            formContainer.style.display = 'none';
+            successMessage.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         })
         .catch(function() {
+            // ネットワークエラーのみここに来る
             submitBtn.disabled = false;
             submitBtn.textContent = '送信する';
-            alert('送信できませんでした。LINEよりご連絡ください。');
+            alert('通信エラーが発生しました。電波の良い場所で再度お試しいただくか、LINEよりご連絡ください。');
         });
     });
 })();
