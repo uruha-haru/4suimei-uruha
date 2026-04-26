@@ -303,9 +303,9 @@
                 id="contact-form"
                 name="contact"
                 method="POST"
+                action="/thanks.html"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
-                novalidate
             >
                 <input type="hidden" name="form-name" value="contact">
                 <!-- Honeypot スパム対策 -->
@@ -440,27 +440,6 @@
             </form>
         </div>
 
-        <!-- 完了メッセージ -->
-        <div id="success-message" style="display:none;">
-            <div class="success-box">
-                <div class="success-icon">🌿</div>
-                <h2>お申し込みありがとうございます</h2>
-                <p>
-                    このたびはお申し込みいただき、<br>
-                    ありがとうございます。<br><br>
-                    内容を確認のうえ、<br>
-                    こちらからご案内をお送りします。<br><br>
-                    今しばらくお待ちください。
-                </p>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 20px; line-height: 1.9;">
-                    ご案内はLINEまたはメールにてお送りします。<br>
-                    2日以上たっても連絡がない場合は、<br>
-                    お手数ですが再度ご連絡ください。
-                </p>
-                <a href="index.html" style="display: inline-block; margin-top: 24px; padding: 12px 28px; background-color: #8b5a2b; color: #fff; border-radius: 50px; font-size: 0.95rem; font-weight: bold;">トップページに戻る</a>
-            </div>
-        </div>
-
         <!-- LINE導線 -->
         <div class="line-fallback">
             <p>LINEで相談しながら決めたい方は、<br>LINEからもご連絡いただけます。</p>
@@ -482,62 +461,29 @@
 </footer>
 
 <script>
-const form = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
-const formContainer = document.getElementById('form-container');
-const successMessage = document.getElementById('success-message');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // 必須バリデーション
+// 必須項目の簡易チェック（送信前確認のみ）
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const form = this;
     let valid = true;
-    let firstError = null;
 
-    // テキスト・テキストエリア
-    form.querySelectorAll('input[required], textarea[required]').forEach(field => {
+    // テキスト・テキストエリア必須チェック
+    form.querySelectorAll('input[required], textarea[required]').forEach(function(field) {
         if (field.type === 'checkbox') {
-            if (!field.checked) { valid = false; firstError = firstError || field; }
+            if (!field.checked) valid = false;
         } else if (field.type !== 'radio') {
-            if (!field.value.trim()) { valid = false; firstError = firstError || field; }
+            if (!field.value.trim()) valid = false;
         }
     });
 
-    // ラジオグループ（必須）
-    ['menu', 'contact_method'].forEach(name => {
-        const group = form.querySelectorAll(`input[name="${name}"]`);
-        const checked = Array.from(group).some(r => r.checked);
-        if (!checked) { valid = false; }
+    // ラジオ必須チェック
+    ['menu', 'contact_method'].forEach(function(name) {
+        const checked = Array.from(form.querySelectorAll('input[name="' + name + '"]')).some(function(r) { return r.checked; });
+        if (!checked) valid = false;
     });
 
     if (!valid) {
+        e.preventDefault();
         alert('必須項目がすべて入力されているか確認してください。');
-        if (firstError) firstError.focus();
-        return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = '送信中...';
-
-    try {
-        const formData = new FormData(form);
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-            formContainer.style.display = 'none';
-            successMessage.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            throw new Error();
-        }
-    } catch {
-        alert('送信に失敗しました。時間をおいて再度お試しいただくか、LINEよりご連絡ください。');
-        submitBtn.disabled = false;
-        submitBtn.textContent = '送信する';
     }
 });
 </script>
