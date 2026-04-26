@@ -202,12 +202,14 @@
             width: 100%;
             background-color: #8b5a2b;
             color: #fff;
-            padding: 16px;
+            padding: 18px 16px;
             border: none;
             border-radius: 50px;
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: bold;
+            -webkit-appearance: none;
+            touch-action: manipulation;
             cursor: pointer;
             margin-top: 28px;
             letter-spacing: 0.06em;
@@ -345,12 +347,12 @@
 
                     <div class="form-group">
                         <label class="field-label" for="name">お名前（ふりがな）<span class="required-mark">＊必須</span></label>
-                        <input type="text" id="name" name="name" placeholder="例：山田 花子（やまだ はなこ）" required>
+                        <input type="text" id="name" name="name" placeholder="例：山田 花子（やまだ はなこ）" required autocomplete="name" inputmode="text">
                     </div>
 
                     <div class="form-group">
                         <label class="field-label" for="birthday">生年月日<span class="required-mark">＊必須</span></label>
-                        <input type="text" id="birthday" name="birthday" placeholder="例：1985年3月20日" required>
+                        <input type="text" id="birthday" name="birthday" placeholder="例：1985年3月20日" required inputmode="text">
                     </div>
 
                     <div class="form-group">
@@ -400,7 +402,7 @@
                         <label class="field-label" for="contact_info">
                             ご連絡先（LINE IDまたはメールアドレス）<span class="required-mark">＊必須</span>
                         </label>
-                        <input type="text" id="contact_info" name="contact_info" placeholder="LINE ID または メールアドレス" required>
+                        <input type="text" id="contact_info" name="contact_info" placeholder="LINE ID または メールアドレス" required inputmode="email" autocomplete="email">
                     </div>
 
                     <div class="form-group">
@@ -460,33 +462,6 @@
     <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
 </footer>
 
-<script>
-// 必須項目の簡易チェック（送信前確認のみ）
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    const form = this;
-    let valid = true;
-
-    // テキスト・テキストエリア必須チェック
-    form.querySelectorAll('input[required], textarea[required]').forEach(function(field) {
-        if (field.type === 'checkbox') {
-            if (!field.checked) valid = false;
-        } else if (field.type !== 'radio') {
-            if (!field.value.trim()) valid = false;
-        }
-    });
-
-    // ラジオ必須チェック
-    ['menu', 'contact_method'].forEach(function(name) {
-        const checked = Array.from(form.querySelectorAll('input[name="' + name + '"]')).some(function(r) { return r.checked; });
-        if (!checked) valid = false;
-    });
-
-    if (!valid) {
-        e.preventDefault();
-        alert('必須項目がすべて入力されているか確認してください。');
-    }
-});
-</script>
 
 </body>
 </html>
