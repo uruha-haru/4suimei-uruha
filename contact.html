@@ -305,6 +305,7 @@
                 id="contact-form"
                 name="contact"
                 method="POST"
+                action="/thanks.html"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
             >
@@ -482,45 +483,6 @@
     <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
 </footer>
 
-<script>
-(function() {
-    var form = document.getElementById('contact-form');
-    var formContainer = document.getElementById('form-container');
-    var successMessage = document.getElementById('success-message');
-    var submitBtn = document.getElementById('submit-btn');
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = '送信中…';
-
-        var data = [];
-        var formData = new FormData(form);
-        formData.forEach(function(value, key) {
-            data.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
-        });
-
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: data.join('&')
-        })
-        .then(function() {
-            // Netlifyからのリダイレクト含め、応答があれば成功とみなす
-            formContainer.style.display = 'none';
-            successMessage.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        })
-        .catch(function() {
-            // ネットワークエラーのみここに来る
-            submitBtn.disabled = false;
-            submitBtn.textContent = '送信する';
-            alert('通信エラーが発生しました。電波の良い場所で再度お試しいただくか、LINEよりご連絡ください。');
-        });
-    });
-})();
-</script>
 
 </body>
 </html>
