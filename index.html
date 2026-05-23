@@ -774,6 +774,151 @@
         }
         .footer-icons { margin-bottom: 16px; }
         .footer-icons a { color: #dcdcdc; margin: 0 12px; font-size: 1.5rem; }
+
+        /* --- [15] メニュー補助要素 --- */
+        .free-vs-paid {
+            max-width: 640px;
+            margin: 0 auto 32px;
+            background: #f3f7f1;
+            border: 1px solid #c6dbc4;
+            border-radius: 12px;
+            padding: 22px 24px;
+            font-size: 0.88rem;
+            color: #5e4b40;
+            line-height: 1.9;
+        }
+        .free-vs-paid-title {
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #6b8c6b;
+            letter-spacing: 0.08em;
+            margin: 0 0 12px;
+        }
+        .free-vs-paid p { margin: 0 0 0.8em; }
+        .free-vs-paid p:last-child { margin-bottom: 0; }
+
+        .menu-guide {
+            max-width: 640px;
+            margin: 0 auto 32px;
+            background: #fffbf5;
+            border: 1px solid #ddd4c8;
+            border-radius: 12px;
+            padding: 22px 24px;
+        }
+        .menu-guide-title {
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #a8c4a2;
+            letter-spacing: 0.08em;
+            margin: 0 0 14px;
+        }
+        .menu-guide-list { list-style: none; padding: 0; margin: 0; }
+        .menu-guide-list li {
+            font-size: 0.88rem;
+            color: #5e4b40;
+            padding: 9px 0;
+            border-bottom: 1px dashed #e8d9c8;
+            line-height: 1.75;
+        }
+        .menu-guide-list li:last-child { border-bottom: none; }
+        .menu-guide-list strong { color: #8b5a2b; }
+
+        .btn-report-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #6b8c6b;
+            border-bottom: 1px dotted #a8c4a2;
+            margin-bottom: 16px;
+        }
+        .btn-report-link:hover { opacity: 0.8; }
+
+        .menu-intent-note {
+            font-size: 0.85rem;
+            color: #557055;
+            background: #f3f7f1;
+            border-left: 3px solid #a8c4a2;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 0 0 16px;
+            line-height: 1.75;
+        }
+
+        /* --- [16] 子育てお悩みブロック --- */
+        .kosodate-block {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 40px 0 8px;
+        }
+        .kosodate-block-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #5e4b40;
+            text-align: center;
+            margin: 0 0 24px;
+            letter-spacing: 0.03em;
+        }
+        .kosodate-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        .kosodate-list li {
+            font-size: 0.93rem;
+            color: #5e4b40;
+            padding: 11px 16px 11px 40px;
+            margin-bottom: 10px;
+            background: #fffbf5;
+            border: 1px solid #e8d9c8;
+            border-radius: 10px;
+            line-height: 1.7;
+            position: relative;
+        }
+        .kosodate-list li::before {
+            content: "・";
+            position: absolute;
+            left: 16px;
+            color: #a8c4a2;
+            font-size: 1.2rem;
+            top: 10px;
+        }
+        .kosodate-block-note {
+            font-size: 0.88rem;
+            color: #7a6558;
+            text-align: center;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* --- [17] 無料診断からの誘導カード --- */
+        .free-guide-card {
+            max-width: 640px;
+            margin: 0 auto 32px;
+            background: #fffef8;
+            border: 1px solid #d8cfc3;
+            border-radius: 14px;
+            padding: 24px 26px;
+        }
+        .free-guide-card-title {
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #8b5a2b;
+            letter-spacing: 0.08em;
+            margin: 0 0 16px;
+        }
+        .free-guide-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .free-guide-list li {
+            font-size: 0.88rem;
+            color: #5e4b40;
+            padding: 9px 0;
+            border-bottom: 1px dashed #e8d9c8;
+            line-height: 1.8;
+        }
+        .free-guide-list li:last-child { border-bottom: none; }
+        .free-guide-list strong { color: #8b5a2b; }
     </style>
 </head>
 <body>
@@ -809,8 +954,8 @@
                 やさしく言葉にします。
             </h2>
             <p class="hero-sub">
-                読み返せる鑑定書（PDF）と1週間のLINEフォローで、自分を責める前に<br>
-                〈自分の扱い方〉を知るための鑑定です。
+                読み返せる鑑定書（PDF）と1週間のLINEフォローで、〈自分の扱い方〉を知るための鑑定です。<br><br>
+                自分自身の気質だけでなく、お子さまやご家族との関わり方も、やさしく整理します。
             </p>
             <div class="hero-btns">
                 <a href="#menu" class="btn-primary">鑑定メニューを見る</a>
@@ -854,6 +999,26 @@
         </div>
     </section>
 
+    <!-- 子育てお悩みブロック -->
+    <section class="section bg-light" style="padding: 48px 0 40px;">
+        <div class="container">
+            <div class="kosodate-block">
+                <p class="kosodate-block-title">子育てで、こんなふうに感じていませんか？</p>
+                <ul class="kosodate-list">
+                    <li>この子にはどんな声かけが合うのだろう</li>
+                    <li>つい怒りすぎてしまう自分を責めてしまう</li>
+                    <li>兄弟姉妹で性格が違いすぎて、関わり方に迷う</li>
+                    <li>子どもの個性をつぶさずに育てたい</li>
+                </ul>
+                <p class="kosodate-block-note">
+                    自然派四柱推命では、生まれ持った気質をもとに<br>
+                    「なぜそう感じるのか」「どう関わると楽になるのか」を<br>
+                    やさしく整理することができます。
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 鑑定メニュー -->
     <section id="menu" class="section">
         <div class="container">
@@ -866,6 +1031,33 @@
                 自然派四柱推命をもとに、ご自身の気質や無理しやすいポイント、今の悩みとのつながりを、読み返せる鑑定書とLINEフォローでお届けしています。<br><br>
                 ご自身のことを深く知りたい方にも、お子さまやご家族との関わり方を整えたい方にも、今の状態に合わせてお選びいただけます。
             </p>
+
+            <!-- 無料診断との違い -->
+            <div class="free-vs-paid">
+                <p class="free-vs-paid-title">無料診断との違い</p>
+                <p>無料診断では大まかな気質をお伝えしていますが、今のお悩みとのつながりや、具体的な整え方までは詳しく見ることができません。</p>
+                <p>有料鑑定では、命式をもとに「なぜ今つらいのか」「どう関われば楽になるのか」まで、鑑定書として丁寧に整理します。</p>
+            </div>
+
+            <!-- メニュー選びの目安 -->
+            <div class="menu-guide">
+                <p class="menu-guide-title">メニュー選びの目安</p>
+                <ul class="menu-guide-list">
+                    <li>はじめての方で、ご自身のことを知りたい方は<strong>「鑑定書付き個別鑑定」</strong>がおすすめです。</li>
+                    <li>お子さまの気質をまず知りたい方は<strong>「子どもの気質ミニ診断」</strong>がおすすめです。</li>
+                    <li>家族全体の関係性まで整理したい方は<strong>「ご家族関係性鑑定」</strong>がおすすめです。</li>
+                </ul>
+            </div>
+
+            <!-- 無料診断からの誘導カード -->
+            <div class="free-guide-card">
+                <p class="free-guide-card-title">無料診断を受けてくださった方へ</p>
+                <ul class="free-guide-list">
+                    <li>お子さまへの声かけや関わり方をもっと知りたい方は → <strong>子どもの気質ミニ診断（3,300円）</strong></li>
+                    <li>ご自身の気質や今のお悩みをじっくり整理したい方は → <strong>鑑定書付き個別鑑定（9,800円）</strong></li>
+                    <li>親子・家族全体の関係性まで知りたい方は → <strong>ご家族関係性鑑定（12,800円）</strong></li>
+                </ul>
+            </div>
 
             <div class="menu-grid">
 
@@ -893,6 +1085,7 @@
                         <span class="menu-price-unit">円（税込）</span>
                     </div>
                     <p class="menu-price-note">お申し込みはフォームから受け付けています</p>
+                    <a href="#report" class="btn-report-link">鑑定書の内容を見る ↓</a>
                     <a href="contact.html" class="btn-menu">このメニューで申し込む</a>
                 </div>
 
@@ -920,6 +1113,7 @@
                         <span class="menu-price-unit">円（税込）</span>
                     </div>
                     <p class="menu-price-note">2回目以降の方専用メニューです</p>
+                    <a href="#report" class="btn-report-link">鑑定書の内容を見る ↓</a>
                     <a href="contact.html" class="btn-menu">継続鑑定を申し込む</a>
                 </div>
 
@@ -928,12 +1122,17 @@
                     <span class="menu-badge" style="background:#8aaa8a;">子育て中の方向け</span>
                     <h4 class="menu-title">子どもの気質ミニ診断</h4>
                     <div class="menu-recommend">
-                        「この子にはどんな接し方が合うのだろう」と感じている方に。
+                        「この子に合う声かけが知りたい」と感じている方へ。
                     </div>
+                    <p class="menu-intent-note">
+                        お子さまを決めつけるための診断ではありません。<br>
+                        持って生まれた気質を知り、声かけや関わり方のヒントを見つけるためのミニ診断です。
+                    </p>
                     <p class="menu-body-text">
                         お子さまを変えるためではなく、お子さまの持って生まれた気質を知り、親子の関わり方を整えるためのミニ診断です。<br>
                         「どう声をかけたら安心しやすいか」「どんな環境だと力を発揮しやすいか」「親が無理に伸ばそうとしなくていい部分はどこか」をやさしく整理します。
                     </p>
+                    <p style="font-size:0.85rem; color:#7a6558; line-height:1.85; margin:0 0 16px;">親子の相性や家族全体の関係性まで知りたい方は、「ご家族関係性鑑定」がおすすめです。</p>
                     <hr class="menu-divider">
                     <p class="menu-contents-label">含まれるもの</p>
                     <ul class="menu-desc">
@@ -941,42 +1140,13 @@
                         <li>気質・関わり方まとめ（PDF 1〜2枚）</li>
                         <li>声かけ・接し方のポイント</li>
                     </ul>
+                    <p class="menu-price-note" style="margin-top:8px;">※ミニ診断のため、LINEフォローは含まれません。</p>
                     <div class="menu-price-row">
                         <span class="menu-price">3,300</span>
                         <span class="menu-price-unit">円（税込）</span>
                     </div>
-                    <p class="menu-price-note" style="margin-bottom:6px;">LINEフォローなし・ミニ診断のためシンプルな構成です</p>
-                    <p class="menu-price-note" style="font-size:0.78rem; background:#f9f7f2; border-left:2px solid #c8c0b4; padding:8px 10px; border-radius:0 6px 6px 0; color:#888; line-height:1.75;">
-                        ※ミニ診断のため、親子全体の相性や家族関係を詳しく見る内容ではありません。より深く知りたい方には「ご家族関係性鑑定」がおすすめです。
-                    </p>
+                    <p class="menu-price-note">お申し込みはフォームから受け付けています</p>
                     <a href="contact.html" class="btn-menu">子どもの気質ミニ診断を申し込む</a>
-                </div>
-
-                <!-- カード4: お子さま・ご家族追加 -->
-                <div class="menu-card">
-                    <span class="menu-badge" style="background:#b0a88e;">ご家族1名を追加したい方へ</span>
-                    <h4 class="menu-title">お子さま・ご家族<br>追加鑑定</h4>
-                    <div class="menu-recommend">
-                        ご本人の鑑定後に、お子さまやパートナーなどご家族1名を追加で見たい方に。
-                    </div>
-                    <p class="menu-body-text">
-                        ご家族1名の命式をもとに、その方の気質や無理しやすいポイント、関わるうえで大切にしたいことを整理した鑑定書をお届けします。<br>
-                        お子さまの特性を知りたい方や、ご家族との距離感をやさしく見直したい方に向いています。
-                    </p>
-                    <hr class="menu-divider">
-                    <p class="menu-contents-label">含まれるもの</p>
-                    <ul class="menu-desc">
-                        <li>ご家族1名分の鑑定</li>
-                        <li>鑑定書（PDF）</li>
-                        <li>1週間のLINEフォロー</li>
-                        <li>関わり方のヒント</li>
-                    </ul>
-                    <div class="menu-price-row">
-                        <span class="menu-price">8,800</span>
-                        <span class="menu-price-unit">円（税込）</span>
-                    </div>
-                    <p class="menu-price-note">ご家族1名追加の場合のメニューです</p>
-                    <a href="contact.html" class="btn-menu">家族追加鑑定を申し込む</a>
                 </div>
 
                 <!-- カード4: ご家族関係性 -->
@@ -1004,7 +1174,36 @@
                         <span class="menu-price-unit">円（税込）</span>
                     </div>
                     <p class="menu-price-note">ご家族2名以上のまとめ鑑定です</p>
+                    <a href="#report" class="btn-report-link">鑑定書の内容を見る ↓</a>
                     <a href="contact.html" class="btn-menu">ご家族鑑定を申し込む</a>
+                </div>
+
+                <!-- カード5: お子さま・ご家族追加 -->
+                <div class="menu-card">
+                    <span class="menu-badge" style="background:#b0a88e;">ご家族1名を追加したい方へ</span>
+                    <h4 class="menu-title">お子さま・ご家族<br>追加鑑定</h4>
+                    <div class="menu-recommend">
+                        ご本人の鑑定後に、お子さまやパートナーなどご家族1名を追加で見たい方に。
+                    </div>
+                    <p class="menu-body-text">
+                        ご家族1名の命式をもとに、その方の気質や無理しやすいポイント、関わるうえで大切にしたいことを整理した鑑定書をお届けします。<br>
+                        お子さまの特性を知りたい方や、ご家族との距離感をやさしく見直したい方に向いています。
+                    </p>
+                    <hr class="menu-divider">
+                    <p class="menu-contents-label">含まれるもの</p>
+                    <ul class="menu-desc">
+                        <li>ご家族1名分の鑑定</li>
+                        <li>鑑定書（PDF）</li>
+                        <li>1週間のLINEフォロー</li>
+                        <li>関わり方のヒント</li>
+                    </ul>
+                    <div class="menu-price-row">
+                        <span class="menu-price">8,800</span>
+                        <span class="menu-price-unit">円（税込）</span>
+                    </div>
+                    <p class="menu-price-note">ご家族1名追加の場合のメニューです</p>
+                    <a href="#report" class="btn-report-link">鑑定書の内容を見る ↓</a>
+                    <a href="contact.html" class="btn-menu">家族追加鑑定を申し込む</a>
                 </div>
 
             </div>
@@ -1040,7 +1239,7 @@
     </section>
 
     <!-- 鑑定書でお届けする内容 -->
-    <section class="section report-section bg-sage">
+    <section id="report" class="section report-section bg-sage">
         <div class="container">
             <h3 class="section-title">鑑定書でお届けする内容</h3>
             <span class="section-title-line"></span>
@@ -1175,7 +1374,7 @@
                 </div>
 
                 <div class="voice-item">
-                    <span class="voice-change">→ これからの道筋が見えた</span>
+                    <span class="voice-change">→ 娘との関わり方にも道筋が見えた</span>
                     <p class="voice-name">Cさん（30代 女性）</p>
                     <p class="voice-text">
                         面白いほど当たり過ぎていて、楽しかったです笑<br>
