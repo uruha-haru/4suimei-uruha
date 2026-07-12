@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お申し込みフォーム | 自然派四柱推命鑑定士 潤葉</title>
+    <meta name="description" content="自然派四柱推命 個別鑑定のお申し込みフォームです。ご希望のメニューと必要事項を入力してお送りください。">
+    <link rel="canonical" href="https://uruha4suimei.netlify.app/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="自然派四柱推命 潤葉">
+    <meta property="og:title" content="お申し込みフォーム | 自然派四柱推命鑑定士 潤葉">
+    <meta property="og:description" content="自然派四柱推命 個別鑑定のお申し込みはこちらから。">
+    <meta property="og:url" content="https://uruha4suimei.netlify.app/contact">
+    <meta property="og:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+    <meta property="og:image:alt" content="木漏れ日の差す森">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お申し込みフォーム | 自然派四柱推命鑑定士 潤葉">
+    <meta name="twitter:description" content="自然派四柱推命 個別鑑定のお申し込みはこちらから。">
+    <meta name="twitter:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -19,6 +36,13 @@
         }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         a:hover { opacity: 0.8; }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #8b5a2b;
+            outline-offset: 3px;
+        }
         ul { list-style: none; padding: 0; margin: 0; }
 
         /* ヘッダー */
@@ -53,7 +77,7 @@
         }
         .page-top p {
             font-size: 0.88rem;
-            color: #999;
+            color: #6e625a;
             margin: 0;
         }
 
@@ -112,9 +136,23 @@
         }
         .form-group { margin-bottom: 22px; }
         .form-group:last-child { margin-bottom: 0; }
+        .form-fieldset {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            min-width: 0;
+            width: 100%;
+        }
+        .menu-category {
+            margin: 16px 0 8px;
+            color: #8b5a2b;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .menu-category:first-of-type { margin-top: 0; }
 
         /* ラベル */
-        label.field-label {
+        .field-label {
             display: block;
             font-size: 0.9rem;
             font-weight: bold;
@@ -122,12 +160,13 @@
             margin-bottom: 8px;
         }
         .required-mark { color: #c0392b; margin-left: 4px; font-size: 0.82rem; }
-        .optional-mark { color: #aaa; margin-left: 6px; font-size: 0.8rem; font-weight: normal; }
-        .field-hint { font-size: 0.8rem; color: #aaa; margin-top: 6px; }
+        .optional-mark { color: #6e625a; margin-left: 6px; font-size: 0.8rem; font-weight: normal; }
+        .field-hint { font-size: 0.8rem; color: #6e625a; margin-top: 6px; }
 
         /* 入力フィールド */
         input[type="text"],
         input[type="email"],
+        input[type="date"],
         textarea {
             width: 100%;
             padding: 13px 14px;
@@ -142,6 +181,7 @@
         }
         input[type="text"]:focus,
         input[type="email"]:focus,
+        input[type="date"]:focus,
         textarea:focus {
             outline: none;
             border-color: #8b5a2b;
@@ -195,6 +235,17 @@
             flex-shrink: 0;
         }
         .privacy-link { color: #8b5a2b; text-decoration: underline; }
+        .legal-links {
+            margin: 12px 0 0;
+            font-size: 0.82rem;
+            color: #7a6357;
+        }
+        .contact-detail {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px dashed #e8d9c8;
+        }
+        .contact-detail[hidden] { display: none; }
 
         /* 送信ボタン */
         .btn-submit {
@@ -217,7 +268,7 @@
         }
         .btn-submit:hover { background-color: #6b4520; transform: translateY(-1px); }
         .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }
-        .submit-note { text-align: center; font-size: 0.8rem; color: #aaa; margin-top: 10px; }
+        .submit-note { text-align: center; font-size: 0.8rem; color: #6e625a; margin-top: 10px; }
 
         /* 完了メッセージ */
         .success-box {
@@ -262,7 +313,15 @@
             padding: 30px 20px;
             font-size: 0.8rem;
         }
-        .footer a { color: #aaa; }
+        .footer a { color: #f2eee9; }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #8b5a2b;
+            outline-offset: 3px;
+        }
 
         @media (min-width: 768px) {
             .page-top h1 { font-size: 1.6rem; }
@@ -273,7 +332,7 @@
 <body>
 
 <header class="header">
-    <h1 class="logo"><a href="index.html">自然派四柱推命 潤葉</a></h1>
+    <div class="logo"><a href="/">自然派四柱推命 潤葉</a></div>
 </header>
 
 <div class="page-top">
@@ -283,19 +342,15 @@
     </div>
 </div>
 
-<section class="form-section">
+<main class="form-section">
     <div class="container">
 
-        <a href="index.html" class="back-link">← トップページに戻る</a>
+        <a href="/" class="back-link">← トップページに戻る</a>
 
         <!-- 冒頭文 -->
         <div class="form-intro">
-            <p>このたびはお申込みをご検討いただき、ありがとうございます。</p>
-            <p>こちらは四柱推命鑑定のお申込みフォームです。</p>
-            <p>事前に命式を丁寧に読み解き、鑑定書を作成したうえでお届けしています。</p>
-            <p>鑑定書では、本来の性質、強みとして出やすい部分、無理しやすいポイント、これからの選び方のヒントを整理してお伝えします。</p>
-            <p>鑑定書お渡し後は、LINEでの補足対応もしています。</p>
-            <p>必要事項をご入力のうえ、送信をお願いいたします。</p>
+            <p>自然派四柱推命 個別鑑定をはじめ、各メニューのお申し込みを承ります。</p>
+            <p>必要事項を送信いただいたあと、内容を確認してLINEまたはメールでお支払い方法などをご案内します。</p>
         </div>
 
         <!-- フォーム本体 -->
@@ -304,7 +359,7 @@
                 id="contact-form"
                 name="contact"
                 method="POST"
-                action="/thanks.html"
+                action="/thanks"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
             >
@@ -318,29 +373,35 @@
                 <div class="form-card">
                     <p class="form-section-heading">🌿 ご希望のメニュー</p>
                     <div class="form-group">
-                        <label class="field-label">ご希望のメニューをお選びください<span class="required-mark">＊必須</span></label>
-                        <div class="radio-group" id="menu-group">
+                        <fieldset class="form-fieldset">
+                            <legend class="field-label">ご希望のメニューをお選びください<span class="required-mark">＊必須</span></legend>
+                            <p class="menu-category">はじめての方・新しいテーマでご相談の方</p>
+                            <div class="radio-group" id="menu-group">
                             <label class="radio-label">
-                                <input type="radio" name="menu" value="自然派四柱推命 鑑定書付き個別鑑定　7,500円" required>
-                                自然派四柱推命 鑑定書付き個別鑑定　7,500円
+                                <input type="radio" id="menu-individual" name="menu" value="自然派四柱推命 個別鑑定　7,500円" data-menu-slug="individual" required>
+                                自然派四柱推命 個別鑑定　7,500円
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="menu" value="子どもの気質ミニ診断　3,300円">
+                                <input type="radio" id="menu-child" name="menu" value="子どもの気質ミニ診断　3,300円" data-menu-slug="child">
                                 子どもの気質ミニ診断　3,300円
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="menu" value="継続フォロー鑑定　6,600円">
+                                <input type="radio" id="menu-family" name="menu" value="ご家族関係性鑑定（基本4名まで）　12,800円" data-menu-slug="family">
+                                ご家族関係性鑑定（基本4名まで）　12,800円
+                            </label>
+                            </div>
+                            <p class="menu-category">以前に鑑定を受けたことがある方</p>
+                            <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" id="menu-followup" name="menu" value="継続フォロー鑑定　6,600円" data-menu-slug="followup">
                                 継続フォロー鑑定　6,600円
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="menu" value="お子さま・ご家族追加鑑定　5,500円">
+                                <input type="radio" id="menu-family-add" name="menu" value="お子さま・ご家族追加鑑定　5,500円" data-menu-slug="family-add">
                                 お子さま・ご家族追加鑑定　5,500円
                             </label>
-                            <label class="radio-label">
-                                <input type="radio" name="menu" value="ご家族関係性鑑定　12,800円">
-                                ご家族関係性鑑定　12,800円
-                            </label>
-                        </div>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
 
@@ -348,29 +409,35 @@
                 <div class="form-card">
                     <p class="form-section-heading">📋 基本情報</p>
 
+                    <input type="hidden" id="name" name="name" value="">
                     <div class="form-group">
-                        <label class="field-label" for="name">お名前（ふりがな）<span class="required-mark">＊必須</span></label>
-                        <input type="text" id="name" name="name" placeholder="例：山田 花子（やまだ はなこ）" required autocomplete="name" inputmode="text">
+                        <label class="field-label" for="full-name">お名前<span class="required-mark">＊必須</span></label>
+                        <input type="text" id="full-name" name="full_name" placeholder="例：山田 花子" required autocomplete="name" inputmode="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="furigana">ふりがな<span class="required-mark">＊必須</span></label>
+                        <input type="text" id="furigana" name="furigana" placeholder="例：やまだ はなこ" required inputmode="text">
                     </div>
 
                     <div class="form-group">
                         <label class="field-label" for="birthday">生年月日<span class="required-mark">＊必須</span></label>
-                        <input type="text" id="birthday" name="birthday" placeholder="例：1985年3月20日" required inputmode="text">
+                        <input type="date" id="birthday" name="birthday" required autocomplete="bday">
                     </div>
 
                     <div class="form-group">
                         <label class="field-label" for="birthtime">
                             生まれた時間<span class="optional-mark">（任意）</span>
                         </label>
-                        <input type="text" id="birthtime" name="birthtime" placeholder="例：午前10時30分 ／ わからない場合は「不明」とご入力ください">
-                        <p class="field-hint">わからない場合は「不明」とご記入ください。</p>
+                        <input type="text" id="birthtime" name="birthtime" placeholder="例：午前10時30分">
+                        <p class="field-hint">わからない場合は空欄のまま、または「不明」とご記入ください。</p>
                     </div>
 
                     <div class="form-group">
                         <label class="field-label" for="birthplace">
                             出生地（都道府県）<span class="optional-mark">（任意）</span>
                         </label>
-                        <input type="text" id="birthplace" name="birthplace" placeholder="例：東京都">
+                        <input type="text" id="birthplace" name="birthplace" placeholder="例：東京都" autocomplete="address-level1">
                     </div>
                 </div>
 
@@ -379,7 +446,8 @@
                     <p class="form-section-heading">💬 ご相談内容</p>
                     <div class="form-group">
                         <label class="field-label" for="concern">今回、いちばん知りたいことをひとつ教えてください。その背景や、今の状況もあわせてお書きください。<span class="required-mark">＊必須</span></label>
-                        <textarea id="concern" name="concern" placeholder="例：&#10;・子どもの気質と関わり方を知りたい&#10;・仕事で無理しやすい理由と、今後の流れを知りたい&#10;・親子関係でぶつかりやすい理由を知りたい&#10;・自分に合う役割や働き方を知りたい&#10;&#10;背景や今の状況もあわせてお書きいただけると、より丁寧に読み解けます。" required></textarea>
+                        <textarea id="concern" name="concern" placeholder="例：自分に合う働き方と、今後の流れを知りたい" required></textarea>
+                        <p class="field-hint">背景や今の状況もあわせてお書きいただけると、より具体的に読み解けます。</p>
                     </div>
                 </div>
 
@@ -387,25 +455,29 @@
                 <div class="form-card">
                     <p class="form-section-heading">📱 ご連絡先</p>
 
-                    <div class="form-group">
-                        <label class="field-label">ご希望の連絡方法<span class="required-mark">＊必須</span></label>
+                    <fieldset class="form-fieldset form-group">
+                        <legend class="field-label">ご希望の連絡方法<span class="required-mark">＊必須</span></legend>
                         <div class="radio-group" id="contact-method-group">
                             <label class="radio-label">
-                                <input type="radio" name="contact_method" value="LINE" required>
+                                <input type="radio" id="contact-line" name="contact_method" value="LINE" aria-controls="line-contact-fields" required>
                                 LINE
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="contact_method" value="メール">
+                                <input type="radio" id="contact-email" name="contact_method" value="メール" aria-controls="email-contact-fields">
                                 メール
                             </label>
                         </div>
-                    </div>
+                    </fieldset>
 
-                    <div class="form-group">
-                        <label class="field-label" for="contact_info">
-                            ご連絡先（LINE IDまたはメールアドレス）<span class="required-mark">＊必須</span>
-                        </label>
-                        <input type="text" id="contact_info" name="contact_info" placeholder="LINE ID または メールアドレス" required inputmode="email" autocomplete="email">
+                    <input type="hidden" id="contact_info" name="contact_info" value="">
+                    <div class="contact-detail" id="line-contact-fields" hidden>
+                        <label class="field-label" for="line-id">LINEの表示名<span class="required-mark">＊必須</span></label>
+                        <input type="text" id="line-id" name="line_display_name" placeholder="例：山田 花子" autocomplete="off">
+                        <p class="field-hint"><a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" class="privacy-link">公式LINEを友だち追加</a>し、「申込フォーム送信済み・お名前」とメッセージをお送りください。</p>
+                    </div>
+                    <div class="contact-detail" id="email-contact-fields" hidden>
+                        <label class="field-label" for="email">メールアドレス<span class="required-mark">＊必須</span></label>
+                        <input type="email" id="email" name="email" placeholder="例：name@example.com" autocomplete="email" inputmode="email">
                     </div>
 
                 </div>
@@ -414,11 +486,12 @@
                 <div class="form-card">
                     <div class="form-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="privacy" required>
+                            <input type="checkbox" id="privacy-consent" name="privacy" required>
                             <span>
-                                <a href="privacy.html" target="_blank" class="privacy-link">プライバシーポリシー</a>を読み、内容に同意します。<span class="required-mark">＊必須</span>
+                                <a href="/privacy" target="_blank" rel="noopener noreferrer" class="privacy-link">プライバシーポリシー</a>を読み、内容に同意します。<span class="required-mark">＊必須</span>
                             </span>
                         </label>
+                        <p class="legal-links">お申し込み前に<a href="/tokusho" target="_blank" rel="noopener noreferrer" class="privacy-link">特定商取引法に基づく表記</a>もご確認ください。</p>
                     </div>
                 </div>
 
@@ -429,8 +502,8 @@
                     ご案内の際に詳細をお伝えします。</p>
                 </div>
 
-                <button type="submit" class="btn-submit" id="submit-btn">送信する</button>
-                <p class="submit-note">送信後、内容を確認のうえご連絡いたします（通常24時間以内）。</p>
+                <button type="submit" class="btn-submit" id="submit-btn">申し込み内容を送信する</button>
+                <p class="submit-note">このフォームの送信時点では決済されません。内容を確認のうえ、通常24時間以内にご連絡します。</p>
 
             </form>
         </div>
@@ -452,30 +525,73 @@
                     2日以上たっても連絡がない場合は、<br>
                     お手数ですが再度ご連絡ください。
                 </p>
-                <a href="index.html" style="display:inline-block; margin-top:24px; padding:13px 32px; background-color:#8b5a2b; color:#fff; border-radius:50px; font-size:0.95rem; font-weight:bold;">トップページに戻る</a>
+                <a href="/" style="display:inline-block; margin-top:24px; padding:13px 32px; background-color:#8b5a2b; color:#fff; border-radius:50px; font-size:0.95rem; font-weight:bold;">トップページに戻る</a>
             </div>
         </div>
 
         <!-- LINE導線 -->
         <div class="line-fallback">
             <p>LINEで相談しながら決めたい方は、<br>LINEからもご連絡いただけます。</p>
-            <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
-                <i class="fab fa-line"></i> LINEで相談する
+            <a href="https://lin.ee/xZRU4Ig" target="_blank" rel="noopener noreferrer" class="btn-line">
+                <i class="fab fa-line" aria-hidden="true"></i> LINEで相談する
             </a>
         </div>
 
     </div>
-</section>
+</main>
 
 <footer class="footer">
     <div style="margin-bottom: 14px;">
-        <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line"></i></a>
-        <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/fatenature33/" target="_blank" rel="noopener noreferrer" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
     </div>
-    <p style="margin:0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
-    <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
+    <p style="margin:0 0 8px;">&copy; 2025–2026 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+    <p style="margin:0;"><a href="/privacy">プライバシーポリシー</a> ｜ <a href="/tokusho">特定商取引法に基づく表記</a></p>
 </footer>
 
+<script>
+    (() => {
+        const menuSlug = new URLSearchParams(window.location.search).get('menu');
+        if (menuSlug) {
+            const requestedMenu = Array.from(document.querySelectorAll('input[name="menu"][data-menu-slug]'))
+                .find(input => input.dataset.menuSlug === menuSlug.trim().toLowerCase());
+            if (requestedMenu) requestedMenu.checked = true;
+        }
+
+        const methodInputs = document.querySelectorAll('input[name="contact_method"]');
+        const lineFields = document.getElementById('line-contact-fields');
+        const emailFields = document.getElementById('email-contact-fields');
+        const lineInput = document.getElementById('line-id');
+        const emailInput = document.getElementById('email');
+
+        const updateContactFields = () => {
+            const selected = document.querySelector('input[name="contact_method"]:checked');
+            const useLine = selected?.value === 'LINE';
+            const useEmail = selected?.value === 'メール';
+
+            lineFields.hidden = !useLine;
+            emailFields.hidden = !useEmail;
+            lineInput.required = useLine;
+            emailInput.required = useEmail;
+            lineInput.disabled = !useLine;
+            emailInput.disabled = !useEmail;
+        };
+
+        methodInputs.forEach(input => input.addEventListener('change', updateContactFields));
+        updateContactFields();
+
+        document.getElementById('contact-form').addEventListener('submit', () => {
+            const fullName = document.getElementById('full-name').value.trim();
+            const furigana = document.getElementById('furigana').value.trim();
+            const selectedMethod = document.querySelector('input[name="contact_method"]:checked')?.value;
+
+            document.getElementById('name').value = `${fullName}（${furigana}）`;
+            document.getElementById('contact_info').value = selectedMethod === 'LINE'
+                ? lineInput.value.trim()
+                : emailInput.value.trim();
+        });
+    })();
+</script>
 
 </body>
 </html>

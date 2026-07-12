@@ -3,7 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自然派四柱推命鑑定士 潤葉</title>
+    <title>自然派四柱推命 個別鑑定｜潤葉</title>
+    <meta name="description" content="自然派四柱推命 個別鑑定。持って生まれた気質や強みを読み解き、仕事・恋愛・家族・人生の選択を整理します。鑑定書PDF、1週間LINEフォロー付き。7,500円（税込）。">
+    <link rel="canonical" href="https://uruha4suimei.netlify.app/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/image/uruha.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="自然派四柱推命 潤葉">
+    <meta property="og:title" content="自然派四柱推命 個別鑑定｜潤葉">
+    <meta property="og:description" content="運勢を良い・悪いで決めつけず、持って生まれた気質から、今の悩みに使える行動のヒントを見つける四柱推命です。">
+    <meta property="og:url" content="https://uruha4suimei.netlify.app/">
+    <meta property="og:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="木漏れ日の差す森">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="自然派四柱推命 個別鑑定｜潤葉">
+    <meta name="twitter:description" content="鑑定書PDFと1週間LINEフォロー付きの自然派四柱推命 個別鑑定。7,500円（税込）。">
+    <meta name="twitter:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://uruha4suimei.netlify.app/#website",
+          "url": "https://uruha4suimei.netlify.app/",
+          "name": "自然派四柱推命 潤葉",
+          "description": "持って生まれた気質から、今の悩みに使える行動のヒントを見つける自然派四柱推命です。",
+          "inLanguage": "ja-JP"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://uruha4suimei.netlify.app/#individual-reading",
+          "name": "自然派四柱推命 個別鑑定",
+          "url": "https://uruha4suimei.netlify.app/contact?menu=individual",
+          "provider": {
+            "@type": "Person",
+            "name": "潤葉",
+            "url": "https://uruha4suimei.netlify.app/"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "7500",
+            "priceCurrency": "JPY",
+            "url": "https://uruha4suimei.netlify.app/contact?menu=individual"
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -22,8 +77,28 @@
         }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         a:hover { opacity: 0.8; }
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid #8b5a2b;
+            outline-offset: 3px;
+        }
         img { max-width: 100%; height: auto; vertical-align: bottom; }
         ul { list-style: none; padding: 0; margin: 0; }
+
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 20000;
+            padding: 10px 16px;
+            border-radius: 6px;
+            background: #4a3b32;
+            color: #fff;
+            transform: translateY(-150%);
+        }
+        .skip-link:focus { transform: translateY(0); }
+        section[id] { scroll-margin-top: 76px; }
 
         /* --- [2] レイアウト共通 --- */
         .container {
@@ -78,8 +153,8 @@
 
         .menu-toggle {
             display: block;
-            width: 30px;
-            height: 25px;
+            width: 44px;
+            height: 44px;
             position: relative;
             cursor: pointer;
             background: none;
@@ -91,18 +166,18 @@
             display: block;
             position: absolute;
             height: 3px;
-            width: 100%;
+            width: 30px;
             background: #5e4b40;
             border-radius: 3px;
             transition: 0.3s;
-            left: 0;
+            left: 7px;
         }
-        .menu-toggle span:nth-child(1) { top: 0; }
-        .menu-toggle span:nth-child(2) { top: 11px; }
-        .menu-toggle span:nth-child(3) { top: 22px; }
-        .menu-toggle.active span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+        .menu-toggle span:nth-child(1) { top: 10px; }
+        .menu-toggle span:nth-child(2) { top: 20px; }
+        .menu-toggle span:nth-child(3) { top: 30px; }
+        .menu-toggle.active span:nth-child(1) { top: 20px; transform: rotate(45deg); }
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+        .menu-toggle.active span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
 
         .nav {
             position: absolute;
@@ -114,13 +189,21 @@
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
+            visibility: hidden;
+            transition: max-height 0.4s ease-in-out, visibility 0s linear 0.4s;
         }
-        .nav.active { max-height: 420px; }
+        .nav.active {
+            max-height: calc(100vh - 60px);
+            max-height: calc(100dvh - 60px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            visibility: visible;
+            transition-delay: 0s;
+        }
         .nav li { border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav a { display: block; padding: 15px 20px; font-size: 1rem; color: #5e4b40; font-weight: 500; }
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1080px) {
             .menu-toggle { display: none; }
             .nav {
                 position: static;
@@ -130,10 +213,11 @@
                 box-shadow: none;
                 max-height: none;
                 overflow: visible;
+                visibility: visible;
             }
-            .nav ul { display: flex; gap: 20px; }
+            .nav ul { display: flex; gap: 14px; }
             .nav li { border: none; }
-            .nav a { padding: 0; font-size: 0.9rem; }
+            .nav a { padding: 0; font-size: 0.84rem; }
         }
 
         /* アロマのナビ非表示 */
@@ -158,8 +242,8 @@
         .btn-secondary {
             display: inline-block;
             background-color: transparent;
-            color: #6b8c6b;
-            border: 2px solid #6b8c6b;
+            color: #4f704f;
+            border: 2px solid #4f704f;
             padding: 12px 28px;
             border-radius: 30px;
             font-weight: bold;
@@ -167,13 +251,13 @@
             text-align: center;
             transition: background-color 0.25s, color 0.25s, transform 0.2s;
         }
-        .btn-secondary:hover { background-color: #6b8c6b; color: #fff; opacity: 1; transform: translateY(-2px); }
+        .btn-secondary:hover { background-color: #4f704f; color: #fff; opacity: 1; transform: translateY(-2px); }
 
         .btn-line {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #06C755;
+            background: #087a3a;
             color: white;
             padding: 14px 28px;
             border-radius: 30px;
@@ -205,8 +289,12 @@
             min-height: 540px;
             background-color: #e6e0d4;
             background-image: url('image/image01.jpg');
+            background-image: image-set(
+                url('image/image01-mobile.webp') type('image/webp'),
+                url('image/image01.jpg') type('image/jpeg')
+            );
             background-size: cover;
-            background-position: center top;
+            background-position: 25% center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -231,7 +319,7 @@
         }
         .hero-tag {
             display: inline-block;
-            background: #a8c4a2;
+            background: #557055;
             color: #fff;
             padding: 4px 16px;
             border-radius: 20px;
@@ -241,7 +329,7 @@
             margin-bottom: 18px;
         }
         .hero-title {
-            font-size: 1.25rem;
+            font-size: 1.65rem;
             color: #3a2e28;
             margin: 0 0 16px;
             line-height: 1.7;
@@ -251,7 +339,26 @@
             font-size: 0.9rem;
             color: #6b5547;
             line-height: 1.85;
+            margin: 0 0 14px;
+        }
+        .hero-facts {
+            display: grid;
+            gap: 4px;
             margin: 0 0 24px;
+            color: #4a3b32;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+        .hero-facts li::before {
+            content: '✓';
+            color: #557055;
+            margin-right: 0.45em;
+        }
+        .helper-text {
+            color: #6f6258;
+            font-size: 0.78rem;
+            margin: 10px 0 0;
+            text-align: center;
         }
         .hero-btns {
             display: flex;
@@ -263,8 +370,15 @@
         .hero-btns .btn-secondary { width: 100%; max-width: 320px; }
 
         @media screen and (min-width: 768px) {
-            .hero { min-height: 600px; }
-            .hero-title { font-size: 1.5rem; }
+            .hero {
+                min-height: 600px;
+                background-position: center top;
+                background-image: image-set(
+                    url('image/image01.webp') type('image/webp'),
+                    url('image/image01.jpg') type('image/jpeg')
+                );
+            }
+            .hero-title { font-size: 2rem; }
             .hero-sub { font-size: 0.95rem; }
             .hero-btns { flex-direction: row; justify-content: center; }
             .hero-btns .btn-primary,
@@ -298,7 +412,7 @@
             text-align: center;
             font-size: 1rem;
             font-weight: 700;
-            color: #6b8c6b;
+            color: #557055;
             border: 1.5px solid #a8c4a2;
             border-radius: 10px;
             padding: 14px 20px;
@@ -327,7 +441,7 @@
         }
         .menu-badge {
             display: inline-block;
-            background: #a8c4a2;
+            background: #557055;
             color: #fff;
             font-size: 0.75rem;
             font-weight: bold;
@@ -367,7 +481,7 @@
         .menu-contents-label {
             font-size: 0.78rem;
             font-weight: bold;
-            color: #a8c4a2;
+            color: #557055;
             letter-spacing: 0.08em;
             margin: 0 0 10px;
         }
@@ -390,7 +504,7 @@
         }
         .menu-price-note {
             font-size: 0.8rem;
-            color: #999;
+            color: #6f6258;
             margin: 0 0 20px;
         }
         .menu-desc {
@@ -406,7 +520,7 @@
         }
         .menu-desc li::before {
             content: '✔';
-            color: #a8c4a2;
+            color: #557055;
             position: absolute;
             left: 0;
             font-size: 0.82rem;
@@ -490,7 +604,7 @@
         .aroma-accordion summary::after {
             content: '＋';
             font-size: 1rem;
-            color: #a8c4a2;
+            color: #557055;
             flex-shrink: 0;
             margin-left: 8px;
         }
@@ -505,7 +619,7 @@
         }
 
         /* --- [8] 鑑定書でお届けする内容 --- */
-        .report-section { background-color: #f9f7f2; }
+        .report-section { background-color: #f3f7f1; }
         .report-wrap {
             display: flex;
             flex-direction: column;
@@ -521,7 +635,7 @@
             overflow: hidden;
         }
         .report-card-header {
-            background: #6b8c6b;
+            background: #557055;
             color: #fff;
             padding: 18px 24px 14px;
         }
@@ -558,14 +672,14 @@
             color: #4a7a4a;
         }
         .report-toc-highlight .report-toc-num {
-            background: #6b8c6b;
+            background: #557055;
         }
         .report-toc-num {
             flex-shrink: 0;
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            background: #a8c4a2;
+            background: #557055;
             color: #fff;
             font-size: 0.75rem;
             font-weight: bold;
@@ -641,7 +755,7 @@
         }
         .flow-body { padding-top: 8px; }
         .flow-body h4 { color: #5e4b40; font-size: 1rem; font-weight: bold; margin: 0 0 4px; }
-        .flow-body p { font-size: 0.88rem; color: #888; margin: 0; }
+        .flow-body p { font-size: 0.88rem; color: #6f6258; margin: 0; }
 
         /* --- [10] お客様の声 --- */
         .voice-list {
@@ -766,7 +880,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .shichu-card h4 {
-            color: #6b8c6b;
+            color: #557055;
             margin: 0 0 10px;
             font-weight: bold;
             font-size: 1rem;
@@ -787,6 +901,19 @@
         }
         .footer-icons { margin-bottom: 16px; }
         .footer-icons a { color: #dcdcdc; margin: 0 12px; font-size: 1.5rem; }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: #f0e9e2;
+            font-size: 0.82rem;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
         /* --- [15] メニュー補助要素 --- */
         .free-vs-paid {
@@ -803,7 +930,7 @@
         .free-vs-paid-title {
             font-size: 0.82rem;
             font-weight: bold;
-            color: #6b8c6b;
+            color: #557055;
             letter-spacing: 0.08em;
             margin: 0 0 12px;
         }
@@ -821,7 +948,7 @@
         .menu-guide-title {
             font-size: 0.82rem;
             font-weight: bold;
-            color: #a8c4a2;
+            color: #557055;
             letter-spacing: 0.08em;
             margin: 0 0 14px;
         }
@@ -839,7 +966,7 @@
         .btn-report-link {
             display: inline-block;
             font-size: 0.8rem;
-            color: #6b8c6b;
+            color: #557055;
             border-bottom: 1px dotted #a8c4a2;
             margin-bottom: 16px;
         }
@@ -890,7 +1017,7 @@
             content: "・";
             position: absolute;
             left: 16px;
-            color: #a8c4a2;
+            color: #557055;
             font-size: 1.2rem;
             top: 10px;
         }
@@ -951,10 +1078,10 @@
         .menu-main-card .btn-menu {
             font-size: 1rem;
             padding: 16px;
-            background-color: #6b8c6b;
+            background-color: #557055;
         }
         .menu-main-card .btn-menu:hover {
-            background-color: #557055;
+            background-color: #3f5b3f;
         }
 
         /* 相談テーマ見出し */
@@ -979,7 +1106,7 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-        @media screen and (min-width: 900px) {
+        @media screen and (min-width: 1024px) {
             .menu-theme-grid {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
@@ -1055,13 +1182,13 @@
             opacity: 0.92;
         }
         .btn-menu-sub {
-            background-color: #9ab09a !important;
+            background-color: #557055 !important;
         }
         .btn-menu-sub:hover {
-            background-color: #7a9a7a !important;
+            background-color: #3f5b3f !important;
         }
 
-        /* キャンペーン価格表示 */
+        /* 現在の鑑定料 */
         .menu-campaign-wrap {
             background: #fef9ef;
             border: 1px solid #e0c88a;
@@ -1079,12 +1206,12 @@
         }
         .menu-campaign-regular {
             font-size: 0.82rem;
-            color: #a09080;
+            color: #6f6258;
             margin: 6px 0 0;
         }
         .menu-campaign-notes {
             font-size: 0.78rem;
-            color: #9a7050;
+            color: #704f32;
             margin: 8px 0 0;
             line-height: 1.8;
         }
@@ -1112,7 +1239,7 @@
         .menu-followup-heading {
             font-size: 0.82rem;
             font-weight: 700;
-            color: #a09080;
+            color: #6f6258;
             letter-spacing: 0.06em;
             margin: 0 0 8px;
         }
@@ -1122,56 +1249,83 @@
             line-height: 1.85;
             margin: 0;
         }
+        .service-scope-note {
+            max-width: 660px;
+            margin: 28px auto 0;
+            padding: 14px 18px;
+            border-left: 3px solid #8b5a2b;
+            border-radius: 0 8px 8px 0;
+            background: #fffaf2;
+            color: #5e4b40;
+            font-size: 0.84rem;
+            line-height: 1.8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">本文へスキップ</a>
+
     <!-- ヘッダー -->
     <header class="header">
-        <h1 class="logo"><a href="#home">自然派四柱推命 潤葉</a></h1>
-        <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
-            <span></span><span></span><span></span>
+        <div class="logo"><a href="#home">自然派四柱推命 潤葉</a></div>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="nav" aria-expanded="false">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
-        <nav class="nav" id="nav">
+        <nav class="nav" id="nav" aria-label="メインナビゲーション">
             <ul>
                 <li><a href="#home">ホーム</a></li>
-                <li><a href="hajimete.html">はじめての方へ</a></li>
+                <li><a href="/hajimete">はじめての方へ</a></li>
                 <li><a href="#about">潤葉について</a></li>
                 <li><a href="#shichu">四柱推命とは</a></li>
                 <li><a href="#menu">鑑定メニュー</a></li>
                 <li><a href="#flow">ご利用の流れ</a></li>
                 <li><a href="#voice">お客様の声</a></li>
-                <li><a href="contact.html">フォームで申し込む</a></li>
+                <li><a href="/contact?menu=individual">フォームで申し込む</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main-content" tabindex="-1">
     <!-- ヒーロー -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <span class="hero-tag">仕事・恋愛・夫婦関係・人生の転機まで</span>
-            <h2 class="hero-title">
-                なぜ、いつも同じことで<br>悩んでしまうのか。
-            </h2>
+            <span class="hero-tag">自然派四柱推命 個別鑑定</span>
+            <h1 class="hero-title">
+                運勢を決めつけず、<br>今の悩みを、行動のヒントへ。
+            </h1>
             <p class="hero-sub">
-                自然派四柱推命で、あなたの気質・強み・無理しやすいパターンを読み解き、悩みの根っこを言葉にします。<br><br>
-                仕事・恋愛・夫婦関係・親子関係・人生の転機まで、鑑定書PDFと1週間のLINEフォローで、日常の判断や関わり方に落とし込んでいきます。
+                持って生まれた気質や強みを読み解き、今の悩みに使える具体的な一歩を一緒に見つける四柱推命です。
             </p>
+            <ul class="hero-facts" aria-label="鑑定の概要">
+                <li>鑑定書PDF＋1週間LINEフォロー</li>
+                <li>7,500円（税込）</li>
+                <li>ご入金確認後3〜5日でお届け</li>
+            </ul>
             <div class="hero-btns">
-                <a href="#menu" class="btn-primary">鑑定メニューを見る</a>
+                <a href="/contact?menu=individual" class="btn-primary">個別鑑定を申し込む</a>
                 <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" class="btn-secondary">まずはLINEで事前相談する</a>
             </div>
-            <p style="font-size: 0.78rem; color: #b0a090; margin-top: 10px; text-align: center;">LINEを開いたら、「事前相談希望」とメッセージをお送りください。</p>
+            <p class="helper-text">LINEを開いたら、「事前相談希望」とメッセージをお送りください。</p>
         </div>
     </section>
 
     <!-- 鑑定士プロフィール -->
     <section id="about" class="section">
         <div class="container">
-            <h3 class="section-title">鑑定士 潤葉</h3>
+            <h2 class="section-title">鑑定士 潤葉</h2>
             <span class="section-title-line"></span>
             <div class="profile-wrap">
-                <img src="image/uruha.png" alt="鑑定士 潤葉" class="profile-img">
+                <img src="image/uruha.png" alt="潤葉のイラスト" class="profile-img">
                 <div class="profile-body">
                     <p>私が四柱推命と深く関わるようになったのは、仕事、家庭、子育てのすべてに手いっぱいになり、自分のことがわからなくなっていた時期でした。</p>
                     <p>頑張っているのに、なぜか苦しい。<br>
@@ -1181,10 +1335,11 @@
                     「私はこういう気質を持っていたんだ」<br>
                     「だから、こんなふうに無理をしやすかったんだ」<br>
                     そう言葉にできたことで、自分を責める気持ちが少しゆるみました。</p>
+                    <p>浅野太志先生に師事し、四柱推命の初級・中級講座を修了しました。現在も先生主催の勉強会で研鑽を重ねています。鑑定活動歴は5年です。</p>
                     <p>私の鑑定では、運気を「良い・悪い」で決めつけることはしません。<br>
-                    持って生まれた気質や強み、無理しやすいパターンを読み解きながら、今の悩みの根っこをやさしく言葉にしていきます。</p>
+                    持って生まれた気質や強み、無理しやすいパターンを読み解きながら、今の悩みの根っこをやさしく言葉にします。不安をあおるのではなく、希望と具体的な一歩につなげることを大切にしています。</p>
                     <p>仕事、恋愛、夫婦関係、親子関係、人生の転機までご相談いただけます。<br>
-                    「自分を責めるため」ではなく、「これからの関わり方や進み方を見つけるため」の鑑定を、心を込めてお届けしています。</p>
+                    「自分を責めるため」ではなく、「これからの関わり方や進み方を見つけるため」に。鑑定の先で「きっと大丈夫」と思える明日につながるよう、心を込めてお届けしています。</p>
                 </div>
             </div>
         </div>
@@ -1193,7 +1348,7 @@
     <!-- 自然派四柱推命とは -->
     <section id="shichu" class="section bg-light">
         <div class="container">
-            <h3 class="section-title">自然派四柱推命とは</h3>
+            <h2 class="section-title">自然派四柱推命とは</h2>
             <span class="section-title-line"></span>
             <div class="shichu-cards">
                 <div class="shichu-card">
@@ -1233,7 +1388,7 @@
     <!-- 鑑定メニュー -->
     <section id="menu" class="section">
         <div class="container">
-            <h3 class="section-title">鑑定メニュー</h3>
+            <h2 class="section-title">鑑定メニュー</h2>
             <span class="section-title-line"></span>
 
             <!-- サブ見出し・導入文 -->
@@ -1261,16 +1416,16 @@
                     ひとつのテーマを深く見ることで、今の状況に必要なメッセージをより具体的にお伝えできます。
                 </p>
                 <div class="menu-campaign-wrap">
+                    <p class="menu-campaign-label">現在の鑑定料</p>
                     <div class="menu-price-row" style="margin-bottom:0;">
                         <span class="menu-price">7,500</span>
                         <span class="menu-price-unit">円（税込）</span>
                     </div>
-                    <p class="menu-campaign-regular">現在は、鑑定内容をより丁寧に整えながら、はじめての方にも受けていただきやすい価格でご案内しています。</p>
+                    <p class="menu-campaign-regular">鑑定書PDF・1週間LINEフォロー付き</p>
                     <p class="menu-campaign-notes">※鑑定後、簡単なご感想をお願いしています</p>
                 </div>
                 <p class="menu-price-note">お申し込みはフォームから受け付けています</p>
-                <a href="contact.html" class="btn-menu">この鑑定を申し込む</a>
-                <p style="font-size: 0.78rem; color: #a09080; margin-top: 10px; text-align: center;">今後、鑑定内容やサポート内容の充実にあわせて、価格を見直す場合があります。</p>
+                <a href="/contact?menu=individual" class="btn-menu">この鑑定を申し込む</a>
             </div>
 
             <!-- 相談テーマ4つ -->
@@ -1317,7 +1472,7 @@
                             <span class="menu-price-unit">円（税込）</span>
                         </div>
                         <p class="menu-price-note">お申し込みはフォームから受け付けています</p>
-                        <a href="contact.html" class="btn-menu btn-menu-sub">申し込む</a>
+                        <a href="/contact?menu=child" class="btn-menu btn-menu-sub">申し込む</a>
                     </div>
                     <div class="menu-card menu-sub-card">
                         <h4 class="menu-title">ご家族関係性鑑定</h4>
@@ -1329,8 +1484,8 @@
                             <span class="menu-price" style="font-size:1.6rem;">12,800</span>
                             <span class="menu-price-unit">円（税込）</span>
                         </div>
-                        <p class="menu-price-note">ご家族2名以上のまとめ鑑定です</p>
-                        <a href="contact.html" class="btn-menu btn-menu-sub">申し込む</a>
+                        <p class="menu-price-note">ご家族2〜4名を基本とするまとめ鑑定です。5名以上は事前にご相談ください</p>
+                        <a href="/contact?menu=family" class="btn-menu btn-menu-sub">申し込む</a>
                     </div>
                 </div>
             </div>
@@ -1361,7 +1516,7 @@
                 <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" class="btn-line">
                     <i class="fab fa-line"></i> LINEで事前相談する
                 </a>
-                <p style="font-size: 0.78rem; color: #9a7050; margin-top: 10px; text-align: center;">LINEを開いたら、「事前相談希望」とメッセージをお送りください。</p>
+                <p class="helper-text">LINEを開いたら、「事前相談希望」とメッセージをお送りください。</p>
             </div>
 
             <!-- アロマオプション（アコーディオン） -->
@@ -1373,13 +1528,16 @@
                     ※精油そのものの販売ではなく、レシピのお渡しとなります。プラナロム精油での説明となります。
                 </div>
             </details>
+            <p class="service-scope-note">
+                <strong>鑑定でお受けできないご相談：</strong>心身の病気に関する診断や治療判断はお受けしていません。医療機関などの専門窓口へご相談ください。
+            </p>
         </div>
     </section>
 
     <!-- 鑑定書でお届けする内容 -->
     <section id="report" class="section report-section bg-sage">
         <div class="container">
-            <h3 class="section-title">鑑定書でお届けする内容</h3>
+            <h2 class="section-title">鑑定書でお届けする内容</h2>
             <span class="section-title-line"></span>
             <p class="section-lead">
                 自然派四柱推命では、<br>
@@ -1390,6 +1548,7 @@
                 迷ったときに何度でも立ち返れる、<br>
                 あなただけの一冊としてお届けします。
             </p>
+            <!-- 鑑定書サンプル画像は、準備ができ次第この位置に追加 -->
             <div class="report-wrap">
                 <!-- PDF風カード -->
                 <div class="report-card">
@@ -1440,7 +1599,7 @@
     <!-- お申し込みの流れ -->
     <section id="flow" class="section bg-light">
         <div class="container">
-            <h3 class="section-title">お申し込みの流れ</h3>
+            <h2 class="section-title">お申し込みの流れ</h2>
             <span class="section-title-line"></span>
             <p class="section-lead">
                 はじめての方にも安心して<br>
@@ -1497,7 +1656,7 @@
     <!-- お客様の声 -->
     <section id="voice" class="section">
         <div class="container">
-            <h3 class="section-title">お喜びの声</h3>
+            <h2 class="section-title">お喜びの声</h2>
             <span class="section-title-line"></span>
 
             <div class="voice-list">
@@ -1536,58 +1695,82 @@
     <!-- お問い合わせ -->
     <section id="contact" class="section bg-light">
         <div class="container">
-            <h3 class="section-title">お申し込み・ご相談</h3>
+            <h2 class="section-title">お申し込み・ご相談</h2>
             <span class="section-title-line"></span>
             <div class="contact-box">
                 <p style="margin-bottom: 24px; font-size: 0.95rem; line-height: 1.9;">
                     ご自身のペースでじっくりお伝えしたい方は<strong>フォーム</strong>から、<br>
                     まずはちょっと聞いてみたい方は<strong>LINE</strong>からお気軽にどうぞ。
                 </p>
-                <a href="contact.html" class="btn-form">
+                <a href="/contact?menu=individual" class="btn-form">
                     <i class="fas fa-pen"></i> フォームで申し込む
                 </a>
                 <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" class="btn-line" style="margin-top: 12px;">
                     <i class="fab fa-line"></i> LINEで事前相談する
                 </a>
-                <p style="font-size: 0.82rem; color: #888; margin-top: 12px;">
+                <p class="helper-text">
                     LINEを開いたら、「事前相談希望」とメッセージをお送りください。
                 </p>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- フッター -->
     <footer class="footer">
         <div class="footer-icons">
             <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="fab fa-line"></i></a>
-            <a href="https://www.instagram.com/fatenature33/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/fatenature33/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <p style="margin: 0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
-        <p style="margin: 0;"><a href="privacy.html" style="color: #aaa; font-size: 0.8rem;">プライバシーポリシー</a></p>
+        <p style="margin: 0;">&copy; 2025&ndash;2026 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+        <nav class="footer-links" aria-label="サイト情報">
+            <a href="/privacy">プライバシーポリシー</a>
+            <a href="/tokusho">特定商取引法に基づく表記</a>
+        </nav>
     </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const nav = document.getElementById('nav');
 
+        const setMenuState = (isOpen) => {
+            menuToggle.classList.toggle('active', isOpen);
+            nav.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+        };
+
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            setMenuState(!isOpen);
         });
 
         const navLinks = document.querySelectorAll('.nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
+                setMenuState(false);
             });
         });
 
-        window.addEventListener('load', () => {
-            window.scrollTo(0, 0);
-            if (location.hash) {
-                history.replaceState(null, '', location.pathname);
+        document.addEventListener('click', (event) => {
+            if (
+                menuToggle.getAttribute('aria-expanded') === 'true' &&
+                !menuToggle.contains(event.target) &&
+                !nav.contains(event.target)
+            ) {
+                setMenuState(false);
             }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+                setMenuState(false);
+                menuToggle.focus();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1080) setMenuState(false);
         });
     </script>
 

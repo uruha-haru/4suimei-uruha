@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>はじめての方へ | 自然派四柱推命鑑定士 潤葉</title>
+    <meta name="description" content="自然派四柱推命 個別鑑定がはじめての方へ。鑑定でお届けする内容、料金、お申し込みの流れ、よくあるご質問をご案内します。">
+    <link rel="canonical" href="https://uruha4suimei.netlify.app/hajimete">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="自然派四柱推命 潤葉">
+    <meta property="og:title" content="はじめての方へ | 自然派四柱推命鑑定士 潤葉">
+    <meta property="og:description" content="鑑定でお届けする内容、料金、お申し込みの流れ、よくあるご質問をご案内します。">
+    <meta property="og:url" content="https://uruha4suimei.netlify.app/hajimete">
+    <meta property="og:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+    <meta property="og:image:alt" content="木漏れ日の差す森">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="はじめての方へ | 自然派四柱推命鑑定士 潤葉">
+    <meta name="twitter:description" content="鑑定内容、料金、お申し込みの流れ、よくあるご質問をご案内します。">
+    <meta name="twitter:image" content="https://uruha4suimei.netlify.app/image/og-image.jpg">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -20,6 +37,11 @@
         }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         a:hover { opacity: 0.8; }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #8b5a2b;
+            outline-offset: 3px;
+        }
         ul { list-style: none; padding: 0; margin: 0; }
 
         /* --- ヘッダー --- */
@@ -205,6 +227,22 @@
             line-height: 1.85;
         }
 
+        /* --- 中間CTA --- */
+        .mid-cta {
+            background: #f3f7f1;
+            border: 1px solid #d7e4d3;
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            margin-top: 28px;
+        }
+        .mid-cta p {
+            margin: 0 0 14px;
+            color: #5e4b40;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
         /* --- FAQ アコーディオン --- */
         .faq-list { display: flex; flex-direction: column; gap: 10px; }
         .faq-item {
@@ -346,7 +384,7 @@
             padding: 30px 20px;
             font-size: 0.8rem;
         }
-        .footer a { color: #aaa; }
+        .footer a { color: #f2eee9; }
 
         /* --- PC用調整 --- */
         @media (min-width: 768px) {
@@ -363,14 +401,14 @@
 
 <!-- ヘッダー -->
 <header class="header">
-    <h1 class="logo"><a href="index.html">自然派四柱推命 潤葉</a></h1>
+    <div class="logo"><a href="/">自然派四柱推命 潤葉</a></div>
 </header>
 
 <!-- ページ上部 -->
 <div class="page-top">
     <div class="container">
         <h1>はじめての方へ</h1>
-        <p class="lead">自分の強みがわからず、「このままでいいのかな……」と迷う女性へ。</p>
+        <p class="lead">自分の強みがわからず、「このままでいいのかな……」と迷う方へ。</p>
         <p class="lead">四柱推命では、命式から本来の性質を読み解き、無理のない生き方や選び方のヒントをお届けしています。</p>
         <p class="lead">事前に丁寧に読み解いた内容を鑑定書としてお渡ししますので、あとから何度でも見返していただけます。</p>
     </div>
@@ -380,7 +418,7 @@
 <main>
     <div class="container">
 
-        <a href="index.html" class="back-link">← トップページに戻る</a>
+        <a href="/" class="back-link">← トップページに戻る</a>
 
         <!-- セクション1：こんなお悩みはありませんか -->
         <section class="content-section">
@@ -425,6 +463,13 @@
                 <p>当てることだけを目的にするのではなく、自分の性質や選び方の軸を知るきっかけとして、やさしく読み解いています。</p>
             </div>
         </section>
+
+        <div class="mid-cta" aria-label="個別鑑定のお申し込み">
+            <p>自然派四柱推命 個別鑑定は、7,500円（税込）です。</p>
+            <a href="/contact?menu=individual" class="btn-primary">
+                <i class="fas fa-pen" aria-hidden="true"></i> 個別鑑定を申し込む
+            </a>
+        </div>
 
         <!-- セクション4：お申し込みの流れ -->
         <section class="content-section">
@@ -475,14 +520,19 @@
             <h2 class="section-title">ご案内しているメニュー</h2>
             <div class="menu-cards">
                 <div class="menu-card">
-                    <p class="menu-name">鑑定書付き四柱推命鑑定</p>
-                    <p class="menu-price">9,800円（税込）</p>
+                    <p class="menu-name">自然派四柱推命 個別鑑定</p>
+                    <p class="menu-price">7,500円（税込）</p>
                     <p>事前に命式を丁寧に読み解き、鑑定書を作成してお届けします。</p>
                 </div>
                 <div class="menu-card">
-                    <p class="menu-name">リピート鑑定</p>
+                    <p class="menu-name">継続フォロー鑑定</p>
                     <p class="menu-price">6,600円（税込）</p>
                     <p>以前鑑定を受けてくださった方向けのメニューです。前回の内容をふまえながら、今の悩みや流れを整理していきます。</p>
+                </div>
+                <div class="menu-card">
+                    <p class="menu-name">ご家族関係性鑑定</p>
+                    <p class="menu-price">12,800円（税込）／基本4名まで</p>
+                    <p>ご家族それぞれの気質と関係性を読み解くメニューです。</p>
                 </div>
             </div>
         </section>
@@ -492,30 +542,75 @@
             <h2 class="section-title">よくあるご質問</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>生まれた時間がわからなくても申し込めますか。</span>
-                        <i class="faq-icon">+</i>
+                    <button type="button" class="faq-question" id="faq-question-price" aria-expanded="false" aria-controls="faq-answer-price">
+                        <span>自然派四柱推命 個別鑑定の料金はいくらですか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-price" role="region" aria-labelledby="faq-question-price" aria-hidden="true">
+                        <p>7,500円（税込）です。ご家族関係性鑑定は12,800円（税込）で、基本4名までを対象としています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" id="faq-question-delivery" aria-expanded="false" aria-controls="faq-answer-delivery">
+                        <span>鑑定書はいつ届きますか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-delivery" role="region" aria-labelledby="faq-question-delivery" aria-hidden="true">
+                        <p>ご入金確認後、3〜5日を目安にLINEまたはメールでお届けします。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" id="faq-question-line" aria-expanded="false" aria-controls="faq-answer-line">
+                        <span>LINEでのフォローでは何を質問できますか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-line" role="region" aria-labelledby="faq-question-line" aria-hidden="true">
+                        <p>個別鑑定では、鑑定書をお渡ししたあと1週間、鑑定書の内容について補足質問を承ります。別のテーマや別の方の鑑定は、あらためてご相談ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" id="faq-question-birthtime" aria-expanded="false" aria-controls="faq-answer-birthtime">
+                        <span>生まれた時間がわからなくても申し込めますか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-birthtime" role="region" aria-labelledby="faq-question-birthtime" aria-hidden="true">
                         <p>はい。生まれた時間が不明な場合も、お申し込みいただけます。わかる範囲の情報で丁寧に読み解いていきます。</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>鑑定は対面ですか。</span>
-                        <i class="faq-icon">+</i>
+                    <button type="button" class="faq-question" id="faq-question-phone" aria-expanded="false" aria-controls="faq-answer-phone">
+                        <span>電話でのフォローはありますか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-phone" role="region" aria-labelledby="faq-question-phone" aria-hidden="true">
+                        <p>ご希望の方には、電話でのフォローも可能です。時間や回数など、詳しい対応範囲はお申し込み前にお問い合わせください。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" id="faq-question-format" aria-expanded="false" aria-controls="faq-answer-format">
+                        <span>鑑定は対面ですか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-format" role="region" aria-labelledby="faq-question-format" aria-hidden="true">
                         <p>基本は、事前に読み解いた内容を鑑定書としてお届けしています。その後、LINEでの補足や、ご希望の方にはお電話でのフォローも行っています。</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button type="button" class="faq-question" id="faq-question-first" aria-expanded="false" aria-controls="faq-answer-first">
                         <span>四柱推命がはじめてでも大丈夫ですか。</span>
-                        <i class="faq-icon">+</i>
+                        <i class="faq-icon" aria-hidden="true">+</i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-first" role="region" aria-labelledby="faq-question-first" aria-hidden="true">
                         <p>はい。はじめての方にもわかりやすいよう、やさしく整理してお伝えしています。難しい知識がなくても大丈夫です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" id="faq-question-medical" aria-expanded="false" aria-controls="faq-answer-medical">
+                        <span>相談できない内容はありますか。</span>
+                        <i class="faq-icon" aria-hidden="true">+</i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-medical" role="region" aria-labelledby="faq-question-medical" aria-hidden="true">
+                        <p>心身の病気に関するご相談はお受けしていません。診断や治療方針などの医療判断は行わないため、体調に不安がある場合は、医療機関などの専門窓口へご相談ください。</p>
                     </div>
                 </div>
             </div>
@@ -543,11 +638,11 @@
                 LINEからお気軽にご相談ください。
             </p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">
-                    <i class="fas fa-pen"></i> フォームで申し込む
+                <a href="/contact?menu=individual" class="btn-primary">
+                    <i class="fas fa-pen" aria-hidden="true"></i> フォームで申し込む
                 </a>
-                <a href="https://lin.ee/xZRU4Ig" target="_blank" class="btn-line">
-                    <i class="fab fa-line"></i> LINEで相談する
+                <a href="https://lin.ee/xZRU4Ig" target="_blank" rel="noopener noreferrer" class="btn-line">
+                    <i class="fab fa-line" aria-hidden="true"></i> LINEで相談する
                 </a>
             </div>
         </div>
@@ -558,11 +653,11 @@
 <!-- フッター -->
 <footer class="footer">
     <div style="margin-bottom: 14px;">
-        <a href="https://lin.ee/xZRU4Ig" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line"></i></a>
-        <a href="https://www.instagram.com/fatenature33/" target="_blank" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://line.me/R/ti/p/%40887cijws" target="_blank" rel="noopener noreferrer" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="LINE"><i class="fab fa-line" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/fatenature33/" target="_blank" rel="noopener noreferrer" style="color:#dcdcdc; margin:0 12px; font-size:1.5rem;" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
     </div>
-    <p style="margin:0 0 8px;">&copy; 2025 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
-    <p style="margin:0;"><a href="privacy.html">プライバシーポリシー</a></p>
+    <p style="margin:0 0 8px;">&copy; 2025–2026 自然派四柱推命鑑定士 潤葉 All Rights Reserved.</p>
+    <p style="margin:0;"><a href="/privacy">プライバシーポリシー</a> ｜ <a href="/tokusho">特定商取引法に基づく表記</a></p>
 </footer>
 
 <script>
@@ -575,11 +670,13 @@
             document.querySelectorAll('.faq-item').forEach(el => {
                 el.classList.remove('open');
                 el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                el.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
             });
             // クリックしたものを開く（すでに開いていれば閉じる）
             if (!isOpen) {
                 item.classList.add('open');
                 btn.setAttribute('aria-expanded', 'true');
+                item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
             }
         });
     });
