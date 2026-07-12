@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="潤葉">
+  <rect width="64" height="64" rx="16" fill="#f5f0e6"/>
+  <path d="M32 51V20" fill="none" stroke="#7a4d25" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30 31C17 31 12 22 14 13c11-1 19 5 19 16-1 1-2 2-3 2Z" fill="#6b8068"/>
+  <path d="M34 39c13 0 18-9 16-18-11-1-19 5-19 16 1 1 2 2 3 2Z" fill="#8aa087"/>
+</svg>

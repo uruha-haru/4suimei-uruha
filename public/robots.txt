@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uruha4suimei.netlify.app/sitemap.xml
