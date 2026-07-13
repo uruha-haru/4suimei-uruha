@@ -4,3 +4,8 @@
 /privacy.html   /privacy    301
 /tokusho.html   /tokusho    301
 /thanks.html    /thanks     301
+
+# 予約ページURLの先行確保（予約フォーム完成までは申込フォームへ転送）
+# 将来 yoyaku.html を公開するときは、この行を削除して
+# 「/yoyaku.html   /yoyaku   301」に置き換える
+/yoyaku         /contact    302
